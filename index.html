@@ -4,16 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<h1>FARHAN BHAIYA</h1>
-<h2>जीवविज्ञान (Biology)</h2>
-<h2>जैव प्रक्रम (Life Process)</h2>
+<title>FARHAN BHAIYA - Class Xth Biology</title>
 
 <style>
+
+* {
+    box-sizing: border-box;
+}
 
 body {
     font-family: Arial, sans-serif;
     background: #f2f2f2;
     padding: 15px;
+    margin: 0;
 }
 
 .container {
@@ -24,20 +27,43 @@ body {
     border-radius: 12px;
 }
 
-h1 {
+/* MAIN HEADING */
+
+.main-heading {
     text-align: center;
+    margin-bottom: 25px;
+}
+
+.main-heading h1 {
+    margin: 0 0 8px 0;
+    font-size: 32px;
     color: #1565c0;
 }
 
-h2 {
-    text-align: center;
+.main-heading h2 {
+    margin: 5px 0;
+    font-size: 24px;
+    color: #222;
 }
+
+.main-heading h3 {
+    margin: 5px 0;
+    font-size: 22px;
+    color: #087f23;
+}
+
+
+/* QUESTION */
 
 .question {
     font-weight: bold;
     margin-top: 25px;
     margin-bottom: 10px;
+    line-height: 1.5;
 }
+
+
+/* OPTIONS */
 
 .option {
     display: block;
@@ -53,21 +79,26 @@ h2 {
     margin-right: 8px;
 }
 
-/* सही उत्तर */
+
+/* CORRECT */
+
 .correct {
     background: #b9f6ca !important;
     color: #087f23;
     font-weight: bold;
 }
 
-/* गलत उत्तर */
+
+/* WRONG */
+
 .wrong {
     background: #ffcdd2 !important;
     color: #c62828;
     font-weight: bold;
 }
 
-/* Submit Button */
+
+/* SUBMIT */
 
 #submitBtn {
     display: block;
@@ -87,7 +118,8 @@ h2 {
     background: #0d47a1;
 }
 
-/* Result */
+
+/* RESULT */
 
 #result {
     display: none;
@@ -96,12 +128,14 @@ h2 {
 
 .result-title {
     text-align: center;
-    font-size: 26px;
+    font-size: 28px;
     margin-bottom: 20px;
     color: #333;
+    font-weight: bold;
 }
 
-/* चार अलग-अलग BOX */
+
+/* RESULT BOX */
 
 .result-box {
     padding: 20px;
@@ -113,28 +147,36 @@ h2 {
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* सही */
+
+/* CORRECT BOX */
+
 .correct-box {
     background: #c8e6c9;
     color: #087f23;
     border: 3px solid #4caf50;
 }
 
-/* गलत */
+
+/* WRONG BOX */
+
 .wrong-box {
     background: #ffcdd2;
     color: #b71c1c;
     border: 3px solid #f44336;
 }
 
-/* Score */
+
+/* SCORE BOX */
+
 .score-box {
     background: #bbdefb;
     color: #0d47a1;
     border: 3px solid #2196f3;
 }
 
-/* Percentage */
+
+/* PERCENTAGE BOX */
+
 .percent-box {
     background: #e1bee7;
     color: #6a1b9a;
@@ -144,12 +186,23 @@ h2 {
 </style>
 </head>
 
+
 <body>
 
 <div class="container">
 
-<h1>कक्षा 10वीं विज्ञान</h1>
-<h2>बहुविकल्पीय प्रश्न: जीवन प्रक्रियाएं</h2>
+
+<!-- MAIN HEADING -->
+
+<div class="main-heading">
+
+<h1>FARHAN BHAIYA</h1>
+
+<h2>CLASS XTH BIOLOGY</h2>
+
+<h3>CHAP-01 जैव प्रक्रम</h3>
+
+</div>
 
 
 <!-- QUESTION 1 -->
@@ -468,7 +521,7 @@ let score = 0;
 let answered = {};
 
 
-// OPTION CLICK
+/* OPTION CLICK */
 
 document.querySelectorAll(".option").forEach(function(option) {
 
@@ -478,7 +531,8 @@ document.querySelectorAll(".option").forEach(function(option) {
 
         let question = input.name;
 
-        // एक प्रश्न का उत्तर दोबारा नहीं बदल सकते
+        /* एक प्रश्न का उत्तर दोबारा नहीं बदल सकते */
+
         if (answered[question]) {
             return;
         }
@@ -489,7 +543,7 @@ document.querySelectorAll(".option").forEach(function(option) {
             this.getAttribute("data-answer");
 
 
-        // सही उत्तर
+        /* सही उत्तर */
 
         if (input.value === correctAnswer) {
 
@@ -502,25 +556,27 @@ document.querySelectorAll(".option").forEach(function(option) {
         }
 
 
-        // गलत उत्तर
+        /* गलत उत्तर */
 
         else {
 
             this.classList.add("wrong");
 
-            // vibration
+
+            /* VIBRATION */
 
             if (navigator.vibrate) {
                 navigator.vibrate(300);
             }
 
 
-            // सही option को हरा करें
+            /* सही option को हरा करना */
 
             let allOptions =
                 document.querySelectorAll(
                     'input[name="' + question + '"]'
                 );
+
 
             allOptions.forEach(function(correctInput) {
 
@@ -540,7 +596,7 @@ document.querySelectorAll(".option").forEach(function(option) {
 });
 
 
-// SUBMIT BUTTON
+/* SUBMIT */
 
 document.getElementById("submitBtn")
 .addEventListener("click", function() {
@@ -553,7 +609,8 @@ document.getElementById("submitBtn")
     let wrong =
         answeredCount - score;
 
-    // परिणाम में संख्या
+
+    /* RESULT */
 
     document.getElementById("correctCount")
         .innerText = score;
@@ -568,13 +625,13 @@ document.getElementById("submitBtn")
         .innerText = (score * 10) + "%";
 
 
-    // Result दिखाई दें
+    /* RESULT SHOW */
 
     document.getElementById("result")
         .style.display = "block";
 
 
-    // Result तक जाएँ
+    /* RESULT तक जाएँ */
 
     document.getElementById("result")
         .scrollIntoView({
@@ -584,7 +641,7 @@ document.getElementById("submitBtn")
 });
 
 
-// सही उत्तर का sound
+/* CORRECT ANSWER SOUND */
 
 function playCorrectSound() {
 
