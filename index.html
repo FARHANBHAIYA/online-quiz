@@ -4,162 +4,183 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FARHAN BHAIYA - CLASS XTH BIOLOGY</title>
+<title>FARHAN BHAIYA - Class Xth Biology</title>
 
 <style>
 
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
-body{
-    margin:0;
-    font-family:Arial,"Noto Sans Devanagari",sans-serif;
-    background:linear-gradient(135deg,#e8f5e9,#e3f2fd);
-    color:#222;
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    padding: 15px;
+    margin: 0;
 }
 
-.header{
-    background:linear-gradient(135deg,#1565c0,#00897b);
-    color:white;
-    text-align:center;
-    padding:20px 10px;
-    border-radius:0 0 25px 25px;
-    box-shadow:0 4px 12px #0003;
+.container {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
 }
 
-.header h1{
-    margin:0;
-    font-size:28px;
-    font-weight:bold;
+/* MAIN HEADING */
+
+.main-heading {
+    text-align: center;
+    margin-bottom: 25px;
 }
 
-.header h2{
-    margin:7px 0;
-    font-size:22px;
+.main-heading h1 {
+    margin: 0 0 8px 0;
+    font-size: 32px;
+    color: #1565c0;
 }
 
-.header p{
-    margin:5px 0 0;
-    font-size:18px;
-    font-weight:bold;
+.main-heading h2 {
+    margin: 5px 0;
+    font-size: 24px;
+    color: #222;
 }
 
-.quiz{
-    max-width:650px;
-    margin:20px auto;
-    padding:12px;
+.main-heading h3 {
+    margin: 5px 0;
+    font-size: 22px;
+    color: #087f23;
 }
 
-.question{
-    background:white;
-    padding:20px;
-    border-radius:20px;
-    box-shadow:0 5px 20px #0002;
+
+/* QUESTION */
+
+.question {
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    line-height: 1.5;
 }
 
-#qno{
-    color:#1565c0;
-    margin-top:0;
+
+/* OPTIONS */
+
+.option {
+    display: block;
+    padding: 13px;
+    margin: 8px 0;
+    background: #eeeeee;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-#question{
-    font-size:20px;
-    line-height:1.5;
+.option input {
+    margin-right: 8px;
 }
 
-.options{
-    margin-top:20px;
+
+/* CORRECT */
+
+.correct {
+    background: #b9f6ca !important;
+    color: #087f23;
+    font-weight: bold;
 }
 
-.options button{
-    display:block;
-    width:100%;
-    margin:12px 0;
-    padding:15px;
-    border:2px solid #ddd;
-    border-radius:13px;
-    background:#fff;
-    font-size:17px;
-    text-align:left;
-    cursor:pointer;
-    transition:.2s;
+
+/* WRONG */
+
+.wrong {
+    background: #ffcdd2 !important;
+    color: #c62828;
+    font-weight: bold;
 }
 
-.options button:hover{
-    background:#f5f5f5;
+
+/* SUBMIT */
+
+#submitBtn {
+    display: block;
+    width: 90%;
+    margin: 30px auto;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    background: #1565c0;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
-.options button:active{
-    transform:scale(.98);
+#submitBtn:hover {
+    background: #0d47a1;
 }
 
-.options button.correct{
-    background:#c8e6c9 !important;
-    border-color:#2e7d32 !important;
-    color:#1b5e20;
-    font-weight:bold;
+
+/* RESULT */
+
+#result {
+    display: none;
+    margin-top: 30px;
 }
 
-.options button.wrong{
-    background:#ffcdd2 !important;
-    border-color:#c62828 !important;
-    color:#b71c1c;
-    font-weight:bold;
+.result-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
 }
 
-.answer{
-    text-align:center;
-    font-size:19px;
-    font-weight:bold;
-    margin-top:18px;
-    min-height:28px;
+
+/* RESULT BOX */
+
+.result-box {
+    padding: 20px;
+    margin: 12px 0;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-.next{
-    display:block;
-    margin:18px auto 0;
-    padding:13px 30px;
-    border:0;
-    border-radius:13px;
-    background:#1565c0;
-    color:white;
-    font-size:17px;
-    cursor:pointer;
-    box-shadow:0 3px 8px #0003;
+
+/* CORRECT BOX */
+
+.correct-box {
+    background: #c8e6c9;
+    color: #087f23;
+    border: 3px solid #4caf50;
 }
 
-.next:active{
-    transform:scale(.96);
+
+/* WRONG BOX */
+
+.wrong-box {
+    background: #ffcdd2;
+    color: #b71c1c;
+    border: 3px solid #f44336;
 }
 
-#result{
-    display:none;
-    background:white;
-    margin-top:20px;
-    padding:25px 15px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0 5px 20px #0002;
+
+/* SCORE BOX */
+
+.score-box {
+    background: #bbdefb;
+    color: #0d47a1;
+    border: 3px solid #2196f3;
 }
 
-#result h2{
-    color:#1565c0;
-}
 
-#score,
-#percent{
-    font-size:20px;
-}
+/* PERCENTAGE BOX */
 
-.restart{
-    background:#00897b;
-    color:white;
-    border:0;
-    padding:13px 28px;
-    border-radius:12px;
-    font-size:17px;
-    margin-top:10px;
+.percent-box {
+    background: #e1bee7;
+    color: #6a1b9a;
+    border: 3px solid #9c27b0;
 }
 
 </style>
@@ -168,615 +189,575 @@ body{
 
 <body>
 
-
-<!-- HEADER -->
-
-<div class="header">
-
-    <h1>FARHAN BHAIYA</h1>
-
-    <h2>CLASS XTH BIOLOGY</h2>
-
-    <p>CHAP-01 जैव प्रक्रम</p>
-
-</div>
+<div class="container">
 
 
+<!-- MAIN HEADING -->
 
-<!-- QUIZ -->
+<div class="main-heading">
 
-<div class="quiz">
+<h1>FARHAN BHAIYA</h1>
 
-    <div class="question">
+<h2>CLASS XTH BIOLOGY</h2>
 
-        <h3 id="qno"></h3>
-
-        <h2 id="question"></h2>
-
-        <div class="options" id="options"></div>
-
-        <div class="answer" id="answer"></div>
-
-        <button
-            class="next"
-            id="nextBtn"
-            onclick="nextQuestion()"
-            style="display:none;">
-            अगला प्रश्न ➜
-        </button>
-
-    </div>
-
-
-
-    <!-- RESULT -->
-
-    <div id="result">
-
-        <h2>🎉 Quiz पूरा हुआ!</h2>
-
-        <p id="score"></p>
-
-        <p id="percent"></p>
-
-        <button
-            class="restart"
-            onclick="restartQuiz()">
-            🔄 फिर से शुरू करें
-        </button>
-
-    </div>
+<h3>CHAP-01 जैव प्रक्रम</h3>
 
 </div>
 
+
+<!-- QUESTION 1 -->
+
+<div class="question">
+1. प्रकाश संश्लेषण में क्लोरोफिल का उपयोग किसके लिए होता है?
+</div>
+
+<label class="option" data-answer="A">
+<input type="radio" name="q1" value="A">
+A. प्रकाश का अवशोषण
+</label>
+
+<label class="option" data-answer="A">
+<input type="radio" name="q1" value="B">
+B. जल के अणुओं का विखंडन
+</label>
+
+<label class="option" data-answer="A">
+<input type="radio" name="q1" value="C">
+C. कोई कार्य नहीं
+</label>
+
+<label class="option" data-answer="A">
+<input type="radio" name="q1" value="D">
+D. CO₂ का अपचयन
+</label>
+
+
+<!-- QUESTION 2 -->
+
+<div class="question">
+2. पाचन के बाद प्रोटीन परिवर्तित हो जाते हैं—
+</div>
+
+<label class="option" data-answer="C">
+<input type="radio" name="q2" value="A">
+A. कार्बोहाइड्रेट
+</label>
+
+<label class="option" data-answer="C">
+<input type="radio" name="q2" value="B">
+B. छोटे गोले
+</label>
+
+<label class="option" data-answer="C">
+<input type="radio" name="q2" value="C">
+C. अमीनो अम्ल
+</label>
+
+<label class="option" data-answer="C">
+<input type="radio" name="q2" value="D">
+D. स्टार्च
+</label>
+
+
+<!-- QUESTION 3 -->
+
+<div class="question">
+3. पौधों में कार्बोहाइड्रेट निम्न रूप में संग्रहित होते हैं—
+</div>
+
+<label class="option" data-answer="B">
+<input type="radio" name="q3" value="A">
+A. ग्लाइकोजन
+</label>
+
+<label class="option" data-answer="B">
+<input type="radio" name="q3" value="B">
+B. स्टार्च
+</label>
+
+<label class="option" data-answer="B">
+<input type="radio" name="q3" value="C">
+C. ग्लूकोज
+</label>
+
+<label class="option" data-answer="B">
+<input type="radio" name="q3" value="D">
+D. माल्टोज़
+</label>
+
+
+<!-- QUESTION 4 -->
+
+<div class="question">
+4. प्रकाश संश्लेषण का मुख्य स्थल है—
+</div>
+
+<label class="option" data-answer="C">
+<input type="radio" name="q4" value="A">
+A. पत्ता
+</label>
+
+<label class="option" data-answer="C">
+<input type="radio" name="q4" value="B">
+B. तना
+</label>
+
+<label class="option" data-answer="C">
+<input type="radio" name="q4" value="C">
+C. क्लोरोप्लास्ट
+</label>
+
+<label class="option" data-answer="C">
+<input type="radio" name="q4" value="D">
+D. रक्षक कोशिकाएँ
+</label>
+
+
+<!-- QUESTION 5 -->
+
+<div class="question">
+5. पत्ती की सतह पर मौजूद छोटे छिद्रों को कहा जाता है—
+</div>
+
+<label class="option" data-answer="A">
+<input type="radio" name="q5" value="A">
+A. स्टोमेटा
+</label>
+
+<label class="option" data-answer="A">
+<input type="radio" name="q5" value="B">
+B. क्लोरोफिल
+</label>
+
+<label class="option" data-answer="A">
+<input type="radio" name="q5" value="C">
+C. सुरक्षा कक्ष
+</label>
+
+<label class="option" data-answer="A">
+<input type="radio" name="q5" value="D">
+D. इनमें से कोई नहीं
+</label>
+
+
+<!-- QUESTION 6 -->
+
+<div class="question">
+6. प्रकाश संश्लेषण एक—
+</div>
+
+<label class="option" data-answer="D">
+<input type="radio" name="q6" value="A">
+A. अपचय प्रक्रिया
+</label>
+
+<label class="option" data-answer="D">
+<input type="radio" name="q6" value="B">
+B. परवलयिक प्रक्रिया
+</label>
+
+<label class="option" data-answer="D">
+<input type="radio" name="q6" value="C">
+C. उभयचर प्रक्रिया
+</label>
+
+<label class="option" data-answer="D">
+<input type="radio" name="q6" value="D">
+D. प्रकाश रासायनिक प्रक्रिया
+</label>
+
+
+<!-- QUESTION 7 -->
+
+<div class="question">
+7. छिद्रों का खुलना और बंद होना किसके द्वारा किया जाता है?
+</div>
+
+<label class="option" data-answer="D">
+<input type="radio" name="q7" value="A">
+A. स्टोमेटा
+</label>
+
+<label class="option" data-answer="D">
+<input type="radio" name="q7" value="B">
+B. क्लोरोफिल
+</label>
+
+<label class="option" data-answer="D">
+<input type="radio" name="q7" value="C">
+C. क्लोरोप्लास्ट
+</label>
+
+<label class="option" data-answer="D">
+<input type="radio" name="q7" value="D">
+D. रक्षक कोशिकाएँ
+</label>
+
+
+<!-- QUESTION 8 -->
+
+<div class="question">
+8. प्रोटीन के संश्लेषण में किस तत्व का उपयोग किया जाता है?
+</div>
+
+<label class="option" data-answer="C">
+<input type="radio" name="q8" value="A">
+A. हाइड्रोजन
+</label>
+
+<label class="option" data-answer="C">
+<input type="radio" name="q8" value="B">
+B. ऑक्सीजन
+</label>
+
+<label class="option" data-answer="C">
+<input type="radio" name="q8" value="C">
+C. नाइट्रोजन
+</label>
+
+<label class="option" data-answer="C">
+<input type="radio" name="q8" value="D">
+D. कार्बन डाइऑक्साइड
+</label>
+
+
+<!-- QUESTION 9 -->
+
+<div class="question">
+9. अमीबा पर पाए जाने वाले अस्थायी उंगली जैसे विस्तारों को क्या कहते हैं?
+</div>
+
+<label class="option" data-answer="C">
+<input type="radio" name="q9" value="A">
+A. कोशिका झिल्ली
+</label>
+
+<label class="option" data-answer="C">
+<input type="radio" name="q9" value="B">
+B. कोशिका भित्ति
+</label>
+
+<label class="option" data-answer="C">
+<input type="radio" name="q9" value="C">
+C. स्यूडोपोडिया
+</label>
+
+<label class="option" data-answer="C">
+<input type="radio" name="q9" value="D">
+D. सिलिया
+</label>
+
+
+<!-- QUESTION 10 -->
+
+<div class="question">
+10. पित्त रस किसके द्वारा स्रावित होता है?
+</div>
+
+<label class="option" data-answer="D">
+<input type="radio" name="q10" value="A">
+A. पेट
+</label>
+
+<label class="option" data-answer="D">
+<input type="radio" name="q10" value="B">
+B. अग्न्याशय
+</label>
+
+<label class="option" data-answer="D">
+<input type="radio" name="q10" value="C">
+C. छोटी आंत
+</label>
+
+<label class="option" data-answer="D">
+<input type="radio" name="q10" value="D">
+D. यकृत
+</label>
+
+
+<!-- SUBMIT -->
+
+<button id="submitBtn" type="button">
+📋 Submit Quiz
+</button>
+
+
+<!-- RESULT -->
+
+<div id="result">
+
+<div class="result-title">
+🎉 आपका परिणाम
+</div>
+
+<div class="result-box correct-box">
+सही उत्तर<br>
+<span id="correctCount">0</span>
+</div>
+
+<div class="result-box wrong-box">
+गलत उत्तर<br>
+<span id="wrongCount">0</span>
+</div>
+
+<div class="result-box score-box">
+स्कोर<br>
+<span id="scoreCount">0 / 10</span>
+</div>
+
+<div class="result-box percent-box">
+प्रतिशत<br>
+<span id="percentCount">0%</span>
+</div>
+
+</div>
+
+</div>
 
 
 <script>
 
-
-/* =========================
-   QUESTIONS
-========================= */
-
-const questions = [
-
-{
-q:"पौधों में वाष्पोत्सर्जन किस भाग में होता है?",
-options:[
-"जड़",
-"तना",
-"पत्ता",
-"फूल"
-],
-answer:2
-},
-
-{
-q:"प्रकाश संश्लेषण के लिए पौधों को किस गैस की आवश्यकता होती है?",
-options:[
-"ऑक्सीजन",
-"कार्बन डाइऑक्साइड",
-"नाइट्रोजन",
-"हाइड्रोजन"
-],
-answer:1
-},
-
-{
-q:"मानव में भोजन का पाचन मुख्यतः कहाँ होता है?",
-options:[
-"मुख",
-"ग्रसनी",
-"छोटी आंत",
-"बड़ी आंत"
-],
-answer:2
-},
-
-{
-q:"रक्त में ऑक्सीजन का परिवहन किसके द्वारा होता है?",
-options:[
-"प्लेटलेट्स",
-"हीमोग्लोबिन",
-"प्लाज्मा",
-"WBC"
-],
-answer:1
-},
-
-{
-q:"पौधों में जल का परिवहन किस ऊतक द्वारा होता है?",
-options:[
-"फ्लोएम",
-"जाइलम",
-"मेरिस्टेम",
-"पैरेन्काइमा"
-],
-answer:1
-},
-
-{
-q:"भोजन का परिवहन पौधों में किसके द्वारा होता है?",
-options:[
-"जाइलम",
-"फ्लोएम",
-"रंध्र",
-"जड़"
-],
-answer:1
-},
-
-{
-q:"मानव शरीर में श्वसन का मुख्य अंग कौन-सा है?",
-options:[
-"हृदय",
-"फेफड़े",
-"गुर्दे",
-"यकृत"
-],
-answer:1
-},
-
-{
-q:"ग्लूकोज के टूटने से मुख्यतः क्या प्राप्त होता है?",
-options:[
-"ऊर्जा",
-"पानी",
-"ऑक्सीजन",
-"नाइट्रोजन"
-],
-answer:0
-},
-
-{
-q:"मानव शरीर में रक्त का पम्पिंग कौन करता है?",
-options:[
-"फेफड़ा",
-"हृदय",
-"यकृत",
-"गुर्दा"
-],
-answer:1
-},
-
-{
-q:"वाष्पोत्सर्जन मुख्यतः पौधे के किस भाग से होता है?",
-options:[
-"जड़",
-"फूल",
-"रंध्र",
-"फल"
-],
-answer:2
-}
-
-];
-
-
-
-/* =========================
-   QUIZ VARIABLES
-========================= */
-
-let current = 0;
-
 let score = 0;
+let answered = {};
 
-let answered = false;
 
+/* OPTION CLICK */
 
+document.querySelectorAll(".option").forEach(function(option) {
 
-/* =========================
-   CORRECT SOUND
-   NO VIBRATION
-========================= */
+    option.addEventListener("click", function() {
 
-function tickSound(){
+        let input = this.querySelector("input");
 
-    try{
+        let question = input.name;
 
-        const audio =
-        new (window.AudioContext ||
-        window.webkitAudioContext)();
+        /* एक प्रश्न का उत्तर दोबारा नहीं बदल सकते */
 
-        const osc =
-        audio.createOscillator();
+        if (answered[question]) {
+            return;
+        }
 
-        const gain =
-        audio.createGain();
+        answered[question] = true;
 
+        let correctAnswer =
+            this.getAttribute("data-answer");
 
-        osc.type = "sine";
 
+        /* सही उत्तर */
 
-        osc.frequency.setValueAtTime(
-            1100,
-            audio.currentTime
-        );
+        if (input.value === correctAnswer) {
 
+            score++;
 
-        osc.frequency.exponentialRampToValueAtTime(
-            1600,
-            audio.currentTime + 0.08
-        );
+            this.classList.add("correct");
 
-
-        gain.gain.setValueAtTime(
-            0.001,
-            audio.currentTime
-        );
-
-
-        gain.gain.exponentialRampToValueAtTime(
-            0.20,
-            audio.currentTime + 0.01
-        );
-
-
-        gain.gain.exponentialRampToValueAtTime(
-            0.001,
-            audio.currentTime + 0.16
-        );
-
-
-        osc.connect(gain);
-
-        gain.connect(audio.destination);
-
-
-        osc.start();
-
-        osc.stop(
-            audio.currentTime + 0.16
-        );
-
-    }catch(e){
-
-        console.log("Sound error:",e);
-
-    }
-
-}
-
-
-
-/* =========================
-   WRONG SOUND
-   + LIGHT VIBRATION
-========================= */
-
-function wrongSound(){
-
-    try{
-
-        const audio =
-        new (window.AudioContext ||
-        window.webkitAudioContext)();
-
-
-        const osc =
-        audio.createOscillator();
-
-        const gain =
-        audio.createGain();
-
-
-        osc.type = "sine";
-
-
-        osc.frequency.setValueAtTime(
-            280,
-            audio.currentTime
-        );
-
-
-        osc.frequency.exponentialRampToValueAtTime(
-            180,
-            audio.currentTime + 0.18
-        );
-
-
-        gain.gain.setValueAtTime(
-            0.001,
-            audio.currentTime
-        );
-
-
-        gain.gain.exponentialRampToValueAtTime(
-            0.18,
-            audio.currentTime + 0.01
-        );
-
-
-        gain.gain.exponentialRampToValueAtTime(
-            0.001,
-            audio.currentTime + 0.20
-        );
-
-
-        osc.connect(gain);
-
-        gain.connect(audio.destination);
-
-
-        osc.start();
-
-        osc.stop(
-            audio.currentTime + 0.20
-        );
-
-
-    }catch(e){
-
-        console.log("Sound error:",e);
-
-    }
-
-
-    /* LIGHT VIBRATION */
-
-    if("vibrate" in navigator){
-
-        navigator.vibrate(70);
-
-    }
-
-}
-
-
-
-/* =========================
-   LOAD QUESTION
-========================= */
-
-function loadQuestion(){
-
-    answered = false;
-
-
-    document.getElementById("qno").innerText =
-        "प्रश्न " +
-        (current + 1) +
-        " / " +
-        questions.length;
-
-
-    document.getElementById("question").innerText =
-        questions[current].q;
-
-
-    document.getElementById("answer").innerText =
-        "";
-
-
-    document.getElementById("nextBtn").style.display =
-        "none";
-
-
-    const box =
-        document.getElementById("options");
-
-
-    box.innerHTML = "";
-
-
-    questions[current].options.forEach(
-        (option,index)=>{
-
-            const button =
-                document.createElement("button");
-
-
-            button.innerText =
-                String.fromCharCode(65 + index)
-                + ". "
-                + option;
-
-
-            button.onclick =
-                function(){
-
-                    checkAnswer(
-                        index,
-                        button
-                    );
-
-                };
-
-
-            box.appendChild(button);
+            playCorrectSound();
 
         }
+
+
+        /* गलत उत्तर */
+
+        else {
+
+            this.classList.add("wrong");
+
+            /* हल्का vibration केवल गलत उत्तर पर */
+
+            if (navigator.vibrate) {
+                navigator.vibrate(70);
+            }
+
+            /* गलत उत्तर की sound */
+
+            playWrongSound();
+
+
+            /* सही option को हरा करना */
+
+            let allOptions =
+                document.querySelectorAll(
+                    'input[name="' + question + '"]'
+                );
+
+
+            allOptions.forEach(function(correctInput) {
+
+                if (correctInput.value === correctAnswer) {
+
+                    correctInput.parentElement
+                        .classList.add("correct");
+
+                }
+
+            });
+
+        }
+
+    });
+
+});
+
+
+/* SUBMIT */
+
+document.getElementById("submitBtn")
+.addEventListener("click", function() {
+
+    let total = 10;
+
+    let answeredCount =
+        Object.keys(answered).length;
+
+    let wrong =
+        answeredCount - score;
+
+
+    /* RESULT */
+
+    document.getElementById("correctCount")
+        .innerText = score;
+
+    document.getElementById("wrongCount")
+        .innerText = wrong;
+
+    document.getElementById("scoreCount")
+        .innerText = score + " / " + total;
+
+    document.getElementById("percentCount")
+        .innerText = (score * 10) + "%";
+
+
+    /* RESULT SHOW */
+
+    document.getElementById("result")
+        .style.display = "block";
+
+
+    /* RESULT तक जाएँ */
+
+    document.getElementById("result")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+});
+
+
+/* CORRECT ANSWER SOUND */
+
+function playCorrectSound() {
+
+    const AudioContext =
+        window.AudioContext ||
+        window.webkitAudioContext;
+
+    if (!AudioContext) return;
+
+    const audio = new AudioContext();
+
+    const oscillator =
+        audio.createOscillator();
+
+    const gain =
+        audio.createGain();
+
+    oscillator.connect(gain);
+
+    gain.connect(audio.destination);
+
+    oscillator.type = "sine";
+
+    oscillator.frequency.setValueAtTime(
+        900,
+        audio.currentTime
+    );
+
+    oscillator.frequency.exponentialRampToValueAtTime(
+        1500,
+        audio.currentTime + 0.08
+    );
+
+    gain.gain.setValueAtTime(
+        0.001,
+        audio.currentTime
+    );
+
+    gain.gain.exponentialRampToValueAtTime(
+        0.18,
+        audio.currentTime + 0.01
+    );
+
+    gain.gain.exponentialRampToValueAtTime(
+        0.001,
+        audio.currentTime + 0.18
+    );
+
+    oscillator.start();
+
+    oscillator.stop(
+        audio.currentTime + 0.18
     );
 
 }
 
 
+/* WRONG ANSWER SOUND */
 
-/* =========================
-   CHECK ANSWER
-========================= */
+function playWrongSound() {
 
-function checkAnswer(
-    selected,
-    button
-){
+    const AudioContext =
+        window.AudioContext ||
+        window.webkitAudioContext;
 
-    if(answered){
+    if (!AudioContext) return;
 
-        return;
+    const audio = new AudioContext();
 
-    }
+    const oscillator =
+        audio.createOscillator();
 
+    const gain =
+        audio.createGain();
 
-    answered = true;
+    oscillator.connect(gain);
 
+    gain.connect(audio.destination);
 
-    const correct =
-        questions[current].answer;
+    oscillator.type = "sine";
 
+    oscillator.frequency.setValueAtTime(
+        320,
+        audio.currentTime
+    );
 
+    oscillator.frequency.exponentialRampToValueAtTime(
+        180,
+        audio.currentTime + 0.18
+    );
 
-    /* CORRECT */
+    gain.gain.setValueAtTime(
+        0.001,
+        audio.currentTime
+    );
 
-    if(selected === correct){
+    gain.gain.exponentialRampToValueAtTime(
+        0.16,
+        audio.currentTime + 0.01
+    );
 
-        score++;
+    gain.gain.exponentialRampToValueAtTime(
+        0.001,
+        audio.currentTime + 0.20
+    );
 
+    oscillator.start();
 
-        button.classList.add(
-            "correct"
-        );
-
-
-        document.getElementById(
-            "answer"
-        ).innerText =
-            "✓ सही उत्तर!";
-
-
-        tickSound();
-
-    }
-
-
-
-    /* WRONG */
-
-    else{
-
-        button.classList.add(
-            "wrong"
-        );
-
-
-        document.getElementById(
-            "answer"
-        ).innerText =
-            "✗ गलत उत्तर!";
-
-
-        wrongSound();
-
-
-        const allButtons =
-            document.querySelectorAll(
-                ".options button"
-            );
-
-
-        allButtons[correct]
-            .classList.add(
-                "correct"
-            );
-
-    }
-
-
-
-    /* SHOW NEXT BUTTON */
-
-    document.getElementById(
-        "nextBtn"
-    ).style.display =
-        "block";
+    oscillator.stop(
+        audio.currentTime + 0.20
+    );
 
 }
-
-
-
-/* =========================
-   NEXT QUESTION
-========================= */
-
-function nextQuestion(){
-
-    current++;
-
-
-    if(current < questions.length){
-
-        loadQuestion();
-
-    }
-
-    else{
-
-        document.querySelector(
-            ".question"
-        ).style.display =
-            "none";
-
-
-        document.getElementById(
-            "result"
-        ).style.display =
-            "block";
-
-
-        document.getElementById(
-            "score"
-        ).innerText =
-            "आपका स्कोर: "
-            + score
-            + " / "
-            + questions.length;
-
-
-        const percentage =
-            (score /
-            questions.length) * 100;
-
-
-        document.getElementById(
-            "percent"
-        ).innerText =
-            "प्रतिशत: "
-            + percentage
-            + "%";
-
-    }
-
-}
-
-
-
-/* =========================
-   RESTART QUIZ
-========================= */
-
-function restartQuiz(){
-
-    current = 0;
-
-    score = 0;
-
-    answered = false;
-
-
-    document.getElementById(
-        "result"
-    ).style.display =
-        "none";
-
-
-    document.querySelector(
-        ".question"
-    ).style.display =
-        "block";
-
-
-    loadQuestion();
-
-}
-
-
-
-/* =========================
-   START QUIZ
-========================= */
-
-loadQuestion();
 
 </script>
 
