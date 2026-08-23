@@ -21,8 +21,11 @@ body {
     border-radius: 10px;
 }
 
-h1 {
+h1, h2 {
     text-align: center;
+}
+
+h1 {
     color: #1565c0;
 }
 
@@ -33,15 +36,28 @@ h1 {
 
 .option {
     display: block;
-    padding: 10px;
+    padding: 12px;
     margin: 8px 0;
     background: #eeeeee;
     border-radius: 6px;
     cursor: pointer;
 }
 
-.option:hover {
-    background: #dddddd;
+.option input {
+    margin-right: 8px;
+}
+
+.feedback {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.correct {
+    background: #c8e6c9;
+}
+
+.wrong {
+    background: #ffcdd2;
 }
 
 button {
@@ -53,7 +69,6 @@ button {
     color: white;
     border: none;
     border-radius: 6px;
-    cursor: pointer;
 }
 
 #result {
@@ -74,96 +89,84 @@ button {
 
 <form id="quiz">
 
-<div class="question">
-1. प्रकाश संश्लेषण में क्लोरोफिल का उपयोग किसके लिए होता है?
-</div>
-<label class="option"><input type="radio" name="q1" value="A"> A. प्रकाश का अवशोषण</label>
-<label class="option"><input type="radio" name="q1" value="B"> B. जल के अणुओं का विखंडन</label>
-<label class="option"><input type="radio" name="q1" value="C"> C. कोई कार्य नहीं</label>
-<label class="option"><input type="radio" name="q1" value="D"> D. CO₂ का अपचयन</label>
+<div class="question">1. प्रकाश संश्लेषण में क्लोरोफिल का उपयोग किसके लिए होता है?</div>
+<label class="option"><input type="radio" name="q1" value="A" onclick="check(this,'A','f1')"> A. प्रकाश का अवशोषण</label>
+<label class="option"><input type="radio" name="q1" value="B" onclick="check(this,'A','f1')"> B. जल के अणुओं का विखंडन</label>
+<label class="option"><input type="radio" name="q1" value="C" onclick="check(this,'A','f1')"> C. कोई कार्य नहीं</label>
+<label class="option"><input type="radio" name="q1" value="D" onclick="check(this,'A','f1')"> D. CO₂ का अपचयन</label>
+<div id="f1" class="feedback"></div>
 
 
-<div class="question">
-2. पाचन के बाद प्रोटीन परिवर्तित हो जाते हैं—
-</div>
-<label class="option"><input type="radio" name="q2" value="A"> A. कार्बोहाइड्रेट</label>
-<label class="option"><input type="radio" name="q2" value="B"> B. छोटे गोले</label>
-<label class="option"><input type="radio" name="q2" value="C"> C. अमीनो अम्ल</label>
-<label class="option"><input type="radio" name="q2" value="D"> D. स्टार्च</label>
+<div class="question">2. पाचन के बाद प्रोटीन परिवर्तित हो जाते हैं—</div>
+<label class="option"><input type="radio" name="q2" value="A" onclick="check(this,'C','f2')"> A. कार्बोहाइड्रेट</label>
+<label class="option"><input type="radio" name="q2" value="B" onclick="check(this,'C','f2')"> B. छोटे गोले</label>
+<label class="option"><input type="radio" name="q2" value="C" onclick="check(this,'C','f2')"> C. अमीनो अम्ल</label>
+<label class="option"><input type="radio" name="q2" value="D" onclick="check(this,'C','f2')"> D. स्टार्च</label>
+<div id="f2" class="feedback"></div>
 
 
-<div class="question">
-3. पौधों में कार्बोहाइड्रेट निम्न रूप में संग्रहित होते हैं—
-</div>
-<label class="option"><input type="radio" name="q3" value="A"> A. ग्लाइकोजन</label>
-<label class="option"><input type="radio" name="q3" value="B"> B. स्टार्च</label>
-<label class="option"><input type="radio" name="q3" value="C"> C. ग्लूकोज</label>
-<label class="option"><input type="radio" name="q3" value="D"> D. माल्टोज़</label>
+<div class="question">3. पौधों में कार्बोहाइड्रेट निम्न रूप में संग्रहित होते हैं—</div>
+<label class="option"><input type="radio" name="q3" value="A" onclick="check(this,'B','f3')"> A. ग्लाइकोजन</label>
+<label class="option"><input type="radio" name="q3" value="B" onclick="check(this,'B','f3')"> B. स्टार्च</label>
+<label class="option"><input type="radio" name="q3" value="C" onclick="check(this,'B','f3')"> C. ग्लूकोज</label>
+<label class="option"><input type="radio" name="q3" value="D" onclick="check(this,'B','f3')"> D. माल्टोज़</label>
+<div id="f3" class="feedback"></div>
 
 
-<div class="question">
-4. प्रकाश संश्लेषण का मुख्य स्थल है—
-</div>
-<label class="option"><input type="radio" name="q4" value="A"> A. पत्ता</label>
-<label class="option"><input type="radio" name="q4" value="B"> B. तना</label>
-<label class="option"><input type="radio" name="q4" value="C"> C. क्लोरोप्लास्ट</label>
-<label class="option"><input type="radio" name="q4" value="D"> D. रक्षक कोशिकाएँ</label>
+<div class="question">4. प्रकाश संश्लेषण का मुख्य स्थल है—</div>
+<label class="option"><input type="radio" name="q4" value="A" onclick="check(this,'C','f4')"> A. पत्ता</label>
+<label class="option"><input type="radio" name="q4" value="B" onclick="check(this,'C','f4')"> B. तना</label>
+<label class="option"><input type="radio" name="q4" value="C" onclick="check(this,'C','f4')"> C. क्लोरोप्लास्ट</label>
+<label class="option"><input type="radio" name="q4" value="D" onclick="check(this,'C','f4')"> D. रक्षक कोशिकाएँ</label>
+<div id="f4" class="feedback"></div>
 
 
-<div class="question">
-5. पत्ती की सतह पर मौजूद छोटे छिद्रों को कहा जाता है—
-</div>
-<label class="option"><input type="radio" name="q5" value="A"> A. स्टोमेटा</label>
-<label class="option"><input type="radio" name="q5" value="B"> B. क्लोरोफिल</label>
-<label class="option"><input type="radio" name="q5" value="C"> C. सुरक्षा कक्ष</label>
-<label class="option"><input type="radio" name="q5" value="D"> D. इनमें से कोई नहीं</label>
+<div class="question">5. पत्ती की सतह पर मौजूद छोटे छिद्रों को कहा जाता है—</div>
+<label class="option"><input type="radio" name="q5" value="A" onclick="check(this,'A','f5')"> A. स्टोमेटा</label>
+<label class="option"><input type="radio" name="q5" value="B" onclick="check(this,'A','f5')"> B. क्लोरोफिल</label>
+<label class="option"><input type="radio" name="q5" value="C" onclick="check(this,'A','f5')"> C. सुरक्षा कक्ष</label>
+<label class="option"><input type="radio" name="q5" value="D" onclick="check(this,'A','f5')"> D. इनमें से कोई नहीं</label>
+<div id="f5" class="feedback"></div>
 
 
-<div class="question">
-6. प्रकाश संश्लेषण एक—
-</div>
-<label class="option"><input type="radio" name="q6" value="A"> A. अपचय प्रक्रिया</label>
-<label class="option"><input type="radio" name="q6" value="B"> B. परवलयिक प्रक्रिया</label>
-<label class="option"><input type="radio" name="q6" value="C"> C. उभयचर प्रक्रिया</label>
-<label class="option"><input type="radio" name="q6" value="D"> D. प्रकाश रासायनिक प्रक्रिया</label>
+<div class="question">6. प्रकाश संश्लेषण एक—</div>
+<label class="option"><input type="radio" name="q6" value="A" onclick="check(this,'D','f6')"> A. अपचय प्रक्रिया</label>
+<label class="option"><input type="radio" name="q6" value="B" onclick="check(this,'D','f6')"> B. परवलयिक प्रक्रिया</label>
+<label class="option"><input type="radio" name="q6" value="C" onclick="check(this,'D','f6')"> C. उभयचर प्रक्रिया</label>
+<label class="option"><input type="radio" name="q6" value="D" onclick="check(this,'D','f6')"> D. प्रकाश रासायनिक प्रक्रिया</label>
+<div id="f6" class="feedback"></div>
 
 
-<div class="question">
-7. छिद्रों का खुलना और बंद होना किसके द्वारा किया जाता है?
-</div>
-<label class="option"><input type="radio" name="q7" value="A"> A. स्टोमेटा</label>
-<label class="option"><input type="radio" name="q7" value="B"> B. क्लोरोफिल</label>
-<label class="option"><input type="radio" name="q7" value="C"> C. क्लोरोप्लास्ट</label>
-<label class="option"><input type="radio" name="q7" value="D"> D. रक्षक कोशिकाएँ</label>
+<div class="question">7. छिद्रों का खुलना और बंद होना किसके द्वारा किया जाता है?</div>
+<label class="option"><input type="radio" name="q7" value="A" onclick="check(this,'D','f7')"> A. स्टोमेटा</label>
+<label class="option"><input type="radio" name="q7" value="B" onclick="check(this,'D','f7')"> B. क्लोरोफिल</label>
+<label class="option"><input type="radio" name="q7" value="C" onclick="check(this,'D','f7')"> C. क्लोरोप्लास्ट</label>
+<label class="option"><input type="radio" name="q7" value="D" onclick="check(this,'D','f7')"> D. रक्षक कोशिकाएँ</label>
+<div id="f7" class="feedback"></div>
 
 
-<div class="question">
-8. प्रोटीन के संश्लेषण में किस तत्व का उपयोग किया जाता है?
-</div>
-<label class="option"><input type="radio" name="q8" value="A"> A. हाइड्रोजन</label>
-<label class="option"><input type="radio" name="q8" value="B"> B. ऑक्सीजन</label>
-<label class="option"><input type="radio" name="q8" value="C"> C. नाइट्रोजन</label>
-<label class="option"><input type="radio" name="q8" value="D"> D. कार्बन डाइऑक्साइड</label>
+<div class="question">8. प्रोटीन के संश्लेषण में किस तत्व का उपयोग किया जाता है?</div>
+<label class="option"><input type="radio" name="q8" value="A" onclick="check(this,'C','f8')"> A. हाइड्रोजन</label>
+<label class="option"><input type="radio" name="q8" value="B" onclick="check(this,'C','f8')"> B. ऑक्सीजन</label>
+<label class="option"><input type="radio" name="q8" value="C" onclick="check(this,'C','f8')"> C. नाइट्रोजन</label>
+<label class="option"><input type="radio" name="q8" value="D" onclick="check(this,'C','f8')"> D. कार्बन डाइऑक्साइड</label>
+<div id="f8" class="feedback"></div>
 
 
-<div class="question">
-9. अमीबा पर पाए जाने वाले अस्थायी उंगली जैसे विस्तारों को क्या कहते हैं?
-</div>
-<label class="option"><input type="radio" name="q9" value="A"> A. कोशिका झिल्ली</label>
-<label class="option"><input type="radio" name="q9" value="B"> B. कोशिका भित्ति</label>
-<label class="option"><input type="radio" name="q9" value="C"> C. स्यूडोपोडिया</label>
-<label class="option"><input type="radio" name="q9" value="D"> D. सिलिया</label>
+<div class="question">9. अमीबा पर पाए जाने वाले अस्थायी उंगली जैसे विस्तारों को क्या कहते हैं?</div>
+<label class="option"><input type="radio" name="q9" value="A" onclick="check(this,'C','f9')"> A. कोशिका झिल्ली</label>
+<label class="option"><input type="radio" name="q9" value="B" onclick="check(this,'C','f9')"> B. कोशिका भित्ति</label>
+<label class="option"><input type="radio" name="q9" value="C" onclick="check(this,'C','f9')"> C. स्यूडोपोडिया</label>
+<label class="option"><input type="radio" name="q9" value="D" onclick="check(this,'C','f9')"> D. सिलिया</label>
+<div id="f9" class="feedback"></div>
 
 
-<div class="question">
-10. पित्त रस किसके द्वारा स्रावित होता है?
-</div>
-<label class="option"><input type="radio" name="q10" value="A"> A. पेट</label>
-<label class="option"><input type="radio" name="q10" value="B"> B. अग्न्याशय</label>
-<label class="option"><input type="radio" name="q10" value="C"> C. छोटी आंत</label>
-<label class="option"><input type="radio" name="q10" value="D"> D. यकृत</label>
-
-<button type="button" onclick="checkQuiz()">क्विज़ जमा करें</button>
+<div class="question">10. पित्त रस किसके द्वारा स्रावित होता है?</div>
+<label class="option"><input type="radio" name="q10" value="A" onclick="check(this,'D','f10')"> A. पेट</label>
+<label class="option"><input type="radio" name="q10" value="B" onclick="check(this,'D','f10')"> B. अग्न्याशय</label>
+<label class="option"><input type="radio" name="q10" value="C" onclick="check(this,'D','f10')"> C. छोटी आंत</label>
+<label class="option"><input type="radio" name="q10" value="D" onclick="check(this,'D','f10')"> D. यकृत</label>
+<div id="f10" class="feedback"></div>
 
 </form>
 
@@ -173,52 +176,44 @@ button {
 
 <script>
 
-function checkQuiz() {
+let score = 0;
+let answered = {};
 
-    const answers = {
-        q1: "A",
-        q2: "C",
-        q3: "B",
-        q4: "C",
-        q5: "A",
-        q6: "D",
-        q7: "D",
-        q8: "C",
-        q9: "C",
-        q10: "D"
-    };
+function check(option, correct, feedbackId) {
 
-    let score = 0;
-    let attempted = 0;
+    let question = option.name;
 
-    for (let i = 1; i <= 10; i++) {
-
-        let selected = document.querySelector(
-            'input[name="q' + i + '"]:checked'
-        );
-
-        if (selected) {
-            attempted++;
-
-            if (selected.value === answers["q" + i]) {
-                score++;
-            }
-        }
+    if (answered[question]) {
+        return;
     }
 
-    let percentage = (score / 10) * 100;
+    answered[question] = true;
+
+    let feedback = document.getElementById(feedbackId);
+
+    if (option.value === correct) {
+
+        score++;
+
+        option.parentElement.classList.add("correct");
+
+        feedback.innerHTML = "✅ सही उत्तर";
+        feedback.style.color = "green";
+
+    } else {
+
+        option.parentElement.classList.add("wrong");
+
+        feedback.innerHTML = "❌ गलत उत्तर — सही उत्तर: " + correct;
+        feedback.style.color = "red";
+    }
 
     document.getElementById("result").innerHTML =
-        "कुल प्रश्न: 10<br>" +
-        "हल किए गए प्रश्न: " + attempted + "<br>" +
-        "सही उत्तर: " + score + "<br>" +
-        "गलत उत्तर: " + (attempted - score) + "<br>" +
-        "प्रतिशत: " + percentage + "%";
-
-    window.scrollTo(0, document.body.scrollHeight);
+        "स्कोर: " + score + " / 10<br>" +
+        "प्रतिशत: " + (score * 10) + "%";
 }
 
 </script>
 
 </body>
-    </html>
+                                  </html>
