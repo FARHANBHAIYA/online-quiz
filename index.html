@@ -521,6 +521,30 @@ let score = 0;
 let answered = {};
 let quizSubmitted = false;
 
+let audioContext = null;
+
+
+/* =========================================
+   AUDIO UNLOCK
+========================================= */
+
+function unlockAudio() {
+
+    const AudioContext =
+        window.AudioContext ||
+        window.webkitAudioContext;
+
+    if (!AudioContext) return;
+
+    if (!audioContext) {
+        audioContext = new AudioContext();
+    }
+
+    if (audioContext.state === "suspended") {
+        audioContext.resume();
+    }
+}
+
 
 /* =========================================
    OPTION CLICK
@@ -530,6 +554,8 @@ document.querySelectorAll(".option").forEach(function(option) {
 
     option.addEventListener("click", function() {
 
+        unlockAudio();
+
         if (quizSubmitted) {
             return;
         }
@@ -538,24 +564,17 @@ document.querySelectorAll(".option").forEach(function(option) {
 
         let question = input.name;
 
-
-        /* एक प्रश्न का उत्तर दोबारा नहीं बदल सकते */
-
         if (answered[question]) {
             return;
         }
 
-
         answered[question] = true;
-
 
         let correctAnswer =
             this.getAttribute("data-answer");
 
 
-        /* =================================
-           सही उत्तर
-        ================================= */
+        /* सही उत्तर */
 
         if (input.value === correctAnswer) {
 
@@ -568,34 +587,25 @@ document.querySelectorAll(".option").forEach(function(option) {
         }
 
 
-        /* =================================
-           गलत उत्तर
-        ================================= */
+        /* गलत उत्तर */
 
         else {
 
             this.classList.add("wrong");
 
-
-            /* हल्का vibration */
-
             if (navigator.vibrate) {
                 navigator.vibrate(70);
             }
 
-
-            /* गलत sound */
-
             playWrongSound();
 
 
-            /* सही option को हरा करें */
+            /* सही उत्तर हरा करें */
 
             let allOptions =
                 document.querySelectorAll(
                     'input[name="' + question + '"]'
                 );
-
 
             allOptions.forEach(function(correctInput) {
 
@@ -616,29 +626,24 @@ document.querySelectorAll(".option").forEach(function(option) {
 
 
 /* =========================================
-   SUBMIT QUIZ
+   SUBMIT
 ========================================= */
 
 document.getElementById("submitBtn")
 .addEventListener("click", function() {
 
-
-    /* Submit दोबारा दबाने पर sound नहीं बजेगा */
+    unlockAudio();
 
     if (quizSubmitted) {
         return;
     }
 
-
     quizSubmitted = true;
-
 
     let total = 10;
 
-
     let answeredCount =
         Object.keys(answered).length;
-
 
     let wrong =
         answeredCount - score;
@@ -649,30 +654,21 @@ document.getElementById("submitBtn")
     document.getElementById("correctCount")
         .innerText = score;
 
-
     document.getElementById("wrongCount")
         .innerText = wrong;
 
-
     document.getElementById("scoreCount")
-        .innerText =
-        score + " / " + total;
-
+        .innerText = score + " / " + total;
 
     document.getElementById("percentCount")
-        .innerText =
-        (score * 10) + "%";
+        .innerText = (score * 10) + "%";
 
-
-    /* RESULT SHOW */
 
     document.getElementById("result")
         .style.display = "block";
 
 
-    /* =================================
-       WINNER / LOSER
-    ================================= */
+    /* WINNER / LOSER */
 
     if (score > wrong) {
 
@@ -687,8 +683,6 @@ document.getElementById("submitBtn")
     }
 
 
-    /* RESULT तक जाएँ */
-
     document.getElementById("result")
         .scrollIntoView({
             behavior: "smooth"
@@ -698,209 +692,179 @@ document.getElementById("submitBtn")
 
 
 /* =========================================
-   CORRECT ANSWER - SOFT TICK
+   CORRECT TICK
 ========================================= */
 
 function playCorrectSound() {
 
-    const AudioContext =
-        window.AudioContext ||
-        window.webkitAudioContext;
+    unlockAudio();
 
-    if (!AudioContext) return;
+    if (!audioContext) return;
 
+    let now = audioContext.currentTime;
 
-    const audio =
-        new AudioContext();
+    let oscillator =
+        audioContext.createOscillator();
 
-
-    const oscillator =
-        audio.createOscillator();
-
-
-    const gain =
-        audio.createGain();
-
+    let gain =
+        audioContext.createGain();
 
     oscillator.connect(gain);
-
-    gain.connect(audio.destination);
-
+    gain.connect(audioContext.destination);
 
     oscillator.type = "sine";
 
-
     oscillator.frequency.setValueAtTime(
         900,
-        audio.currentTime
+        now
     );
-
 
     oscillator.frequency.exponentialRampToValueAtTime(
         1500,
-        audio.currentTime + 0.08
+        now + 0.08
     );
-
 
     gain.gain.setValueAtTime(
         0.001,
-        audio.currentTime
+        now
     );
-
 
     gain.gain.exponentialRampToValueAtTime(
-        0.18,
-        audio.currentTime + 0.01
+        0.16,
+        now + 0.01
     );
-
 
     gain.gain.exponentialRampToValueAtTime(
         0.001,
-        audio.currentTime + 0.18
+        now + 0.18
     );
 
-
-    oscillator.start();
-
+    oscillator.start(now);
 
     oscillator.stop(
-        audio.currentTime + 0.18
+        now + 0.18
     );
-
 }
 
 
 /* =========================================
-   WRONG ANSWER - BUZZ
+   WRONG BUZZ
 ========================================= */
 
 function playWrongSound() {
 
-    const AudioContext =
-        window.AudioContext ||
-        window.webkitAudioContext;
+    unlockAudio();
 
-    if (!AudioContext) return;
+    if (!audioContext) return;
 
+    let now = audioContext.currentTime;
 
-    const audio =
-        new AudioContext();
+    let oscillator =
+        audioContext.createOscillator();
 
-
-    const oscillator =
-        audio.createOscillator();
-
-
-    const gain =
-        audio.createGain();
-
+    let gain =
+        audioContext.createGain();
 
     oscillator.connect(gain);
+    gain.connect(audioContext.destination);
 
-    gain.connect(audio.destination);
-
-
-    oscillator.type = "sine";
-
+    oscillator.type = "sawtooth";
 
     oscillator.frequency.setValueAtTime(
         320,
-        audio.currentTime
+        now
     );
-
 
     oscillator.frequency.exponentialRampToValueAtTime(
-        180,
-        audio.currentTime + 0.18
+        150,
+        now + 0.20
     );
-
 
     gain.gain.setValueAtTime(
         0.001,
-        audio.currentTime
+        now
     );
-
 
     gain.gain.exponentialRampToValueAtTime(
-        0.16,
-        audio.currentTime + 0.01
+        0.12,
+        now + 0.01
     );
-
 
     gain.gain.exponentialRampToValueAtTime(
         0.001,
-        audio.currentTime + 0.20
+        now + 0.22
     );
 
-
-    oscillator.start();
-
+    oscillator.start(now);
 
     oscillator.stop(
-        audio.currentTime + 0.20
+        now + 0.22
     );
-
 }
 
 
 /* =========================================
-   WINNER CELEBRATION
+   🏆 WINNER CELEBRATION
    लगभग 5 सेकंड
 ========================================= */
 
 function playWinnerSound() {
 
-    const AudioContext =
-        window.AudioContext ||
-        window.webkitAudioContext;
+    unlockAudio();
 
-    if (!AudioContext) return;
+    if (!audioContext) return;
 
-
-    const audio =
-        new AudioContext();
+    let start =
+        audioContext.currentTime + 0.05;
 
 
-    const startTime =
-        audio.currentTime;
+    /* Celebration bursts */
 
-
-    /* =================================
-       Celebration bursts
-    ================================= */
-
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < 22; i++) {
 
         let time =
-            startTime +
-            (i * 0.19) +
-            (Math.random() * 0.06);
+            start +
+            (i * 0.20);
 
 
-        let oscillator =
-            audio.createOscillator();
+        /* Noise burst */
+
+        let buffer =
+            audioContext.createBuffer(
+                1,
+                Math.floor(
+                    audioContext.sampleRate * 0.16
+                ),
+                audioContext.sampleRate
+            );
+
+
+        let data =
+            buffer.getChannelData(0);
+
+
+        for (let j = 0; j < data.length; j++) {
+
+            data[j] =
+                Math.random() * 2 - 1;
+
+        }
+
+
+        let noise =
+            audioContext.createBufferSource();
+
+        noise.buffer = buffer;
 
 
         let gain =
-            audio.createGain();
+            audioContext.createGain();
 
 
-        oscillator.connect(gain);
+        noise.connect(gain);
 
-        gain.connect(audio.destination);
-
-
-        oscillator.type = "triangle";
-
-
-        let frequency =
-            350 +
-            Math.random() * 1200;
-
-
-        oscillator.frequency.setValueAtTime(
-            frequency,
-            time
+        gain.connect(
+            audioContext.destination
         );
 
 
@@ -909,36 +873,81 @@ function playWinnerSound() {
             time
         );
 
-
         gain.gain.exponentialRampToValueAtTime(
-            0.20,
-            time + 0.015
+            0.30,
+            time + 0.008
         );
-
 
         gain.gain.exponentialRampToValueAtTime(
             0.001,
-            time + 0.13
+            time + 0.15
         );
 
 
-        oscillator.start(time);
+        noise.start(time);
+
+        noise.stop(
+            time + 0.16
+        );
 
 
-        oscillator.stop(
-            time + 0.15
+        /* High-pitch celebration tone */
+
+        let osc =
+            audioContext.createOscillator();
+
+        let oscGain =
+            audioContext.createGain();
+
+
+        osc.connect(oscGain);
+
+        oscGain.connect(
+            audioContext.destination
+        );
+
+
+        osc.type = "triangle";
+
+
+        osc.frequency.setValueAtTime(
+            700 + Math.random() * 900,
+            time
+        );
+
+
+        oscGain.gain.setValueAtTime(
+            0.001,
+            time
+        );
+
+        oscGain.gain.exponentialRampToValueAtTime(
+            0.12,
+            time + 0.01
+        );
+
+        oscGain.gain.exponentialRampToValueAtTime(
+            0.001,
+            time + 0.18
+        );
+
+
+        osc.start(time);
+
+        osc.stop(
+            time + 0.19
         );
 
     }
 
 
-    /* =================================
-       Happy ending melody
-    ================================= */
+    /* Happy ending melody */
 
-    const notes = [
+    let notes = [
         523.25,
         659.25,
+        783.99,
+        1046.50,
         783.99,
         1046.50,
         1318.51
@@ -947,27 +956,27 @@ function playWinnerSound() {
 
     notes.forEach(function(freq, index) {
 
-        let oscillator =
-            audio.createOscillator();
+        let time =
+            start +
+            3.55 +
+            index * 0.20;
 
+
+        let oscillator =
+            audioContext.createOscillator();
 
         let gain =
-            audio.createGain();
+            audioContext.createGain();
 
 
         oscillator.connect(gain);
 
-        gain.connect(audio.destination);
-
-
-        let time =
-            startTime +
-            4.05 +
-            (index * 0.16);
+        gain.connect(
+            audioContext.destination
+        );
 
 
         oscillator.type = "sine";
-
 
         oscillator.frequency.setValueAtTime(
             freq,
@@ -980,24 +989,21 @@ function playWinnerSound() {
             time
         );
 
-
         gain.gain.exponentialRampToValueAtTime(
-            0.16,
+            0.18,
             time + 0.02
         );
 
-
         gain.gain.exponentialRampToValueAtTime(
             0.001,
-            time + 0.20
+            time + 0.18
         );
 
 
         oscillator.start(time);
 
-
         oscillator.stop(
-            time + 0.22
+            time + 0.20
         );
 
     });
@@ -1006,62 +1012,52 @@ function playWinnerSound() {
 
 
 /* =========================================
-   LOSER - SAD MELODY
+   😔 LOSER SAD MELODY
    लगभग 5 सेकंड
 ========================================= */
 
 function playLoserSound() {
 
-    const AudioContext =
-        window.AudioContext ||
-        window.webkitAudioContext;
+    unlockAudio();
 
-    if (!AudioContext) return;
+    if (!audioContext) return;
 
-
-    const audio =
-        new AudioContext();
+    let start =
+        audioContext.currentTime + 0.05;
 
 
-    const startTime =
-        audio.currentTime;
-
-
-    /* Sad melody */
-
-    const notes = [
-
+    let notes = [
         392.00,
         349.23,
         329.63,
         293.66,
         261.63,
         293.66,
-        329.63,
         246.94,
-        220.00
-
+        220.00,
+        196.00
     ];
 
 
     notes.forEach(function(freq, index) {
 
-        let oscillator =
-            audio.createOscillator();
+        let time =
+            start +
+            index * 0.52;
 
+
+        let oscillator =
+            audioContext.createOscillator();
 
         let gain =
-            audio.createGain();
+            audioContext.createGain();
 
 
         oscillator.connect(gain);
 
-        gain.connect(audio.destination);
-
-
-        let time =
-            startTime +
-            index * 0.54;
+        gain.connect(
+            audioContext.destination
+        );
 
 
         oscillator.type = "sine";
@@ -1078,12 +1074,10 @@ function playLoserSound() {
             time
         );
 
-
         gain.gain.exponentialRampToValueAtTime(
-            0.13,
+            0.14,
             time + 0.05
         );
-
 
         gain.gain.exponentialRampToValueAtTime(
             0.001,
@@ -1093,9 +1087,8 @@ function playLoserSound() {
 
         oscillator.start(time);
 
-
         oscillator.stop(
-            time + 0.51
+            time + 0.50
         );
 
     });
