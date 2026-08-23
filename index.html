@@ -3,16 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>कक्षा 10 विज्ञान - जीवन प्रक्रियाएं Quiz</title>
+<title>कक्षा 10 विज्ञान - जीवन प्रक्रियाएं</title>
 
 <style>
 body {
     font-family: Arial, sans-serif;
     background: #f2f2f2;
+    margin: 0;
     padding: 15px;
 }
 
-.quiz {
+.container {
     max-width: 700px;
     margin: auto;
     background: white;
@@ -22,31 +23,33 @@ body {
 
 h1 {
     text-align: center;
-    color: #333;
+    color: #1565c0;
 }
 
 .question {
-    margin-bottom: 25px;
+    margin-top: 25px;
+    font-weight: bold;
 }
 
 .option {
     display: block;
     padding: 10px;
     margin: 8px 0;
-    background: #f5f5f5;
+    background: #eeeeee;
     border-radius: 6px;
     cursor: pointer;
 }
 
 .option:hover {
-    background: #e5e5e5;
+    background: #dddddd;
 }
 
 button {
-    width: 100%;
-    padding: 13px;
+    display: block;
+    margin: 25px auto;
+    padding: 12px 25px;
     font-size: 18px;
-    background: #2196f3;
+    background: #1565c0;
     color: white;
     border: none;
     border-radius: 6px;
@@ -54,106 +57,113 @@ button {
 }
 
 #result {
-    margin-top: 20px;
-    padding: 15px;
-    background: #e8f5e9;
-    border-radius: 8px;
-    font-size: 18px;
     text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="quiz">
+<div class="container">
 
 <h1>कक्षा 10वीं विज्ञान</h1>
 <h2>बहुविकल्पीय प्रश्न: जीवन प्रक्रियाएं</h2>
 
-<form id="quizForm">
+<form id="quiz">
 
 <div class="question">
-<p><b>1. प्रकाश संश्लेषण में क्लोरोफिल का उपयोग किसके लिए होता है?</b></p>
+1. प्रकाश संश्लेषण में क्लोरोफिल का उपयोग किसके लिए होता है?
+</div>
 <label class="option"><input type="radio" name="q1" value="A"> A. प्रकाश का अवशोषण</label>
 <label class="option"><input type="radio" name="q1" value="B"> B. जल के अणुओं का विखंडन</label>
 <label class="option"><input type="radio" name="q1" value="C"> C. कोई कार्य नहीं</label>
 <label class="option"><input type="radio" name="q1" value="D"> D. CO₂ का अपचयन</label>
-</div>
+
 
 <div class="question">
-<p><b>2. पाचन के बाद प्रोटीन परिवर्तित हो जाते हैं</b></p>
+2. पाचन के बाद प्रोटीन परिवर्तित हो जाते हैं—
+</div>
 <label class="option"><input type="radio" name="q2" value="A"> A. कार्बोहाइड्रेट</label>
 <label class="option"><input type="radio" name="q2" value="B"> B. छोटे गोले</label>
 <label class="option"><input type="radio" name="q2" value="C"> C. अमीनो अम्ल</label>
 <label class="option"><input type="radio" name="q2" value="D"> D. स्टार्च</label>
-</div>
+
 
 <div class="question">
-<p><b>3. पौधों में कार्बोहाइड्रेट निम्न रूप में संग्रहित होते हैं:</b></p>
+3. पौधों में कार्बोहाइड्रेट निम्न रूप में संग्रहित होते हैं—
+</div>
 <label class="option"><input type="radio" name="q3" value="A"> A. ग्लाइकोजन</label>
 <label class="option"><input type="radio" name="q3" value="B"> B. स्टार्च</label>
 <label class="option"><input type="radio" name="q3" value="C"> C. ग्लूकोज</label>
 <label class="option"><input type="radio" name="q3" value="D"> D. माल्टोज़</label>
-</div>
+
 
 <div class="question">
-<p><b>4. प्रकाश संश्लेषण का मुख्य स्थल</b></p>
+4. प्रकाश संश्लेषण का मुख्य स्थल है—
+</div>
 <label class="option"><input type="radio" name="q4" value="A"> A. पत्ता</label>
 <label class="option"><input type="radio" name="q4" value="B"> B. तना</label>
 <label class="option"><input type="radio" name="q4" value="C"> C. क्लोरोप्लास्ट</label>
 <label class="option"><input type="radio" name="q4" value="D"> D. रक्षक कोशिकाएँ</label>
-</div>
+
 
 <div class="question">
-<p><b>5. पत्ती की सतह पर मौजूद छोटे छिद्रों को कहा जाता है</b></p>
+5. पत्ती की सतह पर मौजूद छोटे छिद्रों को कहा जाता है—
+</div>
 <label class="option"><input type="radio" name="q5" value="A"> A. स्टोमेटा</label>
 <label class="option"><input type="radio" name="q5" value="B"> B. क्लोरोफिल</label>
 <label class="option"><input type="radio" name="q5" value="C"> C. सुरक्षा कक्ष</label>
 <label class="option"><input type="radio" name="q5" value="D"> D. इनमें से कोई नहीं</label>
-</div>
+
 
 <div class="question">
-<p><b>6. प्रकाश संश्लेषण एक</b></p>
+6. प्रकाश संश्लेषण एक—
+</div>
 <label class="option"><input type="radio" name="q6" value="A"> A. अपचय प्रक्रिया</label>
 <label class="option"><input type="radio" name="q6" value="B"> B. परवलयिक प्रक्रिया</label>
 <label class="option"><input type="radio" name="q6" value="C"> C. उभयचर प्रक्रिया</label>
 <label class="option"><input type="radio" name="q6" value="D"> D. प्रकाश रासायनिक प्रक्रिया</label>
-</div>
+
 
 <div class="question">
-<p><b>7. छिद्रों का खुलना और बंद होना एक ऐसा कार्य है जो किसके द्वारा किया जाता है?</b></p>
+7. छिद्रों का खुलना और बंद होना किसके द्वारा किया जाता है?
+</div>
 <label class="option"><input type="radio" name="q7" value="A"> A. स्टोमेटा</label>
 <label class="option"><input type="radio" name="q7" value="B"> B. क्लोरोफिल</label>
 <label class="option"><input type="radio" name="q7" value="C"> C. क्लोरोप्लास्ट</label>
 <label class="option"><input type="radio" name="q7" value="D"> D. रक्षक कोशिकाएँ</label>
-</div>
+
 
 <div class="question">
-<p><b>8. प्रोटीन के संश्लेषण में किस तत्व का उपयोग किया जाता है?</b></p>
+8. प्रोटीन के संश्लेषण में किस तत्व का उपयोग किया जाता है?
+</div>
 <label class="option"><input type="radio" name="q8" value="A"> A. हाइड्रोजन</label>
 <label class="option"><input type="radio" name="q8" value="B"> B. ऑक्सीजन</label>
 <label class="option"><input type="radio" name="q8" value="C"> C. नाइट्रोजन</label>
 <label class="option"><input type="radio" name="q8" value="D"> D. कार्बन डाइऑक्साइड</label>
-</div>
+
 
 <div class="question">
-<p><b>9. अमीबा पर पाए जाने वाले अस्थायी उंगली जैसे विस्तारों को क्या कहते हैं?</b></p>
+9. अमीबा पर पाए जाने वाले अस्थायी उंगली जैसे विस्तारों को क्या कहते हैं?
+</div>
 <label class="option"><input type="radio" name="q9" value="A"> A. कोशिका झिल्ली</label>
 <label class="option"><input type="radio" name="q9" value="B"> B. कोशिका भित्ति</label>
 <label class="option"><input type="radio" name="q9" value="C"> C. स्यूडोपोडिया</label>
 <label class="option"><input type="radio" name="q9" value="D"> D. सिलिया</label>
-</div>
+
 
 <div class="question">
-<p><b>10. पित्त रस किसके द्वारा स्रावित होता है?</b></p>
+10. पित्त रस किसके द्वारा स्रावित होता है?
+</div>
 <label class="option"><input type="radio" name="q10" value="A"> A. पेट</label>
 <label class="option"><input type="radio" name="q10" value="B"> B. अग्न्याशय</label>
 <label class="option"><input type="radio" name="q10" value="C"> C. छोटी आंत</label>
 <label class="option"><input type="radio" name="q10" value="D"> D. यकृत</label>
-</div>
 
-<button type="button" onclick="checkQuiz()">Submit Quiz</button>
+<button type="button" onclick="checkQuiz()">क्विज़ जमा करें</button>
 
 </form>
 
@@ -178,39 +188,34 @@ function checkQuiz() {
         q10: "D"
     };
 
-    let correct = 0;
-    let wrong = 0;
+    let score = 0;
+    let attempted = 0;
 
-    for (let question in answers) {
+    for (let i = 1; i <= 10; i++) {
 
         let selected = document.querySelector(
-            'input[name="' + question + '"]:checked'
+            'input[name="q' + i + '"]:checked'
         );
 
         if (selected) {
+            attempted++;
 
-            if (selected.value === answers[question]) {
-                correct++;
-            } else {
-                wrong++;
+            if (selected.value === answers["q" + i]) {
+                score++;
             }
-
-        } else {
-            wrong++;
         }
     }
 
-    let total = 10;
-    let percentage = (correct / total) * 100;
+    let percentage = (score / 10) * 100;
 
     document.getElementById("result").innerHTML =
-        "<b>Quiz Result</b><br><br>" +
-        "कुल प्रश्न: " + total + "<br>" +
-        "✅ सही उत्तर: " + correct + "<br>" +
-        "❌ गलत उत्तर: " + wrong + "<br>" +
-        "🎯 स्कोर: " + correct + "/" + total + "<br>" +
-        "📊 प्रतिशत: " + percentage + "%";
+        "कुल प्रश्न: 10<br>" +
+        "हल किए गए प्रश्न: " + attempted + "<br>" +
+        "सही उत्तर: " + score + "<br>" +
+        "गलत उत्तर: " + (attempted - score) + "<br>" +
+        "प्रतिशत: " + percentage + "%";
 
+    window.scrollTo(0, document.body.scrollHeight);
 }
 
 </script>
