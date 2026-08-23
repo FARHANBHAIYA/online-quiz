@@ -519,9 +519,12 @@ D. यकृत
 
 let score = 0;
 let answered = {};
+let quizSubmitted = false;
 
 
-/* OPTION CLICK */
+/* ==============================
+   OPTION CLICK
+============================== */
 
 document.querySelectorAll(".option").forEach(function(option) {
 
@@ -537,13 +540,21 @@ document.querySelectorAll(".option").forEach(function(option) {
             return;
         }
 
+        /* Submit के बाद उत्तर नहीं बदल सकते */
+
+        if (quizSubmitted) {
+            return;
+        }
+
         answered[question] = true;
 
         let correctAnswer =
             this.getAttribute("data-answer");
 
 
-        /* सही उत्तर */
+        /* ==========================
+           सही उत्तर
+        ========================== */
 
         if (input.value === correctAnswer) {
 
@@ -556,19 +567,21 @@ document.querySelectorAll(".option").forEach(function(option) {
         }
 
 
-        /* गलत उत्तर */
+        /* ==========================
+           गलत उत्तर
+        ========================== */
 
         else {
 
             this.classList.add("wrong");
 
-            /* हल्का vibration केवल गलत उत्तर पर */
+            /* हल्का vibration */
 
             if (navigator.vibrate) {
                 navigator.vibrate(70);
             }
 
-            /* गलत उत्तर की sound */
+            /* गलत sound */
 
             playWrongSound();
 
@@ -599,10 +612,21 @@ document.querySelectorAll(".option").forEach(function(option) {
 });
 
 
-/* SUBMIT */
+/* ==============================
+   SUBMIT
+============================== */
 
 document.getElementById("submitBtn")
 .addEventListener("click", function() {
+
+    /* Submit दोबारा दबाने पर sound नहीं बजेगा */
+
+    if (quizSubmitted) {
+        return;
+    }
+
+    quizSubmitted = true;
+
 
     let total = 10;
 
@@ -634,6 +658,23 @@ document.getElementById("submitBtn")
         .style.display = "block";
 
 
+    /* ==============================
+       WINNER / LOSER SOUND
+    ============================== */
+
+    if (score > wrong) {
+
+        playWinnerSound();
+
+    }
+
+    else if (wrong > score) {
+
+        playLoserSound();
+
+    }
+
+
     /* RESULT तक जाएँ */
 
     document.getElementById("result")
@@ -644,7 +685,10 @@ document.getElementById("submitBtn")
 });
 
 
-/* CORRECT ANSWER SOUND */
+/* ==============================
+   CORRECT ANSWER SOUND
+   Soft Tick
+============================== */
 
 function playCorrectSound() {
 
@@ -662,11 +706,14 @@ function playCorrectSound() {
     const gain =
         audio.createGain();
 
+
     oscillator.connect(gain);
 
     gain.connect(audio.destination);
 
+
     oscillator.type = "sine";
+
 
     oscillator.frequency.setValueAtTime(
         900,
@@ -677,6 +724,7 @@ function playCorrectSound() {
         1500,
         audio.currentTime + 0.08
     );
+
 
     gain.gain.setValueAtTime(
         0.001,
@@ -693,6 +741,7 @@ function playCorrectSound() {
         audio.currentTime + 0.18
     );
 
+
     oscillator.start();
 
     oscillator.stop(
@@ -702,7 +751,9 @@ function playCorrectSound() {
 }
 
 
-/* WRONG ANSWER SOUND */
+/* ==============================
+   WRONG ANSWER SOUND
+============================== */
 
 function playWrongSound() {
 
@@ -720,11 +771,14 @@ function playWrongSound() {
     const gain =
         audio.createGain();
 
+
     oscillator.connect(gain);
 
     gain.connect(audio.destination);
 
+
     oscillator.type = "sine";
+
 
     oscillator.frequency.setValueAtTime(
         320,
@@ -735,6 +789,7 @@ function playWrongSound() {
         180,
         audio.currentTime + 0.18
     );
+
 
     gain.gain.setValueAtTime(
         0.001,
@@ -751,10 +806,155 @@ function playWrongSound() {
         audio.currentTime + 0.20
     );
 
+
     oscillator.start();
 
     oscillator.stop(
         audio.currentTime + 0.20
+    );
+
+}
+
+
+/* ==============================
+   WINNER CELEBRATION SOUND
+============================== */
+
+function playWinnerSound() {
+
+    const AudioContext =
+        window.AudioContext ||
+        window.webkitAudioContext;
+
+    if (!AudioContext) return;
+
+    const audio = new AudioContext();
+
+
+    const notes = [
+        523.25,
+        659.25,
+        783.99,
+        1046.50,
+        1318.51
+    ];
+
+
+    notes.forEach(function(freq, index) {
+
+        const oscillator =
+            audio.createOscillator();
+
+        const gain =
+            audio.createGain();
+
+
+        oscillator.connect(gain);
+
+        gain.connect(audio.destination);
+
+
+        oscillator.type = "sine";
+
+
+        const startTime =
+            audio.currentTime +
+            index * 0.12;
+
+
+        oscillator.frequency.setValueAtTime(
+            freq,
+            startTime
+        );
+
+
+        gain.gain.setValueAtTime(
+            0.001,
+            startTime
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.18,
+            startTime + 0.02
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.001,
+            startTime + 0.30
+        );
+
+
+        oscillator.start(startTime);
+
+        oscillator.stop(
+            startTime + 0.32
+        );
+
+    });
+
+}
+
+
+/* ==============================
+   LOSER SOUND
+============================== */
+
+function playLoserSound() {
+
+    const AudioContext =
+        window.AudioContext ||
+        window.webkitAudioContext;
+
+    if (!AudioContext) return;
+
+    const audio = new AudioContext();
+
+    const oscillator =
+        audio.createOscillator();
+
+    const gain =
+        audio.createGain();
+
+
+    oscillator.connect(gain);
+
+    gain.connect(audio.destination);
+
+
+    oscillator.type = "sine";
+
+
+    oscillator.frequency.setValueAtTime(
+        400,
+        audio.currentTime
+    );
+
+    oscillator.frequency.exponentialRampToValueAtTime(
+        180,
+        audio.currentTime + 0.55
+    );
+
+
+    gain.gain.setValueAtTime(
+        0.001,
+        audio.currentTime
+    );
+
+    gain.gain.exponentialRampToValueAtTime(
+        0.16,
+        audio.currentTime + 0.03
+    );
+
+    gain.gain.exponentialRampToValueAtTime(
+        0.001,
+        audio.currentTime + 0.60
+    );
+
+
+    oscillator.start();
+
+    oscillator.stop(
+        audio.currentTime + 0.60
     );
 
 }
