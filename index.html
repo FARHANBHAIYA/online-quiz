@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FARHAN BHAIYA - Class Xth Biology</title>
+<title>FARHAN BHAIYA - CLASS XTH BIOLOGY</title>
 
 <style>
 
@@ -27,7 +27,8 @@ body {
     border-radius: 12px;
 }
 
-/* MAIN HEADING */
+
+/* ================= HEADING ================= */
 
 .main-heading {
     text-align: center;
@@ -53,7 +54,7 @@ body {
 }
 
 
-/* QUESTION */
+/* ================= QUESTION ================= */
 
 .question {
     font-weight: bold;
@@ -63,7 +64,7 @@ body {
 }
 
 
-/* OPTIONS */
+/* ================= OPTIONS ================= */
 
 .option {
     display: block;
@@ -73,6 +74,7 @@ body {
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
+    user-select: none;
 }
 
 .option input {
@@ -80,7 +82,7 @@ body {
 }
 
 
-/* CORRECT */
+/* ================= CORRECT ================= */
 
 .correct {
     background: #b9f6ca !important;
@@ -89,7 +91,7 @@ body {
 }
 
 
-/* WRONG */
+/* ================= WRONG ================= */
 
 .wrong {
     background: #ffcdd2 !important;
@@ -98,7 +100,7 @@ body {
 }
 
 
-/* SUBMIT */
+/* ================= SUBMIT ================= */
 
 #submitBtn {
     display: block;
@@ -119,7 +121,7 @@ body {
 }
 
 
-/* RESULT */
+/* ================= RESULT ================= */
 
 #result {
     display: none;
@@ -135,7 +137,7 @@ body {
 }
 
 
-/* RESULT BOX */
+/* ================= RESULT BOX ================= */
 
 .result-box {
     padding: 20px;
@@ -192,7 +194,7 @@ body {
 <div class="container">
 
 
-<!-- MAIN HEADING -->
+<!-- ================= MAIN HEADING ================= -->
 
 <div class="main-heading">
 
@@ -205,7 +207,7 @@ body {
 </div>
 
 
-<!-- QUESTION 1 -->
+<!-- ================= QUESTION 1 ================= -->
 
 <div class="question">
 1. प्रकाश संश्लेषण में क्लोरोफिल का उपयोग किसके लिए होता है?
@@ -232,7 +234,7 @@ D. CO₂ का अपचयन
 </label>
 
 
-<!-- QUESTION 2 -->
+<!-- ================= QUESTION 2 ================= -->
 
 <div class="question">
 2. पाचन के बाद प्रोटीन परिवर्तित हो जाते हैं—
@@ -259,7 +261,7 @@ D. स्टार्च
 </label>
 
 
-<!-- QUESTION 3 -->
+<!-- ================= QUESTION 3 ================= -->
 
 <div class="question">
 3. पौधों में कार्बोहाइड्रेट निम्न रूप में संग्रहित होते हैं—
@@ -286,7 +288,7 @@ D. माल्टोज़
 </label>
 
 
-<!-- QUESTION 4 -->
+<!-- ================= QUESTION 4 ================= -->
 
 <div class="question">
 4. प्रकाश संश्लेषण का मुख्य स्थल है—
@@ -313,7 +315,7 @@ D. रक्षक कोशिकाएँ
 </label>
 
 
-<!-- QUESTION 5 -->
+<!-- ================= QUESTION 5 ================= -->
 
 <div class="question">
 5. पत्ती की सतह पर मौजूद छोटे छिद्रों को कहा जाता है—
@@ -340,7 +342,7 @@ D. इनमें से कोई नहीं
 </label>
 
 
-<!-- QUESTION 6 -->
+<!-- ================= QUESTION 6 ================= -->
 
 <div class="question">
 6. प्रकाश संश्लेषण एक—
@@ -367,7 +369,7 @@ D. प्रकाश रासायनिक प्रक्रिया
 </label>
 
 
-<!-- QUESTION 7 -->
+<!-- ================= QUESTION 7 ================= -->
 
 <div class="question">
 7. छिद्रों का खुलना और बंद होना किसके द्वारा किया जाता है?
@@ -394,7 +396,7 @@ D. रक्षक कोशिकाएँ
 </label>
 
 
-<!-- QUESTION 8 -->
+<!-- ================= QUESTION 8 ================= -->
 
 <div class="question">
 8. प्रोटीन के संश्लेषण में किस तत्व का उपयोग किया जाता है?
@@ -421,7 +423,7 @@ D. कार्बन डाइऑक्साइड
 </label>
 
 
-<!-- QUESTION 9 -->
+<!-- ================= QUESTION 9 ================= -->
 
 <div class="question">
 9. अमीबा पर पाए जाने वाले अस्थायी उंगली जैसे विस्तारों को क्या कहते हैं?
@@ -448,7 +450,7 @@ D. सिलिया
 </label>
 
 
-<!-- QUESTION 10 -->
+<!-- ================= QUESTION 10 ================= -->
 
 <div class="question">
 10. पित्त रस किसके द्वारा स्रावित होता है?
@@ -475,14 +477,14 @@ D. यकृत
 </label>
 
 
-<!-- SUBMIT -->
+<!-- ================= SUBMIT ================= -->
 
 <button id="submitBtn" type="button">
 📋 Submit Quiz
 </button>
 
 
-<!-- RESULT -->
+<!-- ================= RESULT ================= -->
 
 <div id="result">
 
@@ -517,11 +519,13 @@ D. यकृत
 
 <script>
 
+/* ================= VARIABLES ================= */
+
 let score = 0;
 let answered = {};
 
 
-/* OPTION CLICK */
+/* ================= OPTION CLICK ================= */
 
 document.querySelectorAll(".option").forEach(function(option) {
 
@@ -531,7 +535,7 @@ document.querySelectorAll(".option").forEach(function(option) {
 
         let question = input.name;
 
-        /* एक प्रश्न का उत्तर दोबारा नहीं बदल सकते */
+        /* एक प्रश्न का उत्तर दोबारा बदलने से रोकना */
 
         if (answered[question]) {
             return;
@@ -543,7 +547,7 @@ document.querySelectorAll(".option").forEach(function(option) {
             this.getAttribute("data-answer");
 
 
-        /* सही उत्तर */
+        /* ================= सही उत्तर ================= */
 
         if (input.value === correctAnswer) {
 
@@ -556,7 +560,7 @@ document.querySelectorAll(".option").forEach(function(option) {
         }
 
 
-        /* गलत उत्तर */
+        /* ================= गलत उत्तर ================= */
 
         else {
 
@@ -596,7 +600,7 @@ document.querySelectorAll(".option").forEach(function(option) {
 });
 
 
-/* SUBMIT */
+/* ================= SUBMIT ================= */
 
 document.getElementById("submitBtn")
 .addEventListener("click", function() {
@@ -610,7 +614,7 @@ document.getElementById("submitBtn")
         answeredCount - score;
 
 
-    /* RESULT */
+    /* RESULT NUMBERS */
 
     document.getElementById("correctCount")
         .innerText = score;
@@ -631,7 +635,7 @@ document.getElementById("submitBtn")
         .style.display = "block";
 
 
-    /* RESULT तक जाएँ */
+    /* RESULT तक SCROLL */
 
     document.getElementById("result")
         .scrollIntoView({
@@ -641,7 +645,9 @@ document.getElementById("submitBtn")
 });
 
 
-/* CORRECT ANSWER SOUND */
+/* ==================================================
+   SOFT ATTRACTIVE CORRECT SOUND
+   ================================================== */
 
 function playCorrectSound() {
 
@@ -653,34 +659,116 @@ function playCorrectSound() {
 
     const audio = new AudioContext();
 
-    const oscillator =
+
+    /* पहला soft tone */
+
+    const oscillator1 =
         audio.createOscillator();
 
-    const gain =
+    const gain1 =
         audio.createGain();
 
-    oscillator.connect(gain);
 
-    gain.connect(audio.destination);
+    oscillator1.connect(gain1);
 
-    oscillator.frequency.value = 800;
+    gain1.connect(audio.destination);
 
-    oscillator.type = "sine";
 
-    gain.gain.setValueAtTime(
-        0.15,
+    oscillator1.type = "sine";
+
+
+    oscillator1.frequency.setValueAtTime(
+        660,
         audio.currentTime
     );
 
-    gain.gain.exponentialRampToValueAtTime(
-        0.001,
-        audio.currentTime + 0.25
+
+    oscillator1.frequency.exponentialRampToValueAtTime(
+        880,
+        audio.currentTime + 0.18
     );
 
-    oscillator.start();
 
-    oscillator.stop(
-        audio.currentTime + 0.25
+    gain1.gain.setValueAtTime(
+        0.001,
+        audio.currentTime
+    );
+
+
+    gain1.gain.exponentialRampToValueAtTime(
+        0.10,
+        audio.currentTime + 0.03
+    );
+
+
+    gain1.gain.exponentialRampToValueAtTime(
+        0.001,
+        audio.currentTime + 0.35
+    );
+
+
+    oscillator1.start();
+
+
+    oscillator1.stop(
+        audio.currentTime + 0.35
+    );
+
+
+    /* दूसरा बहुत हल्का tone */
+
+    const oscillator2 =
+        audio.createOscillator();
+
+    const gain2 =
+        audio.createGain();
+
+
+    oscillator2.connect(gain2);
+
+    gain2.connect(audio.destination);
+
+
+    oscillator2.type = "sine";
+
+
+    oscillator2.frequency.setValueAtTime(
+        990,
+        audio.currentTime + 0.08
+    );
+
+
+    gain2.gain.setValueAtTime(
+        0.001,
+        audio.currentTime
+    );
+
+
+    gain2.gain.setValueAtTime(
+        0.001,
+        audio.currentTime + 0.08
+    );
+
+
+    gain2.gain.exponentialRampToValueAtTime(
+        0.045,
+        audio.currentTime + 0.11
+    );
+
+
+    gain2.gain.exponentialRampToValueAtTime(
+        0.001,
+        audio.currentTime + 0.42
+    );
+
+
+    oscillator2.start(
+        audio.currentTime + 0.08
+    );
+
+
+    oscillator2.stop(
+        audio.currentTime + 0.42
     );
 
 }
