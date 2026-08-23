@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>जैव प्रक्रम - कक्षा 10 विज्ञान Quiz</title>
+
+<style>
+body{
+    font-family:Arial,"Noto Sans Devanagari",sans-serif;
+    background:#f2f6ff;
+    margin:0;
+    padding:0;
+}
+
+.header{
+    background:#1769aa;
+    color:white;
+    text-align:center;
+    padding:20px 10px;
+}
+
+.header h1{
+    margin:0;
+    font-size:25px;
+}
+
+.header p{
+    margin:8px 0 0;
+}
+
+.quiz{
+    max-width:650px;
+    margin:20px auto;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 3px 12px rgba(0,0,0,.15);
+}
+
+#question{
+    font-size:20px;
+    font-weight:bold;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.option{
+    display:block;
+    width:100%;
+    padding:13px;
+    margin:10px 0;
+    border:2px solid #ddd;
+    border-radius:10px;
+    background:#f8f9fa;
+    text-align:left;
+    font-size:17px;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#e5f2ff;
+    border-color:#1769aa;
+}
+
+.correct{
+    background:#c8f7c5 !important;
+    border-color:green !important;
+}
+
+.wrong{
+    background:#ffcaca !important;
+    border-color:red !important;
+}
+
+#next{
+    display:none;
+    background:#1769aa;
+    color:white;
+    border:0;
+    padding:12px 25px;
+    border-radius:8px;
+    font-size:17px;
+    margin-top:15px;
+    cursor:pointer;
+}
+
+#result{
+    display:none;
+    text-align:center;
+}
+
+#result h2{
+    color:#1769aa;
+}
+
+#restart{
+    background:#28a745;
+    color:white;
+    border:0;
+    padding:12px 25px;
+    border-radius:8px;
+    font-size:17px;
+    cursor:pointer;
+}
+
+.progress{
+    color:#1769aa;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>जैव प्रक्रम</h1>
+    <p>Class 10 Objective SCIENCE विज्ञान कक्षा-10</p>
+</div>
+
+<div class="quiz" id="quiz">
+
+    <div class="progress" id="progress"></div>
+
+    <div id="question"></div>
+
+    <div id="options"></div>
+
+    <button id="next" onclick="nextQuestion()">
+        Next Question
+    </button>
+
+</div>
+
+<div class="quiz" id="result">
+
+    <h2>Quiz समाप्त!</h2>
+
+    <h3 id="score"></h3>
+
+    <p id="percentage"></p>
+
+    <button id="restart" onclick="restartQuiz()">
+        फिर से Quiz दें
+    </button>
+
+</div>
+
+<script>
+
+const questions = [
+
+{
+question:"पौधों में वाष्पोत्सर्जन किस भाग में होता है?",
+options:["जड़","तना","पत्ता","फूल"],
+answer:2
+},
+
+{
+question:"मानव रक्त में उपस्थित यूरिया की सामान्य मात्रा होती है-",
+options:["100 Mg","20 Mg","30 Mg","40 Mg"],
+answer:1
+},
+
+{
+question:"श्वसन क्रिया के दौरान कितनी प्रतिशत ऊर्जा ताप के रूप में निष्काषित होती है?",
+options:["20%","40%","60%","80%"],
+answer:0
+},
+
+{
+question:"मनुष्य में वृक्क एक तंत्र का भाग है जो संबंधित है-",
+options:["पोषण","श्वसन","उत्सर्जन","परिवहन"],
+answer:2
+},
+
+{
+question:"पौधों के वायवीय भागों से जल के निष्कर्ष की क्रिया कहलाती है-",
+options:["परागण","निषेचन","विसरण","वाष्पोत्सर्जन"],
+answer:3
+},
+
+{
+question:"वह प्रक्रम जिनके द्वारा शरीर में ऊर्जा का उत्पादन होता है, कहलाता है-",
+options:["श्वसन","पोषण","उत्सर्जन","उत्तेजनशीलता"],
+answer:0
+},
+
+{
+question:"कौन-सी क्रिया सभी जीव के लिए अनिवार्य है?",
+options:["प्रकाश संश्लेषण","वाष्पोत्सर्जन","श्वसन","चलन"],
+answer:2
+},
+
+{
+question:"मैग्नीशियम पाया जाता है?",
+options:["क्लोरोफिल में","लाल रक्त कण में","वर्णी लवक में","श्वेत रक्त कण में"],
+answer:0
+},
+
+{
+question:"मानव हृदय में पाये जाते हैं?",
+options:["3 वेश्म","2 वेश्म","4 वेश्म","5 वेश्म"],
+answer:2
+},
+
+{
+question:"प्रकाश संश्लेषण द्वारा किसकी प्राप्ति होती है?",
+options:["वसा","प्रोटीन","ग्लूकोज","प्रकाश"],
+answer:2
+}
+
+];
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+function loadQuestion(){
+
+    answered = false;
+
+    let q = questions[currentQuestion];
+
+    document.getElementById("progress").innerText =
+        "प्रश्न " + (currentQuestion + 1) +
+        " / " + questions.length;
+
+    document.getElementById("question").innerText =
+        "[ " + (currentQuestion + 1) + " ] " + q.question;
+
+    let optionsHTML = "";
+
+    q.options.forEach((option,index)=>{
+
+        optionsHTML += `
+        <button class="option"
+        onclick="checkAnswer(${index},this)">
+        (${String.fromCharCode(65+index)}) ${option}
+        </button>
+        `;
+
+    });
+
+    document.getElementById("options").innerHTML = optionsHTML;
+
+    document.getElementById("next").style.display = "none";
+
+    if(currentQuestion === questions.length-1){
+        document.getElementById("next").innerText =
+            "Quiz समाप्त करें";
+    }else{
+        document.getElementById("next").innerText =
+            "Next Question";
+    }
+}
+
+function checkAnswer(selected,button){
+
+    if(answered) return;
+
+    answered = true;
+
+    let correct = questions[currentQuestion].answer;
+
+    let allOptions =
+        document.querySelectorAll(".option");
+
+    if(selected === correct){
+
+        score++;
+
+        button.classList.add("correct");
+
+    }else{
+
+        button.classList.add("wrong");
+
+        allOptions[correct].classList.add("correct");
+
+    }
+
+    document.getElementById("next").style.display =
+        "inline-block";
+}
+
+function nextQuestion(){
+
+    if(!answered){
+        alert("कृपया पहले उत्तर चुनें।");
+        return;
+    }
+
+    currentQuestion++;
+
+    if(currentQuestion < questions.length){
+
+        loadQuestion();
+
+    }else{
+
+        showResult();
+
+    }
+}
+
+function showResult(){
+
+    document.getElementById("quiz").style.display =
+        "none";
+
+    document.getElementById("result").style.display =
+        "block";
+
+    let percent =
+        Math.round((score / questions.length) * 100);
+
+    document.getElementById("score").innerText =
+        "आपका Score: " + score + " / " + questions.length;
+
+    document.getElementById("percentage").innerText =
+        "प्रतिशत: " + percent + "%";
+}
+
+function restartQuiz(){
+
+    currentQuestion = 0;
+    score = 0;
+
+    document.getElementById("result").style.display =
+        "none";
+
+    document.getElementById("quiz").style.display =
+        "block";
+
+    loadQuestion();
+}
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
