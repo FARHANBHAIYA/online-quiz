@@ -6,826 +6,127 @@
 
 <title>CLASS IXTH BIOLOGY</title>
 
+<!-- PDF Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 <style>
-
-*{
-    box-sizing:border-box;
-}
-
 body{
     margin:0;
     background:#e9eef5;
-    font-family:"Noto Sans Devanagari", Arial, sans-serif;
-    color:#111;
+    font-family:Arial,sans-serif;
 }
 
-.page{
+#pdfContent{
+    background:white;
     width:210mm;
     min-height:297mm;
-    margin:10px auto;
-    background:white;
-    padding:8mm 8mm 7mm;
+    margin:auto;
+    padding:10mm;
 }
 
-/* ---------- HEADING ---------- */
-
-.header{
-    text-align:center;
-    margin-bottom:6px;
-}
-
-.title{
-    display:inline-block;
-    padding:5px 16px;
-    border-radius:8px;
+.download-btn{
+    position:fixed;
+    top:15px;
+    right:15px;
+    padding:12px 18px;
+    background:#1565c0;
     color:white;
-    font-size:20px;
-    font-weight:900;
-
-    background:linear-gradient(
-        90deg,
-        #2563eb,
-        #7c3aed,
-        #db2777
-    );
-}
-
-.chapter{
-    font-size:14px;
-    font-weight:900;
-    color:#173b7a;
-    margin-top:3px;
-}
-
-.test{
-    font-size:13px;
-    font-weight:900;
-    color:#7c3aed;
-    margin-top:2px;
-}
-
-.info{
-    font-size:11px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
     font-weight:bold;
-    margin-top:2px;
+    cursor:pointer;
+    z-index:9999;
 }
 
-.line{
-    border-top:1.5px solid #2563eb;
-    margin:5px 0 7px;
+.download-btn:active{
+    transform:scale(.96);
 }
 
-
-/* ---------- TWO COLUMNS ---------- */
-
-.questions{
-    column-count:2;
-    column-gap:8mm;
-    column-rule:1px solid #d6dce5;
-}
-
-
-/* ---------- QUESTION ---------- */
-
-.question{
-    font-size:10.5px;
-    line-height:1.25;
-    margin-bottom:5px;
-    break-inside:avoid;
-    page-break-inside:avoid;
-}
-
-.question-text{
-    font-weight:700;
-}
-
-.options{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    column-gap:8px;
-    row-gap:1px;
-    margin-left:13px;
-    margin-top:2px;
-}
-
-.option{
-    font-size:10px;
-}
-
-
-/* ---------- PRINT ---------- */
-
-@page{
-    size:A4 portrait;
-    margin:7mm;
+/* PDF बनाते समय button छिप जाएगा */
+.pdf-mode .download-btn{
+    display:none;
 }
 
 @media print{
+    .download-btn{
+        display:none;
+    }
 
     body{
         background:white;
     }
 
-    .page{
-        width:auto;
-        min-height:auto;
+    #pdfContent{
         margin:0;
-        padding:0;
     }
-
 }
-
 </style>
 </head>
 
-
 <body>
 
-<div class="page">
+<button class="download-btn" onclick="downloadPDF()">
+    📥 PDF Download
+</button>
 
+<!-- =========================
+     आपका पूरा QUESTION PAPER
+     इस DIV के अंदर रखें
+========================= -->
 
-<!-- HEADING -->
+<div id="pdfContent">
 
-<div class="header">
+    <!-- यहाँ अपना पूरा पुराना HTML CONTENT रखें -->
 
-    <div class="title">
-        CLASS IXTH BIOLOGY
-    </div>
+    <h2 style="text-align:center;">CLASS IXTH BIOLOGY</h2>
 
-    <div class="chapter">
-        CHAP - 01 कोशिका-जीवन की आधारभूत इकाई
-    </div>
+    <!-- आपका बाकी question paper यहाँ रहेगा -->
 
-    <div class="test">
-        OBJECTIVE TEST
-    </div>
-
-    <div class="info">
-        FULL MARKS - 40 &nbsp;&nbsp;&nbsp; TIME - 2 HOUR
-    </div>
-
-    <div class="line"></div>
-
-</div>
-
-
-<!-- QUESTIONS -->
-
-<div class="questions">
-
-
-<div class="question">
-<div class="question-text">
-1. तारककाय पाया जाता है-
-</div>
-<div class="options">
-<div class="option">(A) कोशिकाद्रव्य में</div>
-<div class="option">(B) गुणसूत्र में</div>
-<div class="option">(C) केन्द्रक में</div>
-<div class="option">(D) केन्द्रिका में</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-2. इलेक्ट्रॉन सूक्ष्मदर्शी का अधिकतम आवर्धन है:
-</div>
-<div class="options">
-<div class="option">(A) 100 X</div>
-<div class="option">(B) 1000 X</div>
-<div class="option">(C) 20,000 X</div>
-<div class="option">(D) 2,00,000 X</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-3. सेल (कोशिका) शब्द की उत्पत्ति से सम्बन्धित वैज्ञानिक का नाम है :
-</div>
-<div class="options">
-<div class="option">(A) श्‍लाइडेन और श्वान</div>
-<div class="option">(B) वाट्सन और क्रिक</div>
-<div class="option">(C) नॉल और रस्का</div>
-<div class="option">(D) रॉबर्ट हुक</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-4. ER जुटा रहता है ।
-</div>
-<div class="options">
-<div class="option">(A) गॉल्गी से</div>
-<div class="option">(B) कोशिका झिल्ली से</div>
-<div class="option">(C) केंद्रक झिल्ली से</div>
-<div class="option">(D) सभी से</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-5. निम्न में किसका विकास पहले हुआ है ?
-</div>
-<div class="options">
-<div class="option">(A) माइटोकॉन्ड्रिया</div>
-<div class="option">(B) गॉल्‍गी</div>
-<div class="option">(C) केंद्रक</div>
-<div class="option">(D) लाइसोसोम</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-6. Fo-F1 कणों में ऐसा क्या होता है कि ए. टी. पी. का संश्लेषण होता है ?
-</div>
-<div class="options">
-<div class="option">(A) प्रोटीन</div>
-<div class="option">(B) इलेक्ट्रॉन</div>
-<div class="option">(C) प्रोटीन पंप</div>
-<div class="option">(D) क्रेब्‍स चक्र</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-7. ….. प्लास्टिड के प्रकार हैं :
-</div>
-<div class="options">
-<div class="option">(A) क्लोरोप्लास्ट</div>
-<div class="option">(B) एल्यूरोप्लास्ट</div>
-<div class="option">(C) एमाइलोप्लास्ट</div>
-<div class="option">(D) इनमें सभी</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-8. प्रोप्लास्टिड रूपांतरित हो सकता है :
-</div>
-<div class="options">
-<div class="option">(A) क्लोरोप्लास्ट में</div>
-<div class="option">(B) क्रोमोप्लास्ट में</div>
-<div class="option">(C) ल्यूकोप्लास्ट में</div>
-<div class="option">(D) सभी में</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-9. केंद्रक नियंत्रित करता है :
-</div>
-<div class="options">
-<div class="option">(A) कोशिका के भिन्न कार्यों को</div>
-<div class="option">(B) केंद्रिका संश्लेषण को</div>
-<div class="option">(C) आनुवंशिकता को</div>
-<div class="option">(D) सभी को</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-10. स्तनपायी के लाल रक्त कोशिकाओं में किस अवस्था में केन्द्रक नहीं होता है ?
-</div>
-<div class="options">
-<div class="option">(A) संश्लेषण के समय</div>
-<div class="option">(B) परिपक्व होने पर</div>
-<div class="option">(C) मरने के समय</div>
-<div class="option">(D) ‘A’ एवं ‘B’ दोनों समय</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-11. कोशिकाओं की सूक्ष्म संरचना किस यंत्र के द्वारा देखी जाती है ?
-</div>
-<div class="options">
-<div class="option">(A) फेज- कंट्रास्ट माइक्रोस्कोप</div>
-<div class="option">(B) इलेक्ट्रॉन माइक्रोस्कोप</div>
-<div class="option">(C) माइक्रो-डिसेक्सन</div>
-<div class="option">(D) कम्पाउण्ड माइक्रोस्कोप</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-12. ‘कोशिका सिद्धांत’ का प्रतिपादन किसने किया था ?
-</div>
-<div class="options">
-<div class="option">(A) रॉबर्ट हुक</div>
-<div class="option">(B) ल्यूवेन हॉक</div>
-<div class="option">(C) जैनसन</div>
-<div class="option">(D) स्लीडेन एवं स्वान</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-13. प्रत्येक सजीव कोशिका में निम्नलिखित में कौन निश्चित रूप से पाया जाता है ?
-</div>
-<div class="options">
-<div class="option">(A) सेंट्रोसोम</div>
-<div class="option">(B) हरित लवक</div>
-<div class="option">(C) माइटोकॉण्ड्रिया</div>
-<div class="option">(D) राइबोसोम</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-14. अंतःपद्रव्यी जालिका निम्नलिखित में किस क्रिया से सम्बन्धित है ?
-</div>
-<div class="options">
-<div class="option">(A) प्रोटीन निर्माणाधीन रूपांतरण</div>
-<div class="option">(B) वसा का निर्माण</div>
-<div class="option">(C) अंतः कोशिकीय परिवहन</div>
-<div class="option">(D) इनमें से सभी</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-15. इनमें से किस सजीव कोशिका में केन्द्रक नहीं पाया जाता है ?
-</div>
-<div class="options">
-<div class="option">(A) जाइलम वाहिनी कोशिका</div>
-<div class="option">(B) सखी कोशिकाएँ</div>
-<div class="option">(C) जाइलम पैरेनकाइमा</div>
-<div class="option">(D) चालनी कोशिकाएँ</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-16. समुद्र का जल, समुद्री जंतुओं के तुलना में होता है :
-</div>
-<div class="options">
-<div class="option">(A) हाइपरटोनिक</div>
-<div class="option">(B) हाइपोटोनिक</div>
-<div class="option">(C) आइसोटोनिक</div>
-<div class="option">(D) ‘A’ एवं ‘B’</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-17. … में/ पर वसा का संश्लेषण होता है।
-</div>
-<div class="options">
-<div class="option">(A) ER</div>
-<div class="option">(B) SER</div>
-<div class="option">(C) RER</div>
-<div class="option">(D) लाइसोसोम</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-18. तारक केन्द्रक का कार्य है :
-</div>
-<div class="options">
-<div class="option">(A) DNA-संश्लेषण</div>
-<div class="option">(B) तर्कु निर्माण</div>
-<div class="option">(C) श्वसन</div>
-<div class="option">(D) जनन</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-19. झिल्लियों से घिरा हुआ कोशिकाद्रव्य में पाया जानेवाला अंगक जिसमें पाचक रसायन या इन्जाइम पाये जाते हैं, कहलाते हैं :
-</div>
-<div class="options">
-<div class="option">(A) माइटोकॉण्ड्रिया</div>
-<div class="option">(B) लाइसोसोम</div>
-<div class="option">(C) केन्द्रिका</div>
-<div class="option">(D) तारककाय</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-20. पादप कोशिका के चारों तरफ पायी जाने वाली झिल्ली को कहते हैं ?
-</div>
-<div class="options">
-<div class="option">(A) टोनोप्लास्ट</div>
-<div class="option">(B) डिक्टियोसोम</div>
-<div class="option">(C) प्लाज्मा झिल्ली</div>
-<div class="option">(D) कोशिका भित्तिं</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-21. पादप और जन्तु कोशिका में प्रमुख अन्तर है :
-</div>
-<div class="options">
-<div class="option">(A) पोषण सम्बन्धी</div>
-<div class="option">(B) गति सम्बन्धी</div>
-<div class="option">(C) वृद्धि सम्बन्धी</div>
-<div class="option">(D) श्वसन सम्बन्धी</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-22. निम्न में से किस कोशिका में आकृति निश्चित नहीं होती है ?
-</div>
-<div class="options">
-<div class="option">(A) अमीबा</div>
-<div class="option">(B) तंत्रिका कोशिका</div>
-<div class="option">(C) श्वेत रक्त कोशिका</div>
-<div class="option">(D) सभी</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-23. सबसे लंबी कोशिका कौन है ?
-</div>
-<div class="options">
-<div class="option">(A) तंत्रिका कोशिका</div>
-<div class="option">(B) लाल रक्त कोशिका</div>
-<div class="option">(C) श्वेत रक्त कोशिका</div>
-<div class="option">(D) सभी</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-24. निम्न में कौन शेष तीन से मेल नहीं खाता है ?
-</div>
-<div class="options">
-<div class="option">(A) ER</div>
-<div class="option">(B) गॉल्गी</div>
-<div class="option">(C) प्लास्टिड</div>
-<div class="option">(D) लाइसोसोम</div>
 </div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-25. प्रोकैरियोट में नहीं होता है :
-</div>
-<div class="options">
-<div class="option">(A) 80 S राइबोसोम</div>
-<div class="option">(B) केंद्रिका</div>
-<div class="option">(C) केंद्रक</div>
-<div class="option">(D) सभी</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-26. कोशिका झिल्ली में नहीं पाये जाते हैं
-</div>
-<div class="options">
-<div class="option">(A) आंतरिक प्रोटीन</div>
-<div class="option">(B) वसा का स्तर</div>
-<div class="option">(C) Cilia</div>
-<div class="option">(D) क्रिस्टी</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-27. कोशिका झिल्ली में पाये जाते हैं
-</div>
-<div class="options">
-<div class="option">(A) Flagella</div>
-<div class="option">(B) डेस्मोसोम</div>
-<div class="option">(C) पुररुज्जीवन</div>
-<div class="option">(D) सभी</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-28. निम्नलिखित में कौन-सा गुण प्लाज्मा झिल्ली में पाया जाता है ?
-</div>
-<div class="options">
-<div class="option">(A) अंति अपारगम्यता</div>
-<div class="option">(B) अपारगम्यता</div>
-<div class="option">(C) चयनित या अर्धपारगम्यता</div>
-<div class="option">(D) कभी पूर्ण पारगम्यता तो कभी अपारगम्यता</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-29. माइक्रोकॉण्ड्रिया की आंतरिक झिल्ली मुड़कर कैसे रचना का निर्माण करती है ?
-</div>
-<div class="options">
-<div class="option">(A) थाइलाकॉइड</div>
-<div class="option">(B) सिस्टरनी</div>
-<div class="option">(C) क्रिस्टी</div>
-<div class="option">(D) ग्राना</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-30. इनमें से कौन ‘आत्महत्या की थैली’ कहलाता है ?
-</div>
-<div class="options">
-<div class="option">(A) लाइसोसोम</div>
-<div class="option">(B) परऑक्सीसोम</div>
-<div class="option">(C) राइबोसोम</div>
-<div class="option">(D) स्फेरोसोम</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-31. इनमें से किसमें डी. एन. ए. पाया जाता है ?
-</div>
-<div class="options">
-<div class="option">(A) केन्द्रक / गुणसूत्र</div>
-<div class="option">(B) माइटोकॉण्ड्रिया</div>
-<div class="option">(C) क्लोरोप्लास्ट</div>
-<div class="option">(D) इनमें से सभी में</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-32. इनमें से किससे गुणसूत्रों का निर्माण होता है ?
-</div>
-<div class="options">
-<div class="option">(A) डी. एन. ए.</div>
-<div class="option">(B) आर. एन. ए.</div>
-<div class="option">(C) प्रोटीन</div>
-<div class="option">(D) डी. एन. ए. एवं प्रोटीन</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-33. किसकी उत्पत्ति सबसे बाद में हुई है ?
-</div>
-<div class="options">
-<div class="option">(A) कोशिका झिल्ली</div>
-<div class="option">(B) केन्द्रक झिल्ली</div>
-<div class="option">(C) DNA</div>
-<div class="option">(D) RNA</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-34. किसकी उत्पत्ति सबसे पहले हुई है ?
-</div>
-<div class="options">
-<div class="option">(A) बैक्टीरिया</div>
-<div class="option">(B) अमीबा</div>
-<div class="option">(C) पारामीसियम</div>
-<div class="option">(D) वायरस</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-35. मनुष्य के गैमीट्स (शुक्राणु या अण्डे) में कितने गुणसूत्र होते हैं ?
-</div>
-<div class="options">
-<div class="option">(A) बाइस</div>
-<div class="option">(B) तेइस</div>
-<div class="option">(C) बाइस जोड़ा</div>
-<div class="option">(D) तेइस जोड़ा</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-36. प्रोकैरियोटिक कोशिका में कौन कोशिकांग पाया जाता है ?
-</div>
-<div class="options">
-<div class="option">(A) केन्द्रक</div>
-<div class="option">(B) राइबोसोम</div>
-<div class="option">(C) सेंट्रोसोम</div>
-<div class="option">(D) लाइसोसोम</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-37. इनमें से किसे ‘ऊर्जा निर्माण का केन्द्र’ कहा जाता है ?
-</div>
-<div class="options">
-<div class="option">(A) केन्द्रक</div>
-<div class="option">(B) माइटोकॉण्ड्रिया</div>
-<div class="option">(C) हरित लवक</div>
-<div class="option">(D) राइबोसोम</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-38. इनमें से कौन प्रोटीन निर्माण का केन्द्र है ?
-</div>
-<div class="options">
-<div class="option">(A) माइटोकॉण्ड्रिया</div>
-<div class="option">(B) क्लोरोप्लास्ट</div>
-<div class="option">(C) राइबोसोम</div>
-<div class="option">(D) लाइसोसोम</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-39. माइटोकॉन्ड्रिया को बायोप्लास्ट के रूप में किसने चर्चा की थी ?
-</div>
-<div class="options">
-<div class="option">(A) बेंडा</div>
-<div class="option">(B) अल्टमैन</div>
-<div class="option">(C) फ्लेमिंग</div>
-<div class="option">(D) वर्चों</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-40. किसने बतलाया था कि पीढ़ी दर पीढ़ी गुणों को ढोने का कार्य जीन द्वारा होता है ?
-</div>
-<div class="options">
-<div class="option">(A) जोहान्सेन</div>
-<div class="option">(B) बेंडा</div>
-<div class="option">(C) फ्लेमिंग</div>
-<div class="option">(D) वर्चों</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-41. …… बहुकोशिकीय नहीं है :
-</div>
-<div class="options">
-<div class="option">(A) अमीबा</div>
-<div class="option">(B) मलेरिया परजीवी</div>
-<div class="option">(C) कालाज्वर परजीवी</div>
-<div class="option">(D) सभी</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-42. इनमें कौन चयनात्मक पारगम्य झिल्ली है ?
-</div>
-<div class="options">
-<div class="option">(A) केंद्रकझिल्ली</div>
-<div class="option">(B) कोशिकाझिल्ली</div>
-<div class="option">(C) टोनोप्लास्ट</div>
-<div class="option">(D) कोशिकाभित्ति</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-43. निम्नलिखित कोशिकांगों में किसे ‘आत्मघाती थैली’ कहते हैं ?
-</div>
-<div class="options">
-<div class="option">(A) लाइसोसोम</div>
-<div class="option">(B) माइटोकॉण्ड्रिया</div>
-<div class="option">(C) टोनोप्लास्ट</div>
-<div class="option">(D) अंतः प्रदव्ययी जालिका</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-44. पौधों में गैसों का आदान-प्रदान किस क्रिया द्वारा होता है ?
-</div>
-<div class="options">
-<div class="option">(A) परासरण</div>
-<div class="option">(B) विसरण</div>
-<div class="option">(C) संकुचन</div>
-<div class="option">(D) वाष्पोत्सर्जन</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-45. जब किसी जीवित कोशिका को अतिपरासरी विलयन में डाला जाए तो क्या होगा ?
-</div>
-<div class="options">
-<div class="option">(A) कोशिका फूल जाएगी</div>
-<div class="option">(B) कोशिका संकुचित हो जाएगी</div>
-<div class="option">(C) कोशिका जैसी की तैसी रहेगी</div>
-<div class="option">(D) इनमें से कुछ नहीं होगा</div>
-</div>
-</div>
-
-
-<div class="question">
-<div class="question-text">
-46. पौधे के मूल द्वारा जल का अवशोषण किस क्रिया द्वारा होता है ?
-</div>
-<div class="options">
-<div class="option">(A) विसरण</div>
-<div class="option">(B) परासरण</div>
-<div class="option">(C) एंडोसाइटोसिस</div>
-<div class="option">(D) संकुचन</div>
-</div>
-</div>
-
 
-<div class="question">
-<div class="question-text">
-47. कोशिकाद्रव्य में पाए जानेवाले अनियमित नलिकाओं के जाल को कहते हैं :
-</div>
-<div class="options">
-<div class="option">(A) गॉल्जी उपकरण</div>
-<div class="option">(B) लवक</div>
-<div class="option">(C) ग्राना</div>
-<div class="option">(D) अंतःप्रद्रव्यी जालिका</div>
-</div>
-</div>
+<script>
+function downloadPDF(){
 
+    const element = document.getElementById("pdfContent");
 
-<div class="question">
-<div class="question-text">
-48. रंगीन प्लैस्टिड को कहते हैं :
-</div>
-<div class="options">
-<div class="option">(A) ल्यूकोप्लास्ट</div>
-<div class="option">(B) क्लोरोप्लास्ट</div>
-<div class="option">(C) क्रोमोप्लास्ट</div>
-<div class="option">(D) इनमें से कोई नहीं</div>
-</div>
-</div>
+    document.body.classList.add("pdf-mode");
 
+    const options = {
+        margin: 0,
+        filename: "CLASS_IXTH_BIOLOGY.pdf",
 
-<div class="question">
-<div class="question-text">
-49. केंद्रक में पाए जाने वाले गाढ़े द्रव्य को कहते हैं :
-</div>
-<div class="options">
-<div class="option">(A) कोशिकारस</div>
-<div class="option">(B) मैट्रिक्स</div>
-<div class="option">(C) केंद्रकद्रव्य</div>
-<div class="option">(D) स्ट्रोमा</div>
-</div>
-</div>
+        image: {
+            type: "jpeg",
+            quality: 0.98
+        },
 
+        html2canvas: {
+            scale: 2,
+            useCORS: true,
+            backgroundColor: "#ffffff"
+        },
 
-<div class="question">
-<div class="question-text">
-50. किस प्रकार की कोशिका में बड़ी रसधानी पाई जाती है ?
-</div>
-<div class="options">
-<div class="option">(A) जंतु कोशिका</div>
-<div class="option">(B) पादप कोशिका</div>
-<div class="option">(C) प्रोकैरियोटिक कोशिका</div>
-<div class="option">(D) सभी यूकैरियोटिक कोशिका</div>
-</div>
-</div>
+        jsPDF: {
+            unit: "mm",
+            format: "a4",
+            orientation: "portrait"
+        },
 
+        pagebreak: {
+            mode: ["css", "legacy"]
+        }
+    };
 
-</div>
-</div>
+    html2pdf()
+        .set(options)
+        .from(element)
+        .save()
+        .then(function(){
+            document.body.classList.remove("pdf-mode");
+        });
+}
+</script>
 
 </body>
-    </html>
+</html>
