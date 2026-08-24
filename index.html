@@ -6,8 +6,6 @@
 
 <title>CLASS IXTH BIOLOGY</title>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
 <style>
 
 *{
@@ -21,28 +19,6 @@ body{
     color:#111;
 }
 
-/* ---------- DOWNLOAD BUTTON ---------- */
-
-.download-btn{
-    display:block;
-    margin:12px auto;
-    padding:11px 24px;
-    background:#2563eb;
-    color:white;
-    border:none;
-    border-radius:7px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.download-btn:hover{
-    background:#1d4ed8;
-}
-
-
-/* ---------- PAGE ---------- */
-
 .page{
     width:210mm;
     min-height:297mm;
@@ -50,7 +26,6 @@ body{
     background:white;
     padding:8mm 8mm 7mm;
 }
-
 
 /* ---------- HEADING ---------- */
 
@@ -151,10 +126,6 @@ body{
         background:white;
     }
 
-    .download-btn{
-        display:none;
-    }
-
     .page{
         width:auto;
         min-height:auto;
@@ -169,13 +140,6 @@ body{
 
 
 <body>
-
-<!-- PDF DOWNLOAD BUTTON -->
-
-<button class="download-btn" onclick="downloadPDF()">
-    ⬇ Download PDF
-</button>
-
 
 <div class="page">
 
@@ -862,50 +826,6 @@ body{
 
 </div>
 </div>
-
-
-<script>
-
-function downloadPDF(){
-
-    const element = document.querySelector(".page");
-
-    const options = {
-
-        margin: 0,
-
-        filename: "CLASS_IXTH_BIOLOGY_CHAP_01.pdf",
-
-        image: {
-            type: "jpeg",
-            quality: 1
-        },
-
-        html2canvas: {
-            scale: 2,
-            useCORS: true,
-            logging: false
-        },
-
-        jsPDF: {
-            unit: "mm",
-            format: "a4",
-            orientation: "portrait"
-        },
-
-        pagebreak: {
-            mode: ["css", "legacy"]
-        }
-    };
-
-    html2pdf()
-        .set(options)
-        .from(element)
-        .save();
-
-}
-
-</script>
 
 </body>
     </html>
