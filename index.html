@@ -20,7 +20,10 @@ body{
     color:#222;
 }
 
-/* ================= MAIN BOX ================= */
+
+/* ==================================================
+   MAIN BOX
+================================================== */
 
 .quiz-box{
     max-width:850px;
@@ -32,7 +35,9 @@ body{
 }
 
 
-/* ================= HEADINGS ================= */
+/* ==================================================
+   HEADINGS
+================================================== */
 
 .main-heading{
     text-align:center;
@@ -40,9 +45,12 @@ body{
 }
 
 
-/* ================= FARHAN BHAIYA BOX ================= */
+/* ==================================================
+   FARHAN BHAIYA
+================================================== */
 
 .farhan{
+
     display:inline-block;
 
     padding:10px 24px;
@@ -51,13 +59,27 @@ body{
 
     border:3px solid #075b9a;
 
+    /*
+       Box के अंदर attractive
+       multicolor background
+    */
+
     background:
         linear-gradient(
             135deg,
-            #e8f5ff,
-            #ffffff,
-            #e8f5ff
+            #ff1744,
+            #ff9100,
+            #ffd600,
+            #00c853,
+            #00b0ff,
+            #7c4dff,
+            #ff1744
         );
+
+    background-size:300% 300%;
+
+    animation:
+        farhanColor 5s ease infinite;
 
     font-family:Arial,sans-serif;
 
@@ -67,10 +89,18 @@ body{
 
     letter-spacing:2px;
 
-    color:#075b9a;
+    /*
+       Text को gradient colour देना
+    */
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
 
     text-shadow:
-        1px 2px 3px rgba(0,0,0,.18);
+        1px 2px 3px rgba(0,0,0,.15);
 
     box-shadow:
         0 5px 15px rgba(7,91,154,.22);
@@ -79,7 +109,24 @@ body{
 }
 
 
-/* बाहरी आकर्षक बॉर्डर */
+@keyframes farhanColor{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+
+/* FARHAN BOX की बाहरी लाइन */
 
 .farhan::after{
 
@@ -91,13 +138,15 @@ body{
 
     border-radius:19px;
 
-    border:2px solid rgba(126,70,255,.45);
+    border:2px solid rgba(126,70,255,.55);
 
     pointer-events:none;
 }
 
 
-/* ================= BIOLOGY ================= */
+/* ==================================================
+   BIOLOGY
+================================================== */
 
 .biology{
 
@@ -126,7 +175,9 @@ body{
 }
 
 
-/* ================= OBJECTIVE ================= */
+/* ==================================================
+   OBJECTIVE
+================================================== */
 
 .objective{
 
@@ -159,7 +210,9 @@ body{
 }
 
 
-/* ================= QUESTION ================= */
+/* ==================================================
+   QUESTION
+================================================== */
 
 .question{
 
@@ -199,7 +252,9 @@ body{
 }
 
 
-/* ================= OPTIONS ================= */
+/* ==================================================
+   OPTIONS
+================================================== */
 
 .option{
 
@@ -264,7 +319,9 @@ body{
 }
 
 
-/* ================= WRONG OPTION ================= */
+/* ==================================================
+   WRONG OPTION
+================================================== */
 
 .option.wrong{
 
@@ -286,7 +343,9 @@ body{
 }
 
 
-/* ================= CORRECT OPTION ================= */
+/* ==================================================
+   CORRECT OPTION
+================================================== */
 
 .option.correct{
 
@@ -308,13 +367,10 @@ body{
 }
 
 
-/* ================= BLUE TICK ================= */
-
-/*
-   केवल वही सही option जिस पर
-   विद्यार्थी ने click किया हो,
-   उसमें blue tick आएगा।
-*/
+/* ==================================================
+   BLUE TICK
+   केवल सही option click करने पर
+================================================== */
 
 .option.selected-correct .mark{
 
@@ -323,11 +379,12 @@ body{
     background:#1267d6;
 
     color:#fff;
-
 }
 
 
-/* ================= RED CROSS ================= */
+/* ==================================================
+   RED CROSS
+================================================== */
 
 .option.wrong .mark{
 
@@ -336,11 +393,12 @@ body{
     background:#c40000;
 
     color:#fff;
-
 }
 
 
-/* ================= MARK ================= */
+/* ==================================================
+   MARK
+================================================== */
 
 .mark{
 
@@ -375,7 +433,9 @@ body{
 }
 
 
-/* ================= FLOWERS ================= */
+/* ==================================================
+   PETALS / FLOWERS
+================================================== */
 
 .option-flower{
 
@@ -386,44 +446,96 @@ body{
     pointer-events:none;
 
     animation:
-        flowerBurst 1.7s ease-out forwards;
+        petalFall 2.1s
+        cubic-bezier(.25,.46,.45,.94)
+        forwards;
 }
 
 
-@keyframes flowerBurst{
+@keyframes petalFall{
+
+    /*
+       Option से निकलना
+    */
 
     0%{
 
         transform:
             translate(0,0)
-            scale(.25)
-            rotate(0deg);
+            rotate(0deg)
+            scale(.3);
 
-        opacity:1;
+        opacity:0;
     }
 
-    25%{
+
+    /*
+       थोड़ा ऊपर जाना
+    */
+
+    20%{
 
         transform:
             translate(
-                calc(var(--x) * .35),
-                calc(var(--y) * .35)
+                calc(var(--side) * .25),
+                calc(var(--rise) * -0.45)
             )
-            scale(1.15)
-            rotate(120deg);
+            rotate(70deg)
+            scale(1);
 
         opacity:1;
     }
+
+
+    /*
+       सबसे ऊपर
+    */
+
+    42%{
+
+        transform:
+            translate(
+                var(--side),
+                calc(var(--rise) * -1)
+            )
+            rotate(160deg)
+            scale(1.05);
+
+        opacity:1;
+    }
+
+
+    /*
+       नीचे गिरना शुरू
+    */
+
+    70%{
+
+        transform:
+            translate(
+                calc(var(--side) * 1.15),
+                calc(var(--rise) * -.35)
+            )
+            rotate(260deg)
+            scale(.9);
+
+        opacity:.9;
+    }
+
+
+    /*
+       नीचे गिरना
+    */
 
     100%{
 
         transform:
             translate(
-                var(--x),
-                var(--y)
+                calc(var(--side) * 1.35),
+                120px
             )
-            scale(.65)
-            rotate(420deg);
+            rotate(420deg)
+            scale(.65);
 
         opacity:0;
     }
@@ -431,7 +543,9 @@ body{
 }
 
 
-/* ================= SUBMIT ================= */
+/* ==================================================
+   SUBMIT
+================================================== */
 
 #submitBtn{
 
@@ -490,7 +604,9 @@ body{
 }
 
 
-/* ================= RESULT ================= */
+/* ==================================================
+   RESULT
+================================================== */
 
 #resultArea{
 
@@ -602,7 +718,9 @@ body{
 }
 
 
-/* ================= FINAL MESSAGE ================= */
+/* ==================================================
+   FINAL MESSAGE
+================================================== */
 
 #finalMessage{
 
@@ -623,7 +741,9 @@ body{
 }
 
 
-/* ================= RESET ================= */
+/* ==================================================
+   RESET
+================================================== */
 
 #resetBtn{
 
@@ -654,7 +774,9 @@ body{
 }
 
 
-/* ================= MOBILE ================= */
+/* ==================================================
+   MOBILE
+================================================== */
 
 @media(max-width:600px){
 
@@ -915,8 +1037,6 @@ body{
     <div class="result-grid">
 
 
-        <!-- सही -->
-
         <div class="result-card correct-box">
 
             ✓ सही उत्तर
@@ -930,8 +1050,6 @@ body{
 
         </div>
 
-
-        <!-- गलत -->
 
         <div class="result-card wrong-box">
 
@@ -947,8 +1065,6 @@ body{
         </div>
 
 
-        <!-- SCORE -->
-
         <div class="result-card score-box">
 
             🏆 SCORE
@@ -962,8 +1078,6 @@ body{
 
         </div>
 
-
-        <!-- PERCENTAGE -->
 
         <div class="result-card percent-box">
 
@@ -1103,10 +1217,6 @@ function strongVibration(){
     if(
         navigator.vibrate
     ){
-
-        /*
-          एक ही vibration
-        */
 
         navigator.vibrate(350);
 
@@ -1276,108 +1386,134 @@ function sadSound(){
 
 
 /* ==================================================
-   FLOWERS FROM SELECTED OPTION
+   PETALS FROM SELECTED OPTION
 ================================================== */
 
 function flowerBurst(option){
 
-    const flowers =
-        [
-            "🌸",
-            "🌺",
-            "🌼",
-            "🌻",
-            "🌷",
-            "💮",
-            "🪻"
-        ];
+    const petals = [
+
+        "🌸",
+        "🌺",
+        "🌼",
+        "🌻",
+        "🌷",
+        "🪻",
+        "🍃"
+
+    ];
 
 
     const rect =
         option.getBoundingClientRect();
 
 
+    /*
+       सभी पंखुड़ियाँ
+       उसी option से निकलेंगी
+    */
+
     for(
         let i=0;
-        i<25;
+        i<22;
         i++
     ){
 
-        const flower =
+        const petal =
             document.createElement(
                 "div"
             );
 
 
-        flower.className =
+        petal.className =
             "option-flower";
 
 
-        flower.innerHTML =
-            flowers[
+        petal.innerHTML =
+            petals[
                 Math.floor(
                     Math.random() *
-                    flowers.length
+                    petals.length
                 )
             ];
 
 
-        flower.style.left =
+        /*
+           Starting point
+        */
+
+        petal.style.left =
             (
                 rect.left +
-                rect.width/2
+                rect.width / 2
             ) + "px";
 
 
-        flower.style.top =
+        petal.style.top =
             (
                 rect.top +
-                rect.height/2
+                rect.height / 2
             ) + "px";
 
 
-        const x =
-            Math.random()*240-120;
+        /*
+           ऊपर जाने की दूरी
+        */
+
+        const rise =
+            60 +
+            Math.random() * 100;
 
 
-        const y =
-            -(
-                70+
-                Math.random()*170
-            );
+        /*
+           दाएँ-बाएँ फैलाव
+        */
+
+        const side =
+            (Math.random()*180) - 90;
 
 
-        flower.style.setProperty(
-            "--x",
-            x+"px"
+        petal.style.setProperty(
+            "--side",
+            side + "px"
         );
 
 
-        flower.style.setProperty(
-            "--y",
-            y+"px"
+        petal.style.setProperty(
+            "--rise",
+            rise + "px"
         );
 
 
-        flower.style.fontSize =
+        petal.style.fontSize =
             (
-                17+
-                Math.random()*17
-            )+"px";
+                16 +
+                Math.random()*15
+            ) + "px";
+
+
+        /*
+           थोड़ा अलग-अलग समय
+        */
+
+        petal.style.animationDelay =
+            (
+                Math.random() * .25
+            ) + "s";
 
 
         document.body.appendChild(
-            flower
+            petal
         );
 
 
         setTimeout(
             function(){
 
-            flower.remove();
+                petal.remove();
 
-        },
-        1800
+            },
+            2300
         );
 
     }
@@ -1460,7 +1596,7 @@ function checkAnswer(
 
 
         /*
-          Green + Blue Tick
+           Green + Blue Tick
         */
 
         button.classList.add(
@@ -1475,10 +1611,6 @@ function checkAnswer(
             "✓";
 
 
-        /*
-          Blue tick दिखाई देगा
-        */
-
         button.querySelector(
             ".mark"
         ).style.display =
@@ -1486,14 +1618,15 @@ function checkAnswer(
 
 
         /*
-          सही sound
+           सही होने की sound
         */
 
         playCorrectSound();
 
 
         /*
-          उसी option से फूल
+           उसी option से
+           petals ऊपर जाकर नीचे गिरेंगे
         */
 
         flowerBurst(
@@ -1511,8 +1644,8 @@ function checkAnswer(
     else{
 
         /*
-          चुना हुआ गलत option:
-          RED + CROSS
+           चुना हुआ गलत option:
+           RED + CROSS
         */
 
         button.classList.add(
@@ -1533,7 +1666,7 @@ function checkAnswer(
 
 
         /*
-          सही option खोजें
+           सही option खोजना
         */
 
         options.forEach(
@@ -1555,7 +1688,7 @@ function checkAnswer(
             ){
 
                 /*
-                  सही option केवल GREEN
+                   सही option केवल GREEN
                 */
 
                 option.classList.add(
@@ -1564,7 +1697,8 @@ function checkAnswer(
 
 
                 /*
-                  BLUE TICK बिल्कुल नहीं
+                   सही option पर
+                   BLUE TICK नहीं
                 */
 
                 option.querySelector(
@@ -1578,8 +1712,8 @@ function checkAnswer(
 
 
         /*
-          केवल एक बार vibration
-          कोई sound नहीं
+           केवल एक बार vibration
+           कोई sound नहीं
         */
 
         strongVibration();
@@ -1649,15 +1783,15 @@ function submitQuiz(){
     document.getElementById(
         "scoreCount"
     ).innerHTML =
-        score+
-        " / "+
+        score +
+        " / " +
         total;
 
 
     document.getElementById(
         "percentage"
     ).innerHTML =
-        percentage+
+        percentage +
         "%";
 
 
@@ -1666,11 +1800,6 @@ function submitQuiz(){
     ).style.display =
         "block";
 
-
-    /*
-      Submit के बाद options
-      attractive ही रहें
-    */
 
     document.querySelectorAll(
         ".option"
@@ -1718,7 +1847,8 @@ function submitQuiz(){
 
 
         /*
-          Celebration flowers
+           Submit के बाद भी
+           सही options से petals
         */
 
         const correctOptions =
@@ -1885,8 +2015,11 @@ function resetQuiz(){
 
 
     window.scrollTo({
+
         top:0,
+
         behavior:"smooth"
+
     });
 
 }
