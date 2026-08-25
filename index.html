@@ -7,11 +7,6 @@
 <title>FARHAN BHAIYA - Biology Quiz</title>
 
 <style>
-
-/* ==================================================
-   BASIC
-================================================== */
-
 *{
     box-sizing:border-box;
 }
@@ -19,7 +14,7 @@
 body{
     margin:0;
     padding:10px;
-    background:linear-gradient(135deg,#e4f0ff,#f9fcff);
+    background:linear-gradient(135deg,#e5f1ff,#f8fbff);
     font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
     color:#222;
 }
@@ -30,13 +25,10 @@ body{
     background:#fff;
     padding:20px;
     border-radius:20px;
-    box-shadow:0 7px 28px rgba(0,0,0,.16);
+    box-shadow:0 8px 30px rgba(0,0,0,.16);
 }
 
-
-/* ==================================================
-   HEADING
-================================================== */
+/* ================= HEADER ================= */
 
 .main-heading{
     text-align:center;
@@ -45,246 +37,180 @@ body{
 
 .farhan{
     display:inline-block;
-    position:relative;
-
-    padding:11px 27px;
-
+    padding:11px 28px;
     border-radius:17px;
 
     background:
-        linear-gradient(
-            120deg,
-            #ff1744,
-            #ff6d00,
-            #ffd600,
-            #00c853,
-            #00b0ff,
-            #651fff,
-            #d500f9,
-            #ff1744
-        );
+    linear-gradient(
+        120deg,
+        #ff1744,
+        #ff6d00,
+        #ffd600,
+        #00c853,
+        #00b0ff,
+        #651fff,
+        #d500f9,
+        #ff1744
+    );
 
     background-size:400% 400%;
-
     animation:farhanColor 6s ease infinite;
 
     border:3px solid #fff;
 
     color:#fff;
-
     font-family:Arial,sans-serif;
-
     font-size:35px;
-
     font-weight:900;
-
     letter-spacing:2px;
 
     text-shadow:
         2px 2px 0 rgba(0,0,0,.25),
         0 3px 8px rgba(0,0,0,.25);
 
-    box-shadow:
-        0 6px 18px rgba(0,0,0,.25);
+    box-shadow:0 6px 18px rgba(0,0,0,.25);
 }
 
 @keyframes farhanColor{
-
-    0%{
-        background-position:0% 50%;
-    }
-
-    25%{
-        background-position:50% 100%;
-    }
-
-    50%{
-        background-position:100% 50%;
-    }
-
-    75%{
-        background-position:50% 0%;
-    }
-
-    100%{
-        background-position:0% 50%;
-    }
+    0%{background-position:0% 50%}
+    25%{background-position:50% 100%}
+    50%{background-position:100% 50%}
+    75%{background-position:50% 0%}
+    100%{background-position:0% 50%}
 }
 
 .biology{
-
     margin-top:13px;
-
     font-size:29px;
-
     font-weight:900;
 
     background:
-        linear-gradient(
-            90deg,
-            #00695c,
-            #00a86b,
-            #2e7d32
-        );
+    linear-gradient(
+        90deg,
+        #00695c,
+        #00a86b,
+        #2e7d32
+    );
 
     -webkit-background-clip:text;
     background-clip:text;
-
     color:transparent;
 }
 
 .objective{
-
     display:inline-block;
-
     margin-top:10px;
-
     padding:9px 21px;
-
     border-radius:25px;
 
     background:
-        linear-gradient(
-            135deg,
-            #4a148c,
-            #7b1fa2,
-            #ad1457
-        );
+    linear-gradient(
+        135deg,
+        #4a148c,
+        #7b1fa2,
+        #ad1457
+    );
 
     color:#fff;
-
     font-size:18px;
-
     font-weight:900;
 
-    box-shadow:
-        0 4px 10px rgba(74,20,140,.3);
+    box-shadow:0 4px 10px rgba(74,20,140,.3);
 }
 
-
-/* ==================================================
-   QUESTION
-================================================== */
+/* ================= QUESTION ================= */
 
 .question{
-
     margin-top:22px;
-
     padding:18px;
 
     border:2px solid #b7c9dc;
-
     border-radius:15px;
 
     background:
-        linear-gradient(
-            135deg,
-            #fff,
-            #eef6ff
-        );
+    linear-gradient(
+        135deg,
+        #fff,
+        #eef6ff
+    );
 
-    box-shadow:
-        0 4px 12px rgba(0,0,0,.08);
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
 .question-text{
-
     font-size:20px;
-
     font-weight:900;
-
     line-height:1.65;
-
     margin-bottom:14px;
-
     color:#17446b;
 }
 
-
-/* ==================================================
-   OPTION WRAPPER
-================================================== */
+/* ================= OPTION ================= */
 
 .option-wrap{
-    margin:10px 0;
+    margin:11px 0;
 }
 
-
-/* ==================================================
-   OPTION
-================================================== */
-
 .option{
-
     position:relative;
 
     display:flex;
-
     align-items:center;
 
     width:100%;
+    min-height:57px;
 
-    min-height:55px;
+    padding:12px 58px 12px 16px;
 
-    padding:12px 55px 12px 16px;
-
-    border:2px solid #91a8ba;
-
+    border:2px solid #8da7ba;
     border-radius:12px;
 
     background:
-        linear-gradient(
-            135deg,
-            #dce8f1,
-            #cedde8
-        );
+    linear-gradient(
+        135deg,
+        #d5e3ed,
+        #c5d7e3
+    );
 
     color:#173449;
 
     font-size:18px;
-
-    font-weight:600;
+    font-weight:650;
 
     text-align:left;
 
     cursor:pointer;
 
     transition:
-        background .25s,
-        border .25s,
-        transform .2s,
-        box-shadow .25s;
+        background .25s ease,
+        border .25s ease,
+        transform .2s ease,
+        box-shadow .25s ease;
 }
 
 .option:hover{
-
     background:
-        linear-gradient(
-            135deg,
-            #cde3f4,
-            #bdd8ec
-        );
+    linear-gradient(
+        135deg,
+        #c6deef,
+        #b8d4e9
+    );
 
     border-color:#1683c7;
 }
 
-
-/* ==================================================
-   LOCKED CORRECT
-================================================== */
+/* सही */
 
 .option.correct{
-
     background:
-        linear-gradient(
-            135deg,
-            #4fc46a,
-            #31ae4f
-        ) !important;
+    linear-gradient(
+        135deg,
+        #43c764,
+        #2fae4e
+    ) !important;
 
     border-color:#087c26 !important;
-
-    color:#043d12 !important;
+    color:#053d12 !important;
 
     font-weight:900;
 
@@ -292,22 +218,17 @@ body{
         0 4px 13px rgba(0,120,35,.28);
 }
 
-
-/* ==================================================
-   LOCKED WRONG
-================================================== */
+/* गलत */
 
 .option.wrong{
-
     background:
-        linear-gradient(
-            135deg,
-            #ef8585,
-            #df6060
-        ) !important;
+    linear-gradient(
+        135deg,
+        #ef8585,
+        #df5c5c
+    ) !important;
 
     border-color:#c40000 !important;
-
     color:#650000 !important;
 
     font-weight:900;
@@ -316,23 +237,18 @@ body{
         0 4px 13px rgba(190,0,0,.28);
 }
 
-
-/* ==================================================
-   MARK
-================================================== */
+/* ================= TICK ================= */
 
 .mark{
-
     position:absolute;
 
     right:13px;
-
     top:50%;
 
     transform:translateY(-50%);
 
-    width:30px;
-    height:30px;
+    width:31px;
+    height:31px;
 
     border-radius:50%;
 
@@ -342,65 +258,53 @@ body{
     justify-content:center;
 
     font-family:Arial,sans-serif;
-
-    font-size:19px;
-
+    font-size:20px;
     font-weight:900;
 
-    box-shadow:
-        0 2px 6px rgba(0,0,0,.22);
+    box-shadow:0 2px 7px rgba(0,0,0,.22);
 }
+
+/* चुना हुआ सही */
 
 .option.selected-correct .mark{
-
     display:flex;
-
     background:#1267d6;
-
     color:#fff;
 }
+
+/* गलत */
 
 .option.wrong .mark{
-
     display:flex;
-
     background:#c40000;
-
     color:#fff;
 }
 
-
-/* ==================================================
-   CONCLUSION
-   शुरुआत में hidden
-================================================== */
+/* ================= CONCLUSION ================= */
 
 .conclusion{
-
     display:none;
 
-    margin-top:5px;
-
+    margin-top:6px;
     margin-left:5px;
 
-    padding:9px 13px;
+    padding:11px 14px;
 
     border-radius:9px;
 
-    font-size:15px;
-
-    line-height:1.55;
+    font-size:15.5px;
+    line-height:1.7;
 
     font-weight:600;
 
-    animation:showConclusion .25s ease;
+    animation:
+        conclusionShow .3s ease;
 }
 
-@keyframes showConclusion{
-
+@keyframes conclusionShow{
     from{
         opacity:0;
-        transform:translateY(-4px);
+        transform:translateY(-5px);
     }
 
     to{
@@ -409,59 +313,51 @@ body{
     }
 }
 
-
-/* सही option का हल्का green conclusion */
-
 .conclusion.green{
-
     background:#dff5e4;
-
     border-left:4px solid #159447;
-
     color:#145c2b;
 }
 
-
-/* गलत option का हल्का red conclusion */
-
 .conclusion.red{
-
     background:#fde1e1;
-
     border-left:4px solid #d52b2b;
-
     color:#7a2020;
 }
 
+/* ================= FLOWER ================= */
 
-/* ==================================================
-   FLOWER / PETALS
-================================================== */
+/*
+   फूल का पहला भाग:
+   option से धीरे-धीरे ऊपर उठना
+*/
 
-.option-flower{
-
+.petal{
     position:fixed;
 
     z-index:99999;
 
     pointer-events:none;
 
-    will-change:transform,opacity;
+    will-change:
+        transform,
+        opacity;
 
     animation:
-        petalAnimation 2s linear forwards;
+        petalFloat
+        var(--duration)
+        cubic-bezier(.25,.55,.45,1)
+        forwards;
 }
 
-
 /*
-   पूरी animation में LINEAR गति।
-   कोई अचानक रुकना या तेज/धीमा होना नहीं।
+   कोई अचानक झटका नहीं।
+   पूरा movement smooth रखा गया है।
 */
 
-@keyframes petalAnimation{
+@keyframes petalFloat{
 
     0%{
-
         transform:
             translate3d(
                 0,
@@ -469,97 +365,80 @@ body{
                 0
             )
             rotate(0deg)
-            scale(.25);
+            scale(.45);
 
         opacity:0;
     }
 
-    10%{
-
-        transform:
-            translate3d(
-                calc(var(--side) * .10),
-                calc(var(--up) * -.25),
-                0
-            )
-            rotate(45deg)
-            scale(.8);
-
+    8%{
         opacity:1;
     }
 
-    30%{
-
+    25%{
         transform:
             translate3d(
-                calc(var(--side) * .35),
-                calc(var(--up) * -.60),
+                var(--x1),
+                var(--y1),
                 0
             )
-            rotate(120deg)
+            rotate(var(--r1))
             scale(1);
     }
 
     45%{
-
         transform:
             translate3d(
-                var(--side),
-                calc(var(--up) * -1),
+                var(--x2),
+                var(--y2),
                 0
             )
-            rotate(180deg)
-            scale(1.05);
+            rotate(var(--r2))
+            scale(.98);
     }
 
     65%{
-
         transform:
             translate3d(
-                calc(var(--side) * 1.35),
-                calc(var(--down) * -.30),
+                var(--x3),
+                var(--y3),
                 0
             )
-            rotate(270deg)
-            scale(.95);
+            rotate(var(--r3))
+            scale(.92);
+
+        opacity:.82;
     }
 
     82%{
-
         transform:
             translate3d(
-                calc(var(--side) * 1.65),
-                calc(var(--down) * .45),
+                var(--x4),
+                var(--y4),
                 0
             )
-            rotate(360deg)
-            scale(.78);
+            rotate(var(--r4))
+            scale(.82);
 
-        opacity:.7;
+        opacity:.48;
     }
 
     100%{
-
         transform:
             translate3d(
-                calc(var(--side) * 2),
-                var(--down),
+                var(--x5),
+                var(--y5),
                 0
             )
-            rotate(470deg)
-            scale(.55);
+            rotate(var(--r5))
+            scale(.7);
 
         opacity:0;
     }
 }
 
-
-/* ==================================================
-   SUBMIT
-================================================== */
+/* ================= SUBMIT ================= */
 
 #submitBtn{
-
     display:block;
 
     width:100%;
@@ -569,21 +448,19 @@ body{
     padding:16px;
 
     border:none;
-
     border-radius:13px;
 
     background:
-        linear-gradient(
-            135deg,
-            #004d80,
-            #006fae,
-            #003d66
-        );
+    linear-gradient(
+        135deg,
+        #004d80,
+        #006fae,
+        #003d66
+    );
 
     color:#fff;
 
     font-size:21px;
-
     font-weight:900;
 
     cursor:pointer;
@@ -593,26 +470,18 @@ body{
 }
 
 #submitBtn:disabled{
-
     background:#555;
-
     cursor:not-allowed;
 }
 
-
-/* ==================================================
-   RESULT
-================================================== */
+/* ================= RESULT ================= */
 
 #resultArea{
-
     display:none;
-
     margin-top:27px;
 }
 
 .result-grid{
-
     display:grid;
 
     grid-template-columns:
@@ -622,7 +491,6 @@ body{
 }
 
 .result-card{
-
     padding:20px;
 
     border-radius:15px;
@@ -630,7 +498,6 @@ body{
     text-align:center;
 
     font-size:19px;
-
     font-weight:900;
 
     box-shadow:
@@ -640,47 +507,42 @@ body{
 }
 
 .correct-box{
-
     background:
-        linear-gradient(
-            135deg,
-            #087f23,
-            #075c1b
-        );
+    linear-gradient(
+        135deg,
+        #087f23,
+        #075c1b
+    );
 }
 
 .wrong-box{
-
     background:
-        linear-gradient(
-            135deg,
-            #c62828,
-            #8e0000
-        );
+    linear-gradient(
+        135deg,
+        #c62828,
+        #8e0000
+    );
 }
 
 .score-box{
-
     background:
-        linear-gradient(
-            135deg,
-            #075b9a,
-            #003c6b
-        );
+    linear-gradient(
+        135deg,
+        #075b9a,
+        #003c6b
+    );
 }
 
 .percent-box{
-
     background:
-        linear-gradient(
-            135deg,
-            #6a1b9a,
-            #42105f
-        );
+    linear-gradient(
+        135deg,
+        #6a1b9a,
+        #42105f
+    );
 }
 
 .big-number{
-
     display:block;
 
     font-size:32px;
@@ -690,13 +552,9 @@ body{
     font-family:Arial,sans-serif;
 }
 
-
-/* ==================================================
-   FINAL MESSAGE
-================================================== */
+/* ================= FINAL MESSAGE ================= */
 
 #finalMessage{
-
     margin-top:19px;
 
     padding:17px;
@@ -706,20 +564,15 @@ body{
     text-align:center;
 
     font-size:21px;
-
     font-weight:900;
 
     box-shadow:
         0 4px 12px rgba(0,0,0,.13);
 }
 
-
-/* ==================================================
-   RESET
-================================================== */
+/* ================= RESET ================= */
 
 #resetBtn{
-
     display:block;
 
     margin:21px auto 0;
@@ -727,29 +580,24 @@ body{
     padding:13px 27px;
 
     border:none;
-
     border-radius:10px;
 
     background:
-        linear-gradient(
-            135deg,
-            #222,
-            #444
-        );
+    linear-gradient(
+        135deg,
+        #222,
+        #444
+    );
 
     color:#fff;
 
     font-size:17px;
-
     font-weight:bold;
 
     cursor:pointer;
 }
 
-
-/* ==================================================
-   MOBILE
-================================================== */
+/* ================= MOBILE ================= */
 
 @media(max-width:600px){
 
@@ -781,11 +629,12 @@ body{
 
     .option{
         font-size:16px;
-        min-height:52px;
+        min-height:53px;
     }
 
     .conclusion{
-        font-size:14px;
+        font-size:14.5px;
+        line-height:1.65;
     }
 
     .result-grid{
@@ -795,7 +644,6 @@ body{
     #finalMessage{
         font-size:18px;
     }
-
 }
 
 </style>
@@ -806,10 +654,7 @@ body{
 
 <div class="quiz-box">
 
-
-<!-- ==================================================
-     HEADER
-================================================== -->
+<!-- ================= HEADER ================= -->
 
 <div class="main-heading">
 
@@ -826,7 +671,6 @@ body{
     </div>
 
 </div>
-
 
 
 <!-- ==================================================
@@ -854,12 +698,13 @@ body{
         <div class="conclusion green">
 
             <b>निष्कर्ष:</b>
-            प्रकाश संश्लेषण में निकलने वाली ऑक्सीजन जल से आती है।
+            प्रकाश संश्लेषण के दौरान जल का अपघटन होता है और
+            इसी प्रक्रिया से ऑक्सीजन मुक्त होती है। इसलिए निकलने वाली
+            ऑक्सीजन का स्रोत जल माना जाता है।
 
         </div>
 
     </div>
-
 
 
     <div class="option-wrap">
@@ -876,12 +721,13 @@ body{
         <div class="conclusion red">
 
             <b>निष्कर्ष:</b>
-            CO₂ भोजन बनाने में काम आती है, ऑक्सीजन का मुख्य स्रोत नहीं है।
+            कार्बन डाइऑक्साइड प्रकाश संश्लेषण में बहुत जरूरी है,
+            क्योंकि पौधा इसका उपयोग भोजन बनाने में करता है।
+            लेकिन इससे निकलने वाली ऑक्सीजन का स्रोत जल होता है।
 
         </div>
 
     </div>
-
 
 
     <div class="option-wrap">
@@ -898,12 +744,13 @@ body{
         <div class="conclusion red">
 
             <b>निष्कर्ष:</b>
-            ग्लूकोज प्रकाश संश्लेषण से बनता है, ऑक्सीजन का स्रोत नहीं है।
+            ग्लूकोज प्रकाश संश्लेषण से बनने वाला भोजन है।
+            यह ऑक्सीजन का स्रोत नहीं है। पौधा ग्लूकोज को
+            आगे ऊर्जा प्राप्त करने के लिए भी उपयोग करता है।
 
         </div>
 
     </div>
-
 
 
     <div class="option-wrap">
@@ -920,14 +767,15 @@ body{
         <div class="conclusion red">
 
             <b>निष्कर्ष:</b>
-            क्लोरोफिल प्रकाश को पकड़ता है, लेकिन ऑक्सीजन का स्रोत नहीं है।
+            क्लोरोफिल पत्तियों में पाया जाने वाला हरा वर्णक है।
+            यह सूर्य के प्रकाश को ग्रहण करने में मदद करता है,
+            लेकिन ऑक्सीजन का स्रोत नहीं है।
 
         </div>
 
     </div>
 
 </div>
-
 
 
 <!-- ==================================================
@@ -955,12 +803,13 @@ body{
         <div class="conclusion red">
 
             <b>निष्कर्ष:</b>
-            आयरन की कमी से मुख्य रूप से एनीमिया होता है।
+            आयरन शरीर में हीमोग्लोबिन बनाने के लिए जरूरी है।
+            इसकी कमी से मुख्य रूप से एनीमिया जैसी समस्या हो सकती है,
+            इसलिए यह घेंघा रोग का सही कारण नहीं है।
 
         </div>
 
     </div>
-
 
 
     <div class="option-wrap">
@@ -977,12 +826,13 @@ body{
         <div class="conclusion green">
 
             <b>निष्कर्ष:</b>
-            आयोडीन की कमी से घेंघा रोग हो सकता है।
+            आयोडीन थायरॉयड ग्रंथि के सामान्य काम के लिए जरूरी है।
+            भोजन में आयोडीन की कमी होने पर घेंघा रोग हो सकता है।
+            इसलिए सही उत्तर आयोडीन है।
 
         </div>
 
     </div>
-
 
 
     <div class="option-wrap">
@@ -999,12 +849,13 @@ body{
         <div class="conclusion red">
 
             <b>निष्कर्ष:</b>
-            कैल्शियम हड्डियों के लिए जरूरी है, इसकी कमी से घेंघा नहीं होता।
+            कैल्शियम शरीर में हड्डियों और दाँतों को मजबूत रखने में
+            मदद करता है। इसकी कमी से घेंघा रोग नहीं होता,
+            इसलिए यह विकल्प गलत है।
 
         </div>
 
     </div>
-
 
 
     <div class="option-wrap">
@@ -1021,14 +872,14 @@ body{
         <div class="conclusion red">
 
             <b>निष्कर्ष:</b>
-            सोडियम शरीर में जल और लवण का संतुलन बनाए रखने में मदद करता है।
+            सोडियम शरीर में जल और लवण का संतुलन बनाए रखने में
+            मदद करता है। इसकी कमी घेंघा रोग का मुख्य कारण नहीं है।
 
         </div>
 
     </div>
 
 </div>
-
 
 
 <!-- ==================================================
@@ -1056,12 +907,13 @@ body{
         <div class="conclusion red">
 
             <b>निष्कर्ष:</b>
-            पैरामीशियम गति के लिए पक्ष्माभों का उपयोग करता है।
+            पैरामीशियम एक एककोशिकीय जीव है और यह गति के लिए
+            पक्ष्माभों का उपयोग करता है। इसलिए इसमें कूटपाद
+            नहीं पाए जाते हैं।
 
         </div>
 
     </div>
-
 
 
     <div class="option-wrap">
@@ -1078,12 +930,13 @@ body{
         <div class="conclusion red">
 
             <b>निष्कर्ष:</b>
-            यूग्लीना गति के लिए कशाभ का उपयोग करता है।
+            यूग्लीना गति करने के लिए कशाभ का उपयोग करता है।
+            कशाभ एक लंबी, धागे जैसी संरचना होती है।
+            इसलिए यह कूटपाद का सही उदाहरण नहीं है।
 
         </div>
 
     </div>
-
 
 
     <div class="option-wrap">
@@ -1100,12 +953,13 @@ body{
         <div class="conclusion green">
 
             <b>निष्कर्ष:</b>
-            अमीबा कूटपाद बनाकर चलता है और भोजन पकड़ता है।
+            अमीबा अपने शरीर से अस्थायी उभार बनाता है,
+            जिन्हें कूटपाद कहते हैं। इनकी सहायता से अमीबा
+            चलता भी है और भोजन को पकड़ता भी है।
 
         </div>
 
     </div>
-
 
 
     <div class="option-wrap">
@@ -1122,7 +976,9 @@ body{
         <div class="conclusion red">
 
             <b>निष्कर्ष:</b>
-            बैक्टीरिया में सामान्यतः कूटपाद नहीं पाए जाते।
+            बैक्टीरिया बहुत छोटे एककोशिकीय जीव होते हैं।
+            उनमें सामान्यतः अमीबा जैसे कूटपाद नहीं पाए जाते।
+            इसलिए यह सही उत्तर नहीं है।
 
         </div>
 
@@ -1131,10 +987,7 @@ body{
 </div>
 
 
-
-<!-- ==================================================
-     SUBMIT
-================================================== -->
+<!-- ================= SUBMIT ================= -->
 
 <button id="submitBtn"
         onclick="submitQuiz()">
@@ -1144,15 +997,11 @@ body{
 </button>
 
 
-
-<!-- ==================================================
-     RESULT
-================================================== -->
+<!-- ================= RESULT ================= -->
 
 <div id="resultArea">
 
     <div class="result-grid">
-
 
         <div class="result-card correct-box">
 
@@ -1219,7 +1068,6 @@ body{
 </div>
 
 
-
 <script>
 
 /* ==================================================
@@ -1227,9 +1075,7 @@ body{
 ================================================== */
 
 let score = 0;
-
 let attempted = 0;
-
 let submitted = false;
 
 
@@ -1245,8 +1091,7 @@ function playCorrectSound(){
 
     if(!AudioContext) return;
 
-    const ctx =
-        new AudioContext();
+    const ctx = new AudioContext();
 
     const notes =
         [523,659,784,1046];
@@ -1254,68 +1099,56 @@ function playCorrectSound(){
     notes.forEach(
         function(freq,index){
 
-        const osc =
-            ctx.createOscillator();
+            const osc =
+                ctx.createOscillator();
 
-        const gain =
-            ctx.createGain();
+            const gain =
+                ctx.createGain();
 
-        osc.type =
-            "sine";
+            osc.type = "sine";
+            osc.frequency.value = freq;
 
-        osc.frequency.value =
-            freq;
+            osc.connect(gain);
+            gain.connect(ctx.destination);
 
-        osc.connect(gain);
+            const start =
+                ctx.currentTime +
+                index*.09;
 
-        gain.connect(
-            ctx.destination
-        );
+            gain.gain.setValueAtTime(
+                .001,
+                start
+            );
 
-        const start =
-            ctx.currentTime +
-            index*.09;
+            gain.gain.exponentialRampToValueAtTime(
+                .28,
+                start+.02
+            );
 
-        gain.gain.setValueAtTime(
-            .001,
-            start
-        );
+            gain.gain.exponentialRampToValueAtTime(
+                .001,
+                start+.27
+            );
 
-        gain.gain.exponentialRampToValueAtTime(
-            .3,
-            start+.02
-        );
+            osc.start(start);
+            osc.stop(start+.29);
 
-        gain.gain.exponentialRampToValueAtTime(
-            .001,
-            start+.25
-        );
-
-        osc.start(start);
-
-        osc.stop(
-            start+.27
-        );
-
-    });
-
+        }
+    );
 }
 
 
 /* ==================================================
-   WRONG VIBRATION
+   ONE TIME VIBRATION
 ================================================== */
 
 function strongVibration(){
 
-    if(
-        navigator.vibrate
-    ){
+    if(navigator.vibrate){
 
-        navigator.vibrate(350);
+        navigator.vibrate(400);
 
     }
-
 }
 
 
@@ -1331,8 +1164,7 @@ function celebrationSound(){
 
     if(!AudioContext) return;
 
-    const ctx =
-        new AudioContext();
+    const ctx = new AudioContext();
 
     const notes =
         [
@@ -1349,51 +1181,42 @@ function celebrationSound(){
     notes.forEach(
         function(freq,index){
 
-        const osc =
-            ctx.createOscillator();
+            const osc =
+                ctx.createOscillator();
 
-        const gain =
-            ctx.createGain();
+            const gain =
+                ctx.createGain();
 
-        osc.type =
-            "triangle";
+            osc.type = "triangle";
+            osc.frequency.value = freq;
 
-        osc.frequency.value =
-            freq;
+            osc.connect(gain);
+            gain.connect(ctx.destination);
 
-        osc.connect(gain);
+            const start =
+                ctx.currentTime +
+                index*.11;
 
-        gain.connect(
-            ctx.destination
-        );
+            gain.gain.setValueAtTime(
+                .001,
+                start
+            );
 
-        const start =
-            ctx.currentTime +
-            index*.11;
+            gain.gain.exponentialRampToValueAtTime(
+                .3,
+                start+.02
+            );
 
-        gain.gain.setValueAtTime(
-            .001,
-            start
-        );
+            gain.gain.exponentialRampToValueAtTime(
+                .001,
+                start+.32
+            );
 
-        gain.gain.exponentialRampToValueAtTime(
-            .3,
-            start+.02
-        );
+            osc.start(start);
+            osc.stop(start+.34);
 
-        gain.gain.exponentialRampToValueAtTime(
-            .001,
-            start+.3
-        );
-
-        osc.start(start);
-
-        osc.stop(
-            start+.32
-        );
-
-    });
-
+        }
+    );
 }
 
 
@@ -1409,8 +1232,7 @@ function sadSound(){
 
     if(!AudioContext) return;
 
-    const ctx =
-        new AudioContext();
+    const ctx = new AudioContext();
 
     const osc =
         ctx.createOscillator();
@@ -1418,8 +1240,7 @@ function sadSound(){
     const gain =
         ctx.createGain();
 
-    osc.type =
-        "sine";
+    osc.type = "sine";
 
     osc.frequency.setValueAtTime(
         330,
@@ -1432,13 +1253,10 @@ function sadSound(){
     );
 
     osc.connect(gain);
-
-    gain.connect(
-        ctx.destination
-    );
+    gain.connect(ctx.destination);
 
     gain.gain.setValueAtTime(
-        .23,
+        .22,
         ctx.currentTime
     );
 
@@ -1452,149 +1270,364 @@ function sadSound(){
     osc.stop(
         ctx.currentTime+1.2
     );
-
 }
 
 
 /* ==================================================
-   FLOWER EFFECT
+   NATURAL FLOWING PETALS
 ================================================== */
 
 function flowerBurst(option){
 
-    const petals = [
-        "🌸",
-        "🌺",
-        "🌼",
-        "🌻",
-        "🌷",
-        "🪻",
-        "🍃"
-    ];
+    const flowers =
+        [
+            "🌸",
+            "🌺",
+            "🌼",
+            "🌷",
+            "🌻",
+            "🪻",
+            "🌹"
+        ];
 
     const rect =
         option.getBoundingClientRect();
 
 
     /*
-       अलग-अलग direction
+       फूल option के बीच से शुरू होगा
     */
 
-    for(
-        let i=0;
-        i<22;
-        i++
-    ){
+    const startX =
+        rect.left +
+        rect.width/2;
 
-        const petal =
-            document.createElement(
-                "div"
-            );
-
-        petal.className =
-            "option-flower";
-
-        petal.innerHTML =
-            petals[
-                Math.floor(
-                    Math.random() *
-                    petals.length
-                )
-            ];
+    const startY =
+        rect.top +
+        rect.height/2;
 
 
-        /*
-           उसी option से शुरू
-        */
+    /*
+       पहले पूरा flower ऊपर जाएगा।
+       फिर petals हवा में अलग-अलग फैलेंगे।
+    */
 
-        petal.style.left =
-            (
-                rect.left +
-                rect.width/2
-            ) + "px";
+    const flower =
+        document.createElement("div");
 
-        petal.style.top =
-            (
-                rect.top +
-                rect.height/2
-            ) + "px";
+    flower.style.position = "fixed";
+    flower.style.left = startX+"px";
+    flower.style.top = startY+"px";
+    flower.style.zIndex = "99999";
+    flower.style.pointerEvents = "none";
+    flower.style.fontSize = "28px";
+    flower.innerHTML = "🌸";
 
-
-        const angle =
-            Math.random() *
-            Math.PI *
-            2;
+    document.body.appendChild(flower);
 
 
-        const spread =
-            60 +
-            Math.random()*100;
+    /*
+       Smooth upward movement
+    */
 
-
-        const side =
-            Math.cos(angle) *
-            spread;
-
-
-        const up =
-            100 +
-            Math.random()*70;
-
-
-        const down =
-            170 +
-            Math.random()*80;
-
-
-        petal.style.setProperty(
-            "--side",
-            side + "px"
-        );
-
-        petal.style.setProperty(
-            "--up",
-            up + "px"
-        );
-
-        petal.style.setProperty(
-            "--down",
-            down + "px"
-        );
-
-
-        petal.style.fontSize =
-            (
-                16 +
-                Math.random()*15
-            ) + "px";
-
-
-        /*
-           हर flower थोड़ा अलग समय पर निकलेगा
-        */
-
-        petal.style.animationDelay =
-            (
-                Math.random()*.45
-            ) + "s";
-
-
-        document.body.appendChild(
-            petal
-        );
-
-
-        setTimeout(
-            function(){
-
-                petal.remove();
-
+    flower.animate(
+        [
+            {
+                transform:
+                    "translate(-50%,0) scale(.35)",
+                opacity:0
             },
-            2500
-        );
 
-    }
+            {
+                transform:
+                    "translate(-50%,-35px) scale(.9)",
+                opacity:1,
+                offset:.25
+            },
 
+            {
+                transform:
+                    "translate(-50%,-115px) scale(1.05)",
+                opacity:1
+            },
+
+            {
+                transform:
+                    "translate(-50%,-175px) scale(1)",
+                opacity:1
+            }
+        ],
+        {
+            duration:900,
+            easing:"cubic-bezier(.25,.65,.35,1)",
+            fill:"forwards"
+        }
+    );
+
+
+    /*
+       Flower के ऊपर जाने के बाद
+       petals धीरे-धीरे अलग होंगे।
+    */
+
+    setTimeout(
+        function(){
+
+            flower.remove();
+
+
+            for(
+                let i=0;
+                i<18;
+                i++
+            ){
+
+                /*
+                   अलग-अलग delay
+                   ताकि सभी एक साथ न निकलें
+                */
+
+                const delay =
+                    Math.random()*650;
+
+
+                setTimeout(
+                    function(){
+
+                        createFlyingPetal(
+                            startX,
+                            startY-175,
+                            flowers
+                        );
+
+                    },
+                    delay
+                );
+
+            }
+
+        },
+        900
+    );
+}
+
+
+/* ==================================================
+   CREATE ONE NATURAL FLYING PETAL
+================================================== */
+
+function createFlyingPetal(
+    startX,
+    startY,
+    flowers
+){
+
+    const petal =
+        document.createElement("div");
+
+    petal.className = "petal";
+
+    petal.innerHTML =
+        flowers[
+            Math.floor(
+                Math.random() *
+                flowers.length
+            )
+        ];
+
+
+    petal.style.left =
+        startX+"px";
+
+    petal.style.top =
+        startY+"px";
+
+
+    /*
+       हवा जैसी अलग-अलग दिशा
+    */
+
+    const direction =
+        Math.random() > .5
+        ? 1
+        : -1;
+
+
+    const x1 =
+        direction *
+        (25 + Math.random()*70);
+
+    const x2 =
+        direction *
+        (60 + Math.random()*130);
+
+    const x3 =
+        direction *
+        (90 + Math.random()*190);
+
+    const x4 =
+        direction *
+        (120 + Math.random()*240);
+
+    const x5 =
+        direction *
+        (150 + Math.random()*300);
+
+
+    /*
+       पहले ऊपर,
+       फिर धीरे-धीरे नीचे
+    */
+
+    const y1 =
+        -(35 + Math.random()*55);
+
+    const y2 =
+        -(80 + Math.random()*90);
+
+    const y3 =
+        -(60 + Math.random()*80);
+
+    const y4 =
+        10 + Math.random()*70;
+
+    const y5 =
+        100 + Math.random()*150;
+
+
+    /*
+       अलग-अलग rotation
+    */
+
+    const r1 =
+        (Math.random()*120)-60;
+
+    const r2 =
+        (Math.random()*220)-110;
+
+    const r3 =
+        (Math.random()*360)-180;
+
+    const r4 =
+        (Math.random()*500)-250;
+
+    const r5 =
+        (Math.random()*700)-350;
+
+
+    petal.style.setProperty(
+        "--x1",
+        x1+"px"
+    );
+
+    petal.style.setProperty(
+        "--x2",
+        x2+"px"
+    );
+
+    petal.style.setProperty(
+        "--x3",
+        x3+"px"
+    );
+
+    petal.style.setProperty(
+        "--x4",
+        x4+"px"
+    );
+
+    petal.style.setProperty(
+        "--x5",
+        x5+"px"
+    );
+
+
+    petal.style.setProperty(
+        "--y1",
+        y1+"px"
+    );
+
+    petal.style.setProperty(
+        "--y2",
+        y2+"px"
+    );
+
+    petal.style.setProperty(
+        "--y3",
+        y3+"px"
+    );
+
+    petal.style.setProperty(
+        "--y4",
+        y4+"px"
+    );
+
+    petal.style.setProperty(
+        "--y5",
+        y5+"px"
+    );
+
+
+    petal.style.setProperty(
+        "--r1",
+        r1+"deg"
+    );
+
+    petal.style.setProperty(
+        "--r2",
+        r2+"deg"
+    );
+
+    petal.style.setProperty(
+        "--r3",
+        r3+"deg"
+    );
+
+    petal.style.setProperty(
+        "--r4",
+        r4+"deg"
+    );
+
+    petal.style.setProperty(
+        "--r5",
+        r5+"deg"
+    );
+
+
+    /*
+       हर petal की speed थोड़ी अलग
+       लेकिन movement smooth
+    */
+
+    const duration =
+        3000 +
+        Math.random()*1000;
+
+    petal.style.setProperty(
+        "--duration",
+        duration+"ms"
+    );
+
+
+    petal.style.fontSize =
+        (
+            15 +
+            Math.random()*16
+        )+"px";
+
+
+    document.body.appendChild(
+        petal
+    );
+
+
+    setTimeout(
+        function(){
+
+            petal.remove();
+
+        },
+        duration+100
+    );
 }
 
 
@@ -1624,22 +1657,16 @@ function optionClick(
         );
 
 
-    /*
-       इस option का conclusion
-    */
-
     const conclusion =
-        button.parentElement
-        .querySelector(
+        button.parentElement.querySelector(
             ".conclusion"
         );
 
 
     /*
-       ----------------------------------------------
-       अगर question पहली बार click हो रहा है
-       तो answer LOCK होगा
-       ----------------------------------------------
+       ---------------------------------------------
+       FIRST CLICK
+       ---------------------------------------------
     */
 
     if(
@@ -1652,41 +1679,35 @@ function optionClick(
             "answered"
         );
 
-
         attempted++;
 
-
-        /*
-           पहला selected answer save
-        */
 
         question.dataset.selected =
             selected;
 
 
         /*
-           सभी options को visually
-           answer के बाद भी clickable रखें
+           सही answer
         */
 
         if(
-            selected ===
-            correctAnswer
+            selected === correctAnswer
         ){
 
-            /* सही */
-
             score++;
+
 
             button.classList.add(
                 "correct",
                 "selected-correct"
             );
 
+
             button.querySelector(
                 ".mark"
             ).innerHTML =
                 "✓";
+
 
             button.querySelector(
                 ".mark"
@@ -1696,25 +1717,26 @@ function optionClick(
 
             playCorrectSound();
 
-
-            flowerBurst(
-                button
-            );
+            flowerBurst(button);
 
         }
 
-        else{
+        /*
+           गलत answer
+        */
 
-            /* गलत */
+        else{
 
             button.classList.add(
                 "wrong"
             );
 
+
             button.querySelector(
                 ".mark"
             ).innerHTML =
                 "✕";
+
 
             button.querySelector(
                 ".mark"
@@ -1724,7 +1746,7 @@ function optionClick(
 
             /*
                सही option केवल GREEN
-               blue tick नहीं
+               Blue tick नहीं
             */
 
             const options =
@@ -1736,36 +1758,37 @@ function optionClick(
             options.forEach(
                 function(option){
 
-                const code =
-                    option.getAttribute(
-                        "onclick"
-                    );
+                    const code =
+                        option.getAttribute(
+                            "onclick"
+                        );
 
 
-                if(
-                    code &&
-                    code.includes(
-                        "'" +
-                        correctAnswer +
-                        "'"
-                    )
-                ){
+                    if(
+                        code &&
+                        code.includes(
+                            "'" +
+                            correctAnswer +
+                            "'"
+                        )
+                    ){
 
-                    option.classList.add(
-                        "correct"
-                    );
+                        option.classList.add(
+                            "correct"
+                        );
 
-                    option.querySelector(
-                        ".mark"
-                    ).style.display =
-                        "none";
+                        option.querySelector(
+                            ".mark"
+                        ).style.display =
+                            "none";
+                    }
+
                 }
-
-            });
+            );
 
 
             /*
-               गलत पर केवल vibration
+               केवल एक बार vibration
             */
 
             strongVibration();
@@ -1776,32 +1799,29 @@ function optionClick(
 
 
     /*
-       ==================================================
-       IMPORTANT:
-       हर बाद के click पर answer CHANGE नहीं होगा।
-       केवल clicked option का conclusion खुलेगा।
-       ==================================================
+       ---------------------------------------------
+       IMPORTANT
+       बाद में दूसरे option पर click करने पर
+       answer CHANGE नहीं होगा।
+       केवल उस option का conclusion खुलेगा।
+       ---------------------------------------------
     */
 
-
-    /*
-       पहले इस question के सभी conclusions hide
-       करेंगे
-    */
 
     question.querySelectorAll(
         ".conclusion"
     ).forEach(
         function(item){
 
-        item.style.display =
-            "none";
+            item.style.display =
+                "none";
 
-    });
+        }
+    );
 
 
     /*
-       केवल clicked option का conclusion show
+       सिर्फ clicked option का conclusion
     */
 
     if(conclusion){
@@ -1831,21 +1851,17 @@ function submitQuiz(){
         ).length;
 
 
-    if(
-        attempted < total
-    ){
+    if(attempted < total){
 
         alert(
             "कृपया सभी प्रश्नों का उत्तर दें।"
         );
 
         return;
-
     }
 
 
-    submitted =
-        true;
+    submitted = true;
 
 
     const wrong =
@@ -1901,12 +1917,10 @@ function submitQuiz(){
        HIGH SCORE
     */
 
-    if(
-        percentage >= 70
-    ){
+    if(percentage >= 70){
 
         message.innerHTML =
-            "🎉 बहुत शानदार! शानदार प्रदर्शन! 🎉";
+            "🎉 बहुत शानदार! आपका प्रदर्शन बहुत अच्छा रहा। 🎉";
 
         message.style.background =
             "linear-gradient(135deg,#075b1b,#0b8f32)";
@@ -1922,8 +1936,7 @@ function submitQuiz(){
 
 
         /*
-           Submit पर सही options से
-           staggered flowers
+           सभी flowers staggered
         */
 
         const correctOptions =
@@ -1935,32 +1948,28 @@ function submitQuiz(){
         correctOptions.forEach(
             function(option,index){
 
-            setTimeout(
-                function(){
+                setTimeout(
+                    function(){
 
-                    flowerBurst(
-                        option
-                    );
+                        flowerBurst(option);
 
-                },
-                index*350
-            );
+                    },
+                    index*500
+                );
 
-        });
+            }
+        );
 
     }
-
 
     /*
        MEDIUM
     */
 
-    else if(
-        percentage >= 40
-    ){
+    else if(percentage >= 40){
 
         message.innerHTML =
-            "👍 अच्छा प्रयास! थोड़ी और मेहनत करें।";
+            "👍 अच्छा प्रयास! थोड़ी और मेहनत करेंगे तो परिणाम और बेहतर होगा।";
 
         message.style.background =
             "linear-gradient(135deg,#8a6200,#c18a00)";
@@ -1970,7 +1979,6 @@ function submitQuiz(){
 
     }
 
-
     /*
        LOW
     */
@@ -1978,7 +1986,7 @@ function submitQuiz(){
     else{
 
         message.innerHTML =
-            "😔 कोई बात नहीं! दोबारा प्रयास करें, अगली बार बेहतर होगा।";
+            "😔 कोई बात नहीं! दोबारा प्रयास करें, अगली बार और अच्छा होगा।";
 
         message.style.background =
             "linear-gradient(135deg,#8e0000,#c62828)";
@@ -2013,9 +2021,7 @@ function submitQuiz(){
 function resetQuiz(){
 
     score=0;
-
     attempted=0;
-
     submitted=false;
 
 
@@ -2024,45 +2030,48 @@ function resetQuiz(){
     ).forEach(
         function(question){
 
-        question.classList.remove(
-            "answered"
-        );
-
-
-        delete question.dataset.selected;
-
-
-        question.querySelectorAll(
-            ".option"
-        ).forEach(
-            function(option){
-
-            option.classList.remove(
-                "correct",
-                "wrong",
-                "selected-correct"
+            question.classList.remove(
+                "answered"
             );
 
 
-            option.querySelector(
-                ".mark"
-            ).style.display =
-                "none";
-
-        });
+            delete question.dataset.selected;
 
 
-        question.querySelectorAll(
-            ".conclusion"
-        ).forEach(
-            function(conclusion){
+            question.querySelectorAll(
+                ".option"
+            ).forEach(
+                function(option){
 
-            conclusion.style.display =
-                "none";
+                    option.classList.remove(
+                        "correct",
+                        "wrong",
+                        "selected-correct"
+                    );
 
-        });
 
-    });
+                    option.querySelector(
+                        ".mark"
+                    ).style.display =
+                        "none";
+
+                }
+            );
+
+
+            question.querySelectorAll(
+                ".conclusion"
+            ).forEach(
+                function(conclusion){
+
+                    conclusion.style.display =
+                        "none";
+
+                }
+            );
+
+        }
+    );
 
 
     document.getElementById(
@@ -2078,11 +2087,8 @@ function resetQuiz(){
 
 
     window.scrollTo({
-
         top:0,
-
         behavior:"smooth"
-
     });
 
 }
@@ -2090,4 +2096,4 @@ function resetQuiz(){
 </script>
 
 </body>
-            </html>
+           </html>
