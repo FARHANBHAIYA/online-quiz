@@ -31,6 +31,7 @@ body{
     box-shadow:0 7px 28px rgba(0,0,0,.16);
 }
 
+
 /* ================= HEADINGS ================= */
 
 .main-heading{
@@ -38,58 +39,72 @@ body{
     margin-bottom:25px;
 }
 
-/* FARHAN BHAIYA */
+
+/* ================= FARHAN BHAIYA BOX ================= */
 
 .farhan{
     display:inline-block;
-    font-family:Arial,sans-serif;
-    font-size:35px;
-    font-weight:900;
-    letter-spacing:2px;
+
+    padding:10px 24px;
+
+    border-radius:15px;
+
+    border:3px solid #075b9a;
 
     background:
         linear-gradient(
-            90deg,
-            #ff1744,
-            #ff9100,
-            #ffd600,
-            #00c853,
-            #00b0ff,
-            #7c4dff,
-            #ff1744
+            135deg,
+            #e8f5ff,
+            #ffffff,
+            #e8f5ff
         );
 
-    background-size:300% auto;
+    font-family:Arial,sans-serif;
 
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
+    font-size:35px;
 
-    animation:
-        headingColor 5s linear infinite;
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    color:#075b9a;
 
     text-shadow:
-        0 2px 8px rgba(0,0,0,.12);
-}
+        1px 2px 3px rgba(0,0,0,.18);
 
-@keyframes headingColor{
+    box-shadow:
+        0 5px 15px rgba(7,91,154,.22);
 
-    0%{
-        background-position:0% center;
-    }
-
-    100%{
-        background-position:300% center;
-    }
-
+    position:relative;
 }
 
 
-/* BIOLOGY */
+/* बाहरी आकर्षक बॉर्डर */
+
+.farhan::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-6px;
+
+    border-radius:19px;
+
+    border:2px solid rgba(126,70,255,.45);
+
+    pointer-events:none;
+}
+
+
+/* ================= BIOLOGY ================= */
 
 .biology{
-    margin-top:9px;
+
+    margin-top:13px;
+
     font-size:29px;
+
     font-weight:900;
 
     background:
@@ -101,7 +116,9 @@ body{
         );
 
     -webkit-background-clip:text;
+
     background-clip:text;
+
     color:transparent;
 
     text-shadow:
@@ -109,9 +126,10 @@ body{
 }
 
 
-/* OBJECTIVE */
+/* ================= OBJECTIVE ================= */
 
 .objective{
+
     display:inline-block;
 
     margin-top:10px;
@@ -131,6 +149,7 @@ body{
     color:#fff;
 
     font-size:18px;
+
     font-weight:900;
 
     box-shadow:
@@ -143,6 +162,7 @@ body{
 /* ================= QUESTION ================= */
 
 .question{
+
     position:relative;
 
     margin-top:21px;
@@ -164,8 +184,11 @@ body{
         0 4px 12px rgba(0,0,0,.08);
 }
 
+
 .question-text{
+
     font-size:20px;
+
     font-weight:900;
 
     line-height:1.65;
@@ -179,12 +202,15 @@ body{
 /* ================= OPTIONS ================= */
 
 .option{
+
     position:relative;
 
     display:flex;
+
     align-items:center;
 
     width:100%;
+
     min-height:55px;
 
     margin:11px 0;
@@ -205,6 +231,7 @@ body{
     color:#173449;
 
     font-size:18px;
+
     font-weight:600;
 
     text-align:left;
@@ -212,8 +239,12 @@ body{
     cursor:pointer;
 
     transition:
-        .25s;
+        background .25s,
+        border .25s,
+        transform .2s,
+        box-shadow .25s;
 }
+
 
 .option:hover:not(:disabled){
 
@@ -277,42 +308,52 @@ body{
 }
 
 
+/* ================= BLUE TICK ================= */
+
 /*
-   सही option पर blue tick केवल तब
-   जब user ने वही option click किया हो।
+   केवल वही सही option जिस पर
+   विद्यार्थी ने click किया हो,
+   उसमें blue tick आएगा।
 */
 
 .option.selected-correct .mark{
+
     display:flex;
 
     background:#1267d6;
 
     color:#fff;
+
 }
 
 
-/* WRONG MARK */
+/* ================= RED CROSS ================= */
 
 .option.wrong .mark{
+
     display:flex;
 
     background:#c40000;
 
     color:#fff;
+
 }
 
 
-/* MARK */
+/* ================= MARK ================= */
 
 .mark{
+
     position:absolute;
 
     right:13px;
+
     top:50%;
 
     transform:translateY(-50%);
 
     width:30px;
+
     height:30px;
 
     border-radius:50%;
@@ -320,11 +361,13 @@ body{
     display:none;
 
     align-items:center;
+
     justify-content:center;
 
     font-family:Arial,sans-serif;
 
     font-size:19px;
+
     font-weight:900;
 
     box-shadow:
@@ -332,9 +375,10 @@ body{
 }
 
 
-/* ================= FLOWER EFFECT ================= */
+/* ================= FLOWERS ================= */
 
 .option-flower{
+
     position:fixed;
 
     z-index:99999;
@@ -345,9 +389,11 @@ body{
         flowerBurst 1.7s ease-out forwards;
 }
 
+
 @keyframes flowerBurst{
 
     0%{
+
         transform:
             translate(0,0)
             scale(.25)
@@ -357,6 +403,7 @@ body{
     }
 
     25%{
+
         transform:
             translate(
                 calc(var(--x) * .35),
@@ -369,6 +416,7 @@ body{
     }
 
     100%{
+
         transform:
             translate(
                 var(--x),
@@ -379,6 +427,7 @@ body{
 
         opacity:0;
     }
+
 }
 
 
@@ -409,6 +458,7 @@ body{
     color:#fff;
 
     font-size:21px;
+
     font-weight:900;
 
     cursor:pointer;
@@ -419,6 +469,7 @@ body{
     transition:.3s;
 }
 
+
 #submitBtn:hover{
 
     transform:
@@ -427,6 +478,7 @@ body{
     box-shadow:
         0 7px 18px rgba(0,0,0,.3);
 }
+
 
 #submitBtn:disabled{
 
@@ -447,6 +499,7 @@ body{
     margin-top:27px;
 }
 
+
 .result-grid{
 
     display:grid;
@@ -456,6 +509,7 @@ body{
 
     gap:15px;
 }
+
 
 .result-card{
 
@@ -614,6 +668,7 @@ body{
 
     .farhan{
         font-size:28px;
+        padding:9px 18px;
     }
 
     .biology{
@@ -641,6 +696,7 @@ body{
     #finalMessage{
         font-size:18px;
     }
+
 }
 
 </style>
@@ -651,7 +707,10 @@ body{
 
 <div class="quiz-box">
 
-<!-- ================= HEADER ================= -->
+
+<!-- ==================================================
+     HEADER
+================================================== -->
 
 <div class="main-heading">
 
@@ -670,13 +729,17 @@ body{
 </div>
 
 
-<!-- ================= QUESTION 1 ================= -->
+
+<!-- ==================================================
+     QUESTION 1
+================================================== -->
 
 <div class="question" data-answer="A">
 
     <div class="question-text">
         1. प्रकाश संश्लेषण क्रिया में ऑक्सीजन बाहर निकलता है—
     </div>
+
 
     <button class="option"
             onclick="checkAnswer(this,'A')">
@@ -720,7 +783,10 @@ body{
 </div>
 
 
-<!-- ================= QUESTION 2 ================= -->
+
+<!-- ==================================================
+     QUESTION 2
+================================================== -->
 
 <div class="question" data-answer="B">
 
@@ -771,7 +837,10 @@ body{
 </div>
 
 
-<!-- ================= QUESTION 3 ================= -->
+
+<!-- ==================================================
+     QUESTION 3
+================================================== -->
 
 <div class="question" data-answer="C">
 
@@ -822,7 +891,10 @@ body{
 </div>
 
 
-<!-- ================= SUBMIT ================= -->
+
+<!-- ==================================================
+     SUBMIT
+================================================== -->
 
 <button id="submitBtn"
         onclick="submitQuiz()">
@@ -832,11 +904,18 @@ body{
 </button>
 
 
-<!-- ================= RESULT ================= -->
+
+<!-- ==================================================
+     RESULT
+================================================== -->
 
 <div id="resultArea">
 
+
     <div class="result-grid">
+
+
+        <!-- सही -->
 
         <div class="result-card correct-box">
 
@@ -852,6 +931,8 @@ body{
         </div>
 
 
+        <!-- गलत -->
+
         <div class="result-card wrong-box">
 
             ✕ गलत उत्तर
@@ -866,6 +947,8 @@ body{
         </div>
 
 
+        <!-- SCORE -->
+
         <div class="result-card score-box">
 
             🏆 SCORE
@@ -879,6 +962,8 @@ body{
 
         </div>
 
+
+        <!-- PERCENTAGE -->
 
         <div class="result-card percent-box">
 
@@ -908,7 +993,9 @@ body{
 
 </div>
 
+
 </div>
+
 
 
 <script>
@@ -924,6 +1011,7 @@ let attempted = 0;
 let submitted = false;
 
 
+
 /* ==================================================
    CORRECT SOUND
 ================================================== */
@@ -936,11 +1024,14 @@ function playCorrectSound(){
 
     if(!AudioContext) return;
 
+
     const ctx =
         new AudioContext();
 
+
     const notes =
         [523,659,784,1046];
+
 
     notes.forEach(
         function(freq,index){
@@ -951,11 +1042,14 @@ function playCorrectSound(){
         const gain =
             ctx.createGain();
 
+
         osc.type =
             "sine";
 
+
         osc.frequency.value =
             freq;
+
 
         osc.connect(gain);
 
@@ -963,24 +1057,29 @@ function playCorrectSound(){
             ctx.destination
         );
 
+
         const start =
             ctx.currentTime +
-            index * .09;
+            index*.09;
+
 
         gain.gain.setValueAtTime(
             .001,
             start
         );
 
+
         gain.gain.exponentialRampToValueAtTime(
             .3,
             start+.02
         );
 
+
         gain.gain.exponentialRampToValueAtTime(
             .001,
             start+.25
         );
+
 
         osc.start(start);
 
@@ -993,8 +1092,10 @@ function playCorrectSound(){
 }
 
 
+
 /* ==================================================
-   STRONG VIBRATION
+   WRONG ANSWER VIBRATION
+   केवल एक बार
 ================================================== */
 
 function strongVibration(){
@@ -1004,20 +1105,15 @@ function strongVibration(){
     ){
 
         /*
-          मजबूत और स्पष्ट vibration
+          एक ही vibration
         */
 
-        navigator.vibrate([
-            180,
-            70,
-            180,
-            70,
-            220
-        ]);
+        navigator.vibrate(350);
 
     }
 
 }
+
 
 
 /* ==================================================
@@ -1032,8 +1128,10 @@ function celebrationSound(){
 
     if(!AudioContext) return;
 
+
     const ctx =
         new AudioContext();
+
 
     const notes =
         [
@@ -1047,6 +1145,7 @@ function celebrationSound(){
             1568
         ];
 
+
     notes.forEach(
         function(freq,index){
 
@@ -1056,11 +1155,14 @@ function celebrationSound(){
         const gain =
             ctx.createGain();
 
+
         osc.type =
             "triangle";
 
+
         osc.frequency.value =
             freq;
+
 
         osc.connect(gain);
 
@@ -1068,24 +1170,29 @@ function celebrationSound(){
             ctx.destination
         );
 
+
         const start =
             ctx.currentTime +
             index*.11;
+
 
         gain.gain.setValueAtTime(
             .001,
             start
         );
 
+
         gain.gain.exponentialRampToValueAtTime(
             .3,
             start+.02
         );
 
+
         gain.gain.exponentialRampToValueAtTime(
             .001,
             start+.3
         );
+
 
         osc.start(start);
 
@@ -1096,6 +1203,7 @@ function celebrationSound(){
     });
 
 }
+
 
 
 /* ==================================================
@@ -1110,8 +1218,10 @@ function sadSound(){
 
     if(!AudioContext) return;
 
+
     const ctx =
         new AudioContext();
+
 
     const osc =
         ctx.createOscillator();
@@ -1119,18 +1229,22 @@ function sadSound(){
     const gain =
         ctx.createGain();
 
+
     osc.type =
         "sine";
+
 
     osc.frequency.setValueAtTime(
         330,
         ctx.currentTime
     );
 
+
     osc.frequency.exponentialRampToValueAtTime(
         110,
         ctx.currentTime+1.2
     );
+
 
     osc.connect(gain);
 
@@ -1138,15 +1252,18 @@ function sadSound(){
         ctx.destination
     );
 
+
     gain.gain.setValueAtTime(
         .23,
         ctx.currentTime
     );
 
+
     gain.gain.exponentialRampToValueAtTime(
         .001,
         ctx.currentTime+1.2
     );
+
 
     osc.start();
 
@@ -1157,8 +1274,9 @@ function sadSound(){
 }
 
 
+
 /* ==================================================
-   FLOWERS FROM OPTION
+   FLOWERS FROM SELECTED OPTION
 ================================================== */
 
 function flowerBurst(option){
@@ -1190,6 +1308,7 @@ function flowerBurst(option){
                 "div"
             );
 
+
         flower.className =
             "option-flower";
 
@@ -1220,9 +1339,12 @@ function flowerBurst(option){
         const x =
             Math.random()*240-120;
 
+
         const y =
-            -(70+
-              Math.random()*170);
+            -(
+                70+
+                Math.random()*170
+            );
 
 
         flower.style.setProperty(
@@ -1261,6 +1383,7 @@ function flowerBurst(option){
     }
 
 }
+
 
 
 /* ==================================================
@@ -1323,9 +1446,10 @@ function checkAnswer(
     });
 
 
-    /* ==========================
-       RIGHT ANSWER
-    ========================== */
+
+    /* ==================================================
+       CORRECT ANSWER
+    ================================================== */
 
     if(
         selected ===
@@ -1334,6 +1458,10 @@ function checkAnswer(
 
         score++;
 
+
+        /*
+          Green + Blue Tick
+        */
 
         button.classList.add(
             "correct",
@@ -1347,8 +1475,26 @@ function checkAnswer(
             "✓";
 
 
+        /*
+          Blue tick दिखाई देगा
+        */
+
+        button.querySelector(
+            ".mark"
+        ).style.display =
+            "flex";
+
+
+        /*
+          सही sound
+        */
+
         playCorrectSound();
 
+
+        /*
+          उसी option से फूल
+        */
 
         flowerBurst(
             button
@@ -1357,14 +1503,16 @@ function checkAnswer(
     }
 
 
-    /* ==========================
+
+    /* ==================================================
        WRONG ANSWER
-    ========================== */
+    ================================================== */
 
     else{
 
         /*
-          चुना हुआ गलत option RED
+          चुना हुआ गलत option:
+          RED + CROSS
         */
 
         button.classList.add(
@@ -1378,9 +1526,14 @@ function checkAnswer(
             "✕";
 
 
+        button.querySelector(
+            ".mark"
+        ).style.display =
+            "flex";
+
+
         /*
-          सही option GREEN
-          लेकिन BLUE TICK नहीं
+          सही option खोजें
         */
 
         options.forEach(
@@ -1401,13 +1554,17 @@ function checkAnswer(
                 )
             ){
 
+                /*
+                  सही option केवल GREEN
+                */
+
                 option.classList.add(
                     "correct"
                 );
 
+
                 /*
-                   सही option का mark
-                   पूरी तरह छिपा रहेगा
+                  BLUE TICK बिल्कुल नहीं
                 */
 
                 option.querySelector(
@@ -1421,7 +1578,7 @@ function checkAnswer(
 
 
         /*
-          केवल vibration
+          केवल एक बार vibration
           कोई sound नहीं
         */
 
@@ -1430,6 +1587,7 @@ function checkAnswer(
     }
 
 }
+
 
 
 /* ==================================================
@@ -1509,6 +1667,11 @@ function submitQuiz(){
         "block";
 
 
+    /*
+      Submit के बाद options
+      attractive ही रहें
+    */
+
     document.querySelectorAll(
         ".option"
     ).forEach(
@@ -1526,9 +1689,10 @@ function submitQuiz(){
         );
 
 
-    /* ==========================
+
+    /* ==================================================
        HIGH SCORE
-    ========================== */
+    ================================================== */
 
     if(
         percentage >= 70
@@ -1554,8 +1718,7 @@ function submitQuiz(){
 
 
         /*
-          Celebration में सही options
-          से flowers
+          Celebration flowers
         */
 
         const correctOptions =
@@ -1583,9 +1746,10 @@ function submitQuiz(){
     }
 
 
-    /* ==========================
+
+    /* ==================================================
        MEDIUM SCORE
-    ========================== */
+    ================================================== */
 
     else if(
         percentage >= 40
@@ -1609,9 +1773,10 @@ function submitQuiz(){
     }
 
 
-    /* ==========================
+
+    /* ==================================================
        LOW SCORE
-    ========================== */
+    ================================================== */
 
     else{
 
@@ -1651,8 +1816,9 @@ function submitQuiz(){
 }
 
 
+
 /* ==================================================
-   RESET
+   RESET QUIZ
 ================================================== */
 
 function resetQuiz(){
