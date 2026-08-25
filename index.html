@@ -7,13 +7,14 @@
 <title>FARHAN BHAIYA - Biology Quiz</title>
 
 <style>
+
 *{
     box-sizing:border-box;
 }
 
 body{
     margin:0;
-    padding:18px 10px 50px;
+    padding:20px 12px 55px;
     font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
     background:linear-gradient(135deg,#eef7ff,#fff8ec,#f2fff4);
     color:#172033;
@@ -24,164 +25,346 @@ body{
     margin:auto;
 }
 
-/* FARHAN BOX */
+
+/* =========================
+   FARHAN BOX
+========================= */
+
 .farhan-box{
     text-align:center;
-    margin-bottom:14px;
+    margin-bottom:16px;
 }
 
 .farhan{
     display:inline-block;
-    padding:10px 25px;
-    border-radius:16px;
+    padding:12px 28px;
+    border-radius:17px;
     color:white;
-    font-size:25px;
+    font-size:29px;
     font-weight:900;
     letter-spacing:1px;
     background:linear-gradient(135deg,#7b1fa2,#e91e63,#ff9800);
     border:3px solid white;
+
     box-shadow:
         0 5px 18px rgba(100,0,120,.30),
         inset 0 0 12px rgba(255,255,255,.25);
+
     text-shadow:0 2px 4px rgba(0,0,0,.35);
 }
 
-/* HEADINGS */
+
+/* =========================
+   HEADINGS
+========================= */
+
 .main-heading{
     text-align:center;
-    font-size:27px;
+    font-size:31px;
+    line-height:1.4;
     font-weight:900;
-    padding:13px 10px;
-    border-radius:15px;
+    padding:15px 12px;
+    border-radius:16px;
     color:white;
-    background:linear-gradient(90deg,#00695c,#00838f,#3949ab);
-    box-shadow:0 5px 15px rgba(0,80,100,.25);
-    margin-bottom:9px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00695c,
+            #00838f,
+            #3949ab
+        );
+
+    box-shadow:
+        0 5px 15px rgba(0,80,100,.25);
+
+    margin-bottom:11px;
 }
 
 .sub-heading{
     text-align:center;
-    font-size:20px;
+    font-size:23px;
+    line-height:1.5;
     font-weight:800;
     color:#7b1fa2;
     background:#fff;
     border:2px solid #ce93d8;
-    border-radius:12px;
-    padding:8px;
-    margin-bottom:18px;
+    border-radius:13px;
+    padding:10px 8px;
+    margin-bottom:20px;
 }
 
-/* QUESTION CARD */
+
+/* =========================
+   QUESTION CARD
+========================= */
+
 .question-card{
     position:relative;
-    background:rgba(255,255,255,.96);
-    border-radius:17px;
-    padding:17px;
-    margin:16px 0;
-    border-left:7px solid #3949ab;
-    box-shadow:0 5px 17px rgba(30,50,80,.14);
+
+    background:rgba(255,255,255,.97);
+
+    border-radius:18px;
+
+    padding:20px;
+
+    margin:18px 0;
+
+    border-left:8px solid #3949ab;
+
+    box-shadow:
+        0 5px 17px rgba(30,50,80,.14);
+
     overflow:hidden;
 }
 
+
+/* =========================
+   QUESTION
+========================= */
+
 .question{
-    font-size:19px;
-    line-height:1.65;
+    font-size:22px;
+    line-height:1.7;
     font-weight:800;
-    margin-bottom:12px;
+    margin-bottom:14px;
 }
 
-/* OPTIONS */
+
+/* =========================
+   QUESTION NUMBER
+========================= */
+
+.q-number{
+    display:inline-block;
+
+    padding:5px 11px;
+
+    border-radius:9px;
+
+    background:#3949ab;
+
+    color:white;
+
+    margin-right:8px;
+
+    font-size:18px;
+
+    font-weight:900;
+}
+
+
+/* =========================
+   OPTIONS
+========================= */
+
 .option{
     position:relative;
+
     width:100%;
+
     text-align:left;
-    margin:9px 0;
-    padding:12px 45px 12px 15px;
+
+    margin:11px 0;
+
+    padding:14px 52px 14px 17px;
+
     border:none;
-    border-radius:12px;
-    background:linear-gradient(135deg,#d7e8ff,#bcd6f7);
+
+    border-radius:13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d7e8ff,
+            #bcd6f7
+        );
+
     color:#15233b;
-    font-size:17px;
+
+    font-size:20px;
+
+    line-height:1.55;
+
     font-weight:700;
+
     cursor:pointer;
-    box-shadow:0 3px 7px rgba(30,60,100,.18);
+
+    box-shadow:
+        0 3px 7px rgba(30,60,100,.18);
+
     transition:.25s ease;
 }
 
 .option:hover{
     transform:translateX(4px);
-    background:linear-gradient(135deg,#c2daf8,#a8c9f0);
+
+    background:
+        linear-gradient(
+            135deg,
+            #c2daf8,
+            #a8c9f0
+        );
 }
 
 .option:active{
     transform:scale(.98);
 }
 
-/* SELECTED WRONG */
+
+/* =========================
+   WRONG
+========================= */
+
 .option.wrong{
-    background:linear-gradient(135deg,#d83b45,#a91420);
+
+    background:
+        linear-gradient(
+            135deg,
+            #d83b45,
+            #a91420
+        );
+
     color:white;
-    box-shadow:0 5px 14px rgba(180,0,20,.35);
+
+    box-shadow:
+        0 5px 14px rgba(180,0,20,.35);
 }
 
-/* CORRECT */
+
+/* =========================
+   CORRECT
+========================= */
+
 .option.correct{
-    background:linear-gradient(135deg,#198754,#0d6b43);
+
+    background:
+        linear-gradient(
+            135deg,
+            #198754,
+            #0d6b43
+        );
+
     color:white;
-    box-shadow:0 5px 14px rgba(0,110,60,.35);
+
+    box-shadow:
+        0 5px 14px rgba(0,110,60,.35);
 }
 
-/* CORRECT OPTION AFTER WRONG CLICK */
+
+/* =========================
+   REVEAL CORRECT
+========================= */
+
 .option.reveal-correct{
-    background:linear-gradient(135deg,#17844e,#0b673e);
+
+    background:
+        linear-gradient(
+            135deg,
+            #17844e,
+            #0b673e
+        );
+
     color:white;
 }
 
-/* TICK */
+
+/* =========================
+   TICK
+========================= */
+
 .tick{
+
     position:absolute;
-    right:13px;
+
+    right:14px;
+
     top:50%;
+
     transform:translateY(-50%);
-    width:27px;
-    height:27px;
+
+    width:31px;
+
+    height:31px;
+
     border-radius:50%;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
-    font-size:18px;
+
+    font-size:21px;
+
     font-weight:900;
+
     background:#1677ff;
+
     color:white;
-    box-shadow:0 2px 8px rgba(0,0,0,.3);
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,.3);
 }
+
+
+/* =========================
+   CROSS
+========================= */
 
 .cross{
+
     position:absolute;
-    right:13px;
+
+    right:14px;
+
     top:50%;
+
     transform:translateY(-50%);
-    width:26px;
-    height:26px;
+
+    width:30px;
+
+    height:30px;
+
     border-radius:50%;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
-    font-size:18px;
+
+    font-size:21px;
+
     font-weight:900;
+
     background:#e31b23;
+
     color:white;
-    box-shadow:0 2px 8px rgba(0,0,0,.3);
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,.3);
 }
 
-/* CONCLUSION */
+
+/* =========================
+   CONCLUSION
+========================= */
+
 .conclusion{
+
     display:none;
-    margin:5px 4px 10px;
-    padding:10px 13px;
-    border-radius:10px;
-    font-size:15.5px;
-    line-height:1.65;
+
+    margin:7px 5px 12px;
+
+    padding:12px 15px;
+
+    border-radius:11px;
+
+    font-size:18px;
+
+    line-height:1.7;
+
     font-weight:600;
 }
 
@@ -190,43 +373,60 @@ body{
 }
 
 .conclusion.green{
+
     background:#d8f4e5;
+
     color:#075b32;
-    border-left:5px solid #159447;
+
+    border-left:6px solid #159447;
 }
 
 .conclusion.red{
+
     background:#ffe0e2;
+
     color:#8d1720;
-    border-left:5px solid #d32635;
+
+    border-left:6px solid #d32635;
 }
 
-/* QUESTION NUMBER */
-.q-number{
-    display:inline-block;
-    padding:4px 9px;
-    border-radius:8px;
-    background:#3949ab;
-    color:white;
-    margin-right:7px;
-    font-size:15px;
-}
 
-/* SUBMIT */
+/* =========================
+   SUBMIT
+========================= */
+
 .submit-area{
+
     text-align:center;
-    margin:30px 0;
+
+    margin:35px 0;
 }
 
 .submit-btn{
+
     border:none;
-    padding:15px 42px;
-    border-radius:14px;
-    font-size:21px;
+
+    padding:17px 45px;
+
+    border-radius:15px;
+
+    font-size:24px;
+
     font-weight:900;
+
     color:white;
-    background:linear-gradient(135deg,#6a1b9a,#283593,#00695c);
-    box-shadow:0 6px 18px rgba(50,30,120,.35);
+
+    background:
+        linear-gradient(
+            135deg,
+            #6a1b9a,
+            #283593,
+            #00695c
+        );
+
+    box-shadow:
+        0 6px 18px rgba(50,30,120,.35);
+
     cursor:pointer;
 }
 
@@ -234,211 +434,535 @@ body{
     transform:translateY(-2px);
 }
 
-/* RESULT */
+
+/* =========================
+   RESULT
+========================= */
+
 .result{
+
     display:none;
-    margin-top:25px;
+
+    margin-top:28px;
 }
 
 .result-title{
+
     text-align:center;
-    font-size:26px;
+
+    font-size:30px;
+
     font-weight:900;
+
     color:white;
-    background:linear-gradient(90deg,#4a148c,#ad1457,#00695c);
-    padding:13px;
-    border-radius:14px;
-    margin-bottom:14px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #4a148c,
+            #ad1457,
+            #00695c
+        );
+
+    padding:15px;
+
+    border-radius:15px;
+
+    margin-bottom:16px;
 }
 
 .result-grid{
+
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:13px;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:15px;
 }
 
 .result-box{
-    padding:17px 10px;
-    border-radius:14px;
+
+    padding:19px 10px;
+
+    border-radius:15px;
+
     text-align:center;
+
     color:white;
-    box-shadow:0 5px 13px rgba(0,0,0,.22);
+
+    box-shadow:
+        0 5px 13px rgba(0,0,0,.22);
 }
 
 .result-box .label{
-    font-size:16px;
+
+    font-size:19px;
+
     font-weight:800;
 }
 
 .result-box .value{
-    font-size:30px;
+
+    font-size:34px;
+
     font-weight:900;
-    margin-top:4px;
+
+    margin-top:5px;
 }
 
 .green-box{
-    background:linear-gradient(135deg,#087f46,#064d2e);
+
+    background:
+        linear-gradient(
+            135deg,
+            #087f46,
+            #064d2e
+        );
 }
 
 .red-box{
-    background:linear-gradient(135deg,#c62828,#7f1010);
+
+    background:
+        linear-gradient(
+            135deg,
+            #c62828,
+            #7f1010
+        );
 }
 
 .score-box{
-    background:linear-gradient(135deg,#1565c0,#0d47a1);
+
+    background:
+        linear-gradient(
+            135deg,
+            #1565c0,
+            #0d47a1
+        );
 }
 
 .percent-box{
-    background:linear-gradient(135deg,#6a1b9a,#452080);
+
+    background:
+        linear-gradient(
+            135deg,
+            #6a1b9a,
+            #452080
+        );
 }
 
-/* FLOWER */
+
+/* =========================
+   FLOWER
+========================= */
+
 .flower-layer{
+
     position:fixed;
+
     inset:0;
+
     pointer-events:none;
+
     overflow:hidden;
+
     z-index:9999;
 }
 
 .petal{
+
     position:fixed;
+
     width:13px;
+
     height:18px;
-    border-radius:70% 30% 70% 30%;
+
+    border-radius:
+        70% 30% 70% 30%;
+
     opacity:1;
+
     pointer-events:none;
-    animation:petalMove 2.4s linear forwards;
+
+    animation:
+        petalMove 2.4s linear forwards;
 }
 
 @keyframes petalMove{
+
     0%{
-        transform:translate(0,0) rotate(0deg);
+        transform:
+            translate(0,0)
+            rotate(0deg);
+
         opacity:1;
     }
+
     25%{
-        transform:translate(var(--x1),var(--y1)) rotate(100deg);
+        transform:
+            translate(
+                var(--x1),
+                var(--y1)
+            )
+            rotate(100deg);
+
         opacity:1;
     }
+
     55%{
-        transform:translate(var(--x2),var(--y2)) rotate(220deg);
+        transform:
+            translate(
+                var(--x2),
+                var(--y2)
+            )
+            rotate(220deg);
+
         opacity:.9;
     }
+
     80%{
-        transform:translate(var(--x3),var(--y3)) rotate(310deg);
+        transform:
+            translate(
+                var(--x3),
+                var(--y3)
+            )
+            rotate(310deg);
+
         opacity:.65;
     }
+
     100%{
-        transform:translate(var(--x4),var(--y4)) rotate(430deg);
+        transform:
+            translate(
+                var(--x4),
+                var(--y4)
+            )
+            rotate(430deg);
+
         opacity:0;
     }
 }
 
-/* RESPONSIVE */
+
+/* =========================
+   MOBILE
+   बड़ा और साफ TEXT
+========================= */
+
 @media(max-width:600px){
 
     body{
-        padding:10px 7px 40px;
+        padding:12px 8px 45px;
     }
 
     .farhan{
-        font-size:22px;
+
+        font-size:25px;
+
+        padding:11px 23px;
     }
 
     .main-heading{
-        font-size:23px;
+
+        font-size:27px;
+
+        line-height:1.45;
+
+        padding:14px 8px;
     }
 
     .sub-heading{
-        font-size:17px;
+
+        font-size:20px;
+
+        line-height:1.55;
+
+        padding:9px 7px;
+    }
+
+    .question-card{
+
+        padding:17px 14px;
+
+        margin:17px 0;
+
+        border-left-width:7px;
     }
 
     .question{
+
+        font-size:20px;
+
+        line-height:1.75;
+
+        margin-bottom:13px;
+    }
+
+    .q-number{
+
         font-size:17px;
+
+        padding:4px 9px;
     }
 
     .option{
-        font-size:15.5px;
-        padding:11px 42px 11px 12px;
+
+        font-size:18px;
+
+        line-height:1.6;
+
+        padding:13px 48px 13px 14px;
+
+        margin:10px 0;
     }
 
     .conclusion{
-        font-size:14.5px;
+
+        font-size:17px;
+
+        line-height:1.7;
+
+        padding:11px 13px;
     }
 
-    .result-grid{
-        grid-template-columns:1fr 1fr;
+    .tick,
+    .cross{
+
+        width:29px;
+
+        height:29px;
+
+        font-size:20px;
+
+        right:12px;
     }
+
+    .submit-btn{
+
+        font-size:22px;
+
+        padding:16px 34px;
+    }
+
+    .result-title{
+
+        font-size:27px;
+    }
+
+    .result-box .label{
+
+        font-size:17px;
+    }
+
+    .result-box .value{
+
+        font-size:30px;
+    }
+
 }
+
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media(max-width:380px){
+
+    .farhan{
+        font-size:23px;
+    }
+
+    .main-heading{
+        font-size:25px;
+    }
+
+    .sub-heading{
+        font-size:18px;
+    }
+
+    .question{
+        font-size:19px;
+    }
+
+    .option{
+        font-size:17px;
+    }
+
+    .conclusion{
+        font-size:16px;
+    }
+
+}
+
 </style>
 </head>
+
 
 <body>
 
 <div class="container">
 
+
+<!-- =========================
+     FARHAN
+========================= -->
+
 <div class="farhan-box">
-    <div class="farhan">✨ FARHAN BHAIYA ✨</div>
+
+    <div class="farhan">
+        ✨ FARHAN BHAIYA ✨
+    </div>
+
 </div>
+
+
+<!-- =========================
+     HEADING
+========================= -->
 
 <div class="main-heading">
+
     🧬 BIOLOGY - जैव प्रक्रम 🧬
+
 </div>
 
+
 <div class="sub-heading">
+
     📚 QUESTION BANK OBJECTIVE • पोषण • 63 प्रश्न
+
 </div>
+
 
 <div id="quiz"></div>
 
+
+<!-- =========================
+     SUBMIT
+========================= -->
+
 <div class="submit-area">
-    <button class="submit-btn" onclick="submitQuiz()">
+
+    <button
+        class="submit-btn"
+        onclick="submitQuiz()">
+
         🏆 SUBMIT QUIZ 🏆
+
     </button>
+
 </div>
 
-<div class="result" id="result">
+
+<!-- =========================
+     RESULT
+========================= -->
+
+<div
+    class="result"
+    id="result">
+
 
     <div class="result-title">
+
         🎉 QUIZ RESULT 🎉
+
     </div>
+
 
     <div class="result-grid">
 
+
         <div class="result-box green-box">
-            <div class="label">सही उत्तर</div>
-            <div class="value" id="correctCount">0</div>
+
+            <div class="label">
+                सही उत्तर
+            </div>
+
+            <div
+                class="value"
+                id="correctCount">
+
+                0
+
+            </div>
+
         </div>
+
 
         <div class="result-box red-box">
-            <div class="label">गलत उत्तर</div>
-            <div class="value" id="wrongCount">0</div>
+
+            <div class="label">
+                गलत उत्तर
+            </div>
+
+            <div
+                class="value"
+                id="wrongCount">
+
+                0
+
+            </div>
+
         </div>
+
 
         <div class="result-box score-box">
-            <div class="label">SCORE</div>
-            <div class="value" id="score">0 / 63</div>
+
+            <div class="label">
+                SCORE
+            </div>
+
+            <div
+                class="value"
+                id="score">
+
+                0 / 63
+
+            </div>
+
         </div>
 
+
         <div class="result-box percent-box">
-            <div class="label">PERCENTAGE</div>
-            <div class="value" id="percentage">0%</div>
+
+            <div class="label">
+                PERCENTAGE
+            </div>
+
+            <div
+                class="value"
+                id="percentage">
+
+                0%
+
+            </div>
+
         </div>
 
     </div>
-</div>
 
 </div>
 
-<div class="flower-layer" id="flowerLayer"></div>
+</div>
+
+
+<div
+    class="flower-layer"
+    id="flowerLayer">
+</div>
+
+
 
 <script>
 
-/* =========================
+
+/* =====================================================
    QUESTIONS
-========================= */
+===================================================== */
 
 const questions = [
+
 {
 q:"प्रकाश संश्लेषण में बाहर निकलने वाली ऑक्सीजन का मुख्य स्रोत क्या है?",
 o:["जल","CO₂","ग्लूकोज","डिक्टियोसोम"],
@@ -882,129 +1406,212 @@ e:"गार्ड कोशिका की भीतरी भित्ति 
 ];
 
 
-/* =========================
+/* =====================================================
    QUIZ BUILD
-========================= */
+===================================================== */
 
-const quiz = document.getElementById("quiz");
+const quiz =
+    document.getElementById("quiz");
 
-let states = questions.map(() => ({
-    locked:false,
-    selected:null,
-    answered:false
-}));
+let states =
+    questions.map(() => ({
+        locked:false,
+        selected:null,
+        answered:false
+    }));
+
 
 function createQuiz(){
 
-    questions.forEach((item,index)=>{
+    questions.forEach(
+        (item,index)=>{
 
-        const card=document.createElement("div");
-        card.className="question-card";
-        card.dataset.index=index;
+            const card =
+                document.createElement("div");
 
-        const q=document.createElement("div");
-        q.className="question";
+            card.className =
+                "question-card";
 
-        q.innerHTML=
-            `<span class="q-number">Q${index+1}</span>${item.q}`;
+            card.dataset.index =
+                index;
 
-        card.appendChild(q);
 
-        item.o.forEach((text,optIndex)=>{
+            const q =
+                document.createElement("div");
 
-            const letter=String.fromCharCode(65+optIndex);
+            q.className =
+                "question";
 
-            const wrapper=document.createElement("div");
 
-            const btn=document.createElement("button");
-            btn.className="option";
-            btn.dataset.letter=letter;
+            q.innerHTML =
+                `<span class="q-number">
+                    Q${index+1}
+                </span>${item.q}`;
 
-            btn.innerHTML=`(${letter}) ${text}`;
 
-            const conclusion=document.createElement("div");
-            conclusion.className="conclusion";
+            card.appendChild(q);
 
-            wrapper.appendChild(btn);
-            wrapper.appendChild(conclusion);
-            card.appendChild(wrapper);
 
-            btn.addEventListener("click",()=>{
+            item.o.forEach(
+                (text,optIndex)=>{
 
-                handleOption(
-                    index,
-                    letter,
-                    btn,
-                    conclusion,
-                    card
-                );
+                    const letter =
+                        String.fromCharCode(
+                            65+optIndex
+                        );
 
-            });
 
-        });
+                    const wrapper =
+                        document.createElement("div");
 
-        quiz.appendChild(card);
 
-    });
+                    const btn =
+                        document.createElement("button");
+
+                    btn.className =
+                        "option";
+
+                    btn.dataset.letter =
+                        letter;
+
+
+                    btn.innerHTML =
+                        `(${letter}) ${text}`;
+
+
+                    const conclusion =
+                        document.createElement("div");
+
+                    conclusion.className =
+                        "conclusion";
+
+
+                    wrapper.appendChild(btn);
+
+                    wrapper.appendChild(
+                        conclusion
+                    );
+
+                    card.appendChild(wrapper);
+
+
+                    btn.addEventListener(
+                        "click",
+                        ()=>{
+
+                            handleOption(
+                                index,
+                                letter,
+                                btn,
+                                conclusion,
+                                card
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+
+            quiz.appendChild(card);
+
+        }
+    );
 
 }
 
 createQuiz();
 
 
-/* =========================
+
+/* =====================================================
    OPTION CLICK
-========================= */
+===================================================== */
 
-function handleOption(qIndex,letter,btn,conclusion,card){
+function handleOption(
+    qIndex,
+    letter,
+    btn,
+    conclusion,
+    card
+){
 
-    const state=states[qIndex];
-    const question=questions[qIndex];
+    const state =
+        states[qIndex];
 
-    /*
-       पहली बार क्लिक:
-       answer lock होगा
-    */
+    const question =
+        questions[qIndex];
+
 
     if(!state.locked){
 
-        state.locked=true;
-        state.selected=letter;
-        state.answered=true;
+        state.locked =
+            true;
 
-        const isCorrect=question.a.includes(letter);
+        state.selected =
+            letter;
 
-        /*
-           सभी options निकालें
-        */
-        const buttons=card.querySelectorAll(".option");
+        state.answered =
+            true;
 
-        buttons.forEach((b)=>{
 
-            const l=b.dataset.letter;
+        const isCorrect =
+            question.a.includes(letter);
 
-            if(question.a.includes(l)){
 
-                b.classList.add("reveal-correct");
+        const buttons =
+            card.querySelectorAll(
+                ".option"
+            );
+
+
+        buttons.forEach(
+            (b)=>{
+
+                const l =
+                    b.dataset.letter;
+
+
+                if(
+                    question.a.includes(l)
+                ){
+
+                    b.classList.add(
+                        "reveal-correct"
+                    );
+
+                }
 
             }
+        );
 
-        });
-
-        /*
-           clicked option
-        */
 
         if(isCorrect){
 
-            btn.classList.remove("reveal-correct");
-            btn.classList.add("correct");
+            btn.classList.remove(
+                "reveal-correct"
+            );
 
-            const tick=document.createElement("span");
-            tick.className="tick";
-            tick.innerHTML="✓";
+            btn.classList.add(
+                "correct"
+            );
+
+
+            const tick =
+                document.createElement(
+                    "span"
+                );
+
+            tick.className =
+                "tick";
+
+            tick.innerHTML =
+                "✓";
+
 
             btn.appendChild(tick);
+
 
             showConclusion(
                 conclusion,
@@ -1012,20 +1619,37 @@ function handleOption(qIndex,letter,btn,conclusion,card){
                 question.e
             );
 
+
             correctSound();
 
             flowerBurst(btn);
 
+
         }else{
 
-            btn.classList.remove("reveal-correct");
-            btn.classList.add("wrong");
+            btn.classList.remove(
+                "reveal-correct"
+            );
 
-            const cross=document.createElement("span");
-            cross.className="cross";
-            cross.innerHTML="×";
+            btn.classList.add(
+                "wrong"
+            );
+
+
+            const cross =
+                document.createElement(
+                    "span"
+                );
+
+            cross.className =
+                "cross";
+
+            cross.innerHTML =
+                "×";
+
 
             btn.appendChild(cross);
+
 
             showConclusion(
                 conclusion,
@@ -1033,24 +1657,18 @@ function handleOption(qIndex,letter,btn,conclusion,card){
                 question.e
             );
 
-            /*
-              गलत पर केवल vibration
-            */
+
             vibrateOnce();
 
         }
 
     }
 
-    /*
-       पहली बार के बाद:
-       answer change नहीं होगा,
-       केवल clicked option का conclusion दिखेगा।
-    */
-
     else{
 
-        const isCorrect=question.a.includes(letter);
+        const isCorrect =
+            question.a.includes(letter);
+
 
         showConclusion(
             conclusion,
@@ -1059,461 +1677,744 @@ function handleOption(qIndex,letter,btn,conclusion,card){
         );
 
     }
+
 }
 
 
-/* =========================
+
+/* =====================================================
    CONCLUSION
-========================= */
+===================================================== */
 
-function showConclusion(el,isCorrect,text){
+function showConclusion(
+    el,
+    isCorrect,
+    text
+){
 
-    /*
-       इसी question के बाकी conclusions hide
-    */
+    const card =
+        el.closest(
+            ".question-card"
+        );
 
-    const card=el.closest(".question-card");
 
-    card.querySelectorAll(".conclusion")
-        .forEach(c=>{
-            c.classList.remove("show","green","red");
-        });
+    card.querySelectorAll(
+        ".conclusion"
+    )
+    .forEach(
+        c=>{
+            c.classList.remove(
+                "show",
+                "green",
+                "red"
+            );
+        }
+    );
 
-    el.innerHTML=
-        `<b>${isCorrect ? "✓ सही:" : "✗ गलत:"}</b> ${text}`;
 
-    el.classList.add("show");
+    el.innerHTML =
+        `<b>
+            ${isCorrect ? "✓ सही:" : "✗ गलत:"}
+        </b> ${text}`;
 
-    if(isCorrect)
-        el.classList.add("green");
-    else
-        el.classList.add("red");
+
+    el.classList.add(
+        "show"
+    );
+
+
+    if(isCorrect){
+
+        el.classList.add(
+            "green"
+        );
+
+    }else{
+
+        el.classList.add(
+            "red"
+        );
+
+    }
+
 }
 
 
-/* =========================
+
+/* =====================================================
    VIBRATION
-========================= */
+===================================================== */
 
 function vibrateOnce(){
 
     if(navigator.vibrate){
 
-        /*
-          एक ही बार का मजबूत vibration
-        */
         navigator.vibrate(500);
 
     }
+
 }
 
 
-/* =========================
-   AUDIO
-========================= */
 
-let audioCtx=null;
+/* =====================================================
+   AUDIO
+===================================================== */
+
+let audioCtx =
+    null;
+
 
 function getAudio(){
 
     if(!audioCtx){
 
-        audioCtx=
-            new (window.AudioContext ||
-            window.webkitAudioContext)();
+        audioCtx =
+            new (
+                window.AudioContext ||
+                window.webkitAudioContext
+            )();
 
     }
 
-    if(audioCtx.state==="suspended")
+
+    if(
+        audioCtx.state ===
+        "suspended"
+    ){
+
         audioCtx.resume();
 
+    }
+
+
     return audioCtx;
+
 }
 
 
-/* सही उत्तर sound */
+
+/* =====================================================
+   CORRECT SOUND
+===================================================== */
 
 function correctSound(){
 
-    const ctx=getAudio();
+    const ctx =
+        getAudio();
 
-    const osc=ctx.createOscillator();
-    const gain=ctx.createGain();
 
-    osc.type="sine";
+    const osc =
+        ctx.createOscillator();
+
+    const gain =
+        ctx.createGain();
+
+
+    osc.type =
+        "sine";
+
 
     osc.frequency.setValueAtTime(
         600,
         ctx.currentTime
     );
 
+
     osc.frequency.exponentialRampToValueAtTime(
         1100,
         ctx.currentTime+0.28
     );
 
+
     gain.gain.setValueAtTime(
         0.0001,
         ctx.currentTime
     );
+
 
     gain.gain.exponentialRampToValueAtTime(
         0.20,
         ctx.currentTime+0.03
     );
 
+
     gain.gain.exponentialRampToValueAtTime(
         0.0001,
         ctx.currentTime+0.45
     );
 
+
     osc.connect(gain);
-    gain.connect(ctx.destination);
+
+    gain.connect(
+        ctx.destination
+    );
+
 
     osc.start();
-    osc.stop(ctx.currentTime+0.5);
+
+    osc.stop(
+        ctx.currentTime+0.5
+    );
+
 }
 
 
-/* celebration */
+
+/* =====================================================
+   CELEBRATION SOUND
+===================================================== */
 
 function celebrationSound(){
 
-    const ctx=getAudio();
+    const ctx =
+        getAudio();
 
-    const notes=[
-        523,659,784,1046,1318
-    ];
 
-    notes.forEach((freq,i)=>{
+    const notes =
+        [
+            523,
+            659,
+            784,
+            1046,
+            1318
+        ];
 
-        const osc=ctx.createOscillator();
-        const gain=ctx.createGain();
 
-        osc.type="triangle";
+    notes.forEach(
+        (freq,i)=>{
 
-        osc.frequency.value=freq;
+            const osc =
+                ctx.createOscillator();
 
-        const start=ctx.currentTime+i*.12;
+            const gain =
+                ctx.createGain();
 
-        gain.gain.setValueAtTime(
-            0.0001,start
-        );
 
-        gain.gain.exponentialRampToValueAtTime(
-            .16,start+.03
-        );
+            osc.type =
+                "triangle";
 
-        gain.gain.exponentialRampToValueAtTime(
-            .0001,start+.30
-        );
 
-        osc.connect(gain);
-        gain.connect(ctx.destination);
+            osc.frequency.value =
+                freq;
 
-        osc.start(start);
-        osc.stop(start+.34);
 
-    });
+            const start =
+                ctx.currentTime +
+                i*.12;
+
+
+            gain.gain.setValueAtTime(
+                0.0001,
+                start
+            );
+
+
+            gain.gain.exponentialRampToValueAtTime(
+                .16,
+                start+.03
+            );
+
+
+            gain.gain.exponentialRampToValueAtTime(
+                .0001,
+                start+.30
+            );
+
+
+            osc.connect(gain);
+
+            gain.connect(
+                ctx.destination
+            );
+
+
+            osc.start(start);
+
+            osc.stop(
+                start+.34
+            );
+
+        }
+    );
 
 }
 
 
-/* low score sound */
+
+/* =====================================================
+   LOW SCORE SOUND
+===================================================== */
 
 function sadSound(){
 
-    const ctx=getAudio();
+    const ctx =
+        getAudio();
 
-    const osc=ctx.createOscillator();
-    const gain=ctx.createGain();
 
-    osc.type="sine";
+    const osc =
+        ctx.createOscillator();
+
+    const gain =
+        ctx.createGain();
+
+
+    osc.type =
+        "sine";
+
 
     osc.frequency.setValueAtTime(
         380,
         ctx.currentTime
     );
 
+
     osc.frequency.exponentialRampToValueAtTime(
         130,
         ctx.currentTime+0.8
     );
+
 
     gain.gain.setValueAtTime(
         .0001,
         ctx.currentTime
     );
 
+
     gain.gain.exponentialRampToValueAtTime(
         .16,
         ctx.currentTime+.05
     );
+
 
     gain.gain.exponentialRampToValueAtTime(
         .0001,
         ctx.currentTime+.9
     );
 
+
     osc.connect(gain);
-    gain.connect(ctx.destination);
+
+    gain.connect(
+        ctx.destination
+    );
+
 
     osc.start();
-    osc.stop(ctx.currentTime+1);
+
+    osc.stop(
+        ctx.currentTime+1
+    );
+
 }
 
 
-/* =========================
+
+/* =====================================================
    FLOWER EFFECT
-========================= */
+===================================================== */
 
 function flowerBurst(button){
 
-    const rect=button.getBoundingClientRect();
+    const rect =
+        button.getBoundingClientRect();
 
-    const startX=
-        rect.left+
+
+    const startX =
+        rect.left +
         rect.width/2;
 
-    const startY=
-        rect.top+
+
+    const startY =
+        rect.top +
         rect.height/2;
 
-    /*
-       अलग-अलग समय पर petals निकलेंगे
-    */
 
-    const total=24;
+    const total =
+        24;
 
-    for(let i=0;i<total;i++){
 
-        setTimeout(()=>{
+    for(
+        let i=0;
+        i<total;
+        i++
+    ){
 
-            createPetal(
-                startX,
-                startY
-            );
+        setTimeout(
+            ()=>{
 
-        },i*55);
+                createPetal(
+                    startX,
+                    startY
+                );
+
+            },
+            i*55
+        );
 
     }
+
 }
 
 
-function createPetal(x,y){
 
-    const petal=document.createElement("span");
+function createPetal(
+    x,
+    y
+){
 
-    petal.className="petal";
+    const petal =
+        document.createElement(
+            "span"
+        );
 
-    /*
-       flower/petal appearance
-    */
 
-    const symbols=[
-        "🌸",
-        "🌺",
-        "✿",
-        "❀"
-    ];
+    petal.className =
+        "petal";
 
-    petal.textContent=
+
+    const symbols =
+        [
+            "🌸",
+            "🌺",
+            "✿",
+            "❀"
+        ];
+
+
+    petal.textContent =
         symbols[
             Math.floor(
-                Math.random()*symbols.length
+                Math.random() *
+                symbols.length
             )
         ];
 
-    petal.style.fontSize=
-        (11+Math.random()*9)+"px";
 
-    petal.style.left=x+"px";
-    petal.style.top=y+"px";
+    petal.style.fontSize =
+        (
+            11 +
+            Math.random()*9
+        ) +
+        "px";
 
-    /*
-       हवा जैसी अलग-अलग दिशा
-    */
+
+    petal.style.left =
+        x+"px";
+
+
+    petal.style.top =
+        y+"px";
+
 
     const direction =
-        Math.random()<.5 ? -1 : 1;
+        Math.random()<.5
+        ? -1
+        : 1;
+
 
     const x1 =
-        direction*(20+Math.random()*60)+"px";
+        direction *
+        (
+            20 +
+            Math.random()*60
+        ) +
+        "px";
+
 
     const y1 =
-        -(60+Math.random()*80)+"px";
+        -(
+            60 +
+            Math.random()*80
+        ) +
+        "px";
+
 
     const x2 =
-        direction*(70+Math.random()*150)+"px";
+        direction *
+        (
+            70 +
+            Math.random()*150
+        ) +
+        "px";
+
 
     const y2 =
-        -(90+Math.random()*130)+"px";
+        -(
+            90 +
+            Math.random()*130
+        ) +
+        "px";
+
 
     const x3 =
-        direction*(120+Math.random()*230)+"px";
+        direction *
+        (
+            120 +
+            Math.random()*230
+        ) +
+        "px";
+
 
     const y3 =
-        -(30+Math.random()*100)+"px";
+        -(
+            30 +
+            Math.random()*100
+        ) +
+        "px";
+
 
     const x4 =
-        direction*(180+Math.random()*330)+"px";
+        direction *
+        (
+            180 +
+            Math.random()*330
+        ) +
+        "px";
+
 
     const y4 =
-        (20+Math.random()*220)+"px";
+        (
+            20 +
+            Math.random()*220
+        ) +
+        "px";
+
 
     petal.style.setProperty(
-        "--x1",x1
+        "--x1",
+        x1
     );
 
-    petal.style.setProperty(
-        "--y1",y1
-    );
 
     petal.style.setProperty(
-        "--x2",x2
+        "--y1",
+        y1
     );
 
-    petal.style.setProperty(
-        "--y2",y2
-    );
 
     petal.style.setProperty(
-        "--x3",x3
+        "--x2",
+        x2
     );
 
-    petal.style.setProperty(
-        "--y3",y3
-    );
 
     petal.style.setProperty(
-        "--x4",x4
+        "--y2",
+        y2
     );
 
+
     petal.style.setProperty(
-        "--y4",y4
+        "--x3",
+        x3
     );
+
+
+    petal.style.setProperty(
+        "--y3",
+        y3
+    );
+
+
+    petal.style.setProperty(
+        "--x4",
+        x4
+    );
+
+
+    petal.style.setProperty(
+        "--y4",
+        y4
+    );
+
 
     document
-        .getElementById("flowerLayer")
+        .getElementById(
+            "flowerLayer"
+        )
         .appendChild(petal);
 
-    setTimeout(()=>{
-        petal.remove();
-    },2500);
+
+    setTimeout(
+        ()=>{
+            petal.remove();
+        },
+        2500
+    );
 
 }
 
 
-/* =========================
+
+/* =====================================================
    SUBMIT
-========================= */
+===================================================== */
 
 function submitQuiz(){
 
-    let correct=0;
-    let wrong=0;
+    let correct =
+        0;
 
-    questions.forEach((question,index)=>{
+    let wrong =
+        0;
 
-        const state=states[index];
 
-        if(
-            state.locked &&
-            question.a.includes(state.selected)
-        ){
+    questions.forEach(
+        (question,index)=>{
 
-            correct++;
+            const state =
+                states[index];
 
-        }else{
 
-            wrong++;
+            if(
+                state.locked &&
+                question.a.includes(
+                    state.selected
+                )
+            ){
+
+                correct++;
+
+            }else{
+
+                wrong++;
+
+            }
 
         }
+    );
 
-    });
 
-    const total=questions.length;
+    const total =
+        questions.length;
 
-    const percentage=
-        ((correct/total)*100).toFixed(2);
 
-    document.getElementById("correctCount")
-        .textContent=correct;
+    const percentage =
+        (
+            (correct/total)*100
+        ).toFixed(2);
 
-    document.getElementById("wrongCount")
-        .textContent=wrong;
-
-    document.getElementById("score")
-        .textContent=
-        correct+" / "+total;
-
-    document.getElementById("percentage")
-        .textContent=
-        percentage+"%";
-
-    document.getElementById("result")
-        .style.display="block";
-
-    /*
-       Submit के बाद सभी options attractive
-    */
 
     document
-        .querySelectorAll(".option")
-        .forEach(option=>{
+        .getElementById(
+            "correctCount"
+        )
+        .textContent =
+        correct;
 
-            option.style.boxShadow=
-                "0 5px 12px rgba(30,40,80,.25)";
-
-        });
-
-    /*
-       Result पर scroll
-    */
 
     document
-        .getElementById("result")
+        .getElementById(
+            "wrongCount"
+        )
+        .textContent =
+        wrong;
+
+
+    document
+        .getElementById(
+            "score"
+        )
+        .textContent =
+        correct +
+        " / " +
+        total;
+
+
+    document
+        .getElementById(
+            "percentage"
+        )
+        .textContent =
+        percentage +
+        "%";
+
+
+    document
+        .getElementById(
+            "result"
+        )
+        .style.display =
+        "block";
+
+
+    document
+        .querySelectorAll(
+            ".option"
+        )
+        .forEach(
+            option=>{
+
+                option.style.boxShadow =
+                    "0 5px 12px rgba(30,40,80,.25)";
+
+            }
+        );
+
+
+    document
+        .getElementById(
+            "result"
+        )
         .scrollIntoView({
             behavior:"smooth",
             block:"center"
         });
 
-    /*
-       Celebration
-    */
 
-    if(percentage>=70){
+    if(
+        percentage >= 70
+    ){
 
         celebrationSound();
 
-        /*
-           screen के कई हिस्सों से flowers
-        */
 
-        for(let i=0;i<5;i++){
+        for(
+            let i=0;
+            i<5;
+            i++
+        ){
 
-            setTimeout(()=>{
+            setTimeout(
+                ()=>{
 
-                const fake={
-                    getBoundingClientRect:()=>({
-                        left:
-                        100+
-                        Math.random()*
-                        (window.innerWidth-200),
+                    const fake={
 
-                        top:
-                        150+
-                        Math.random()*
-                        400,
+                        getBoundingClientRect:
+                        ()=>({
 
-                        width:80,
-                        height:40
-                    })
-                };
+                            left:
+                                100 +
+                                Math.random() *
+                                (
+                                    window.innerWidth -
+                                    200
+                                ),
 
-                flowerBurst(fake);
+                            top:
+                                150 +
+                                Math.random() *
+                                400,
 
-            },i*250);
+                            width:80,
+
+                            height:40
+
+                        })
+
+                    };
+
+
+                    flowerBurst(
+                        fake
+                    );
+
+
+                },
+                i*250
+            );
 
         }
 
@@ -1526,16 +2427,21 @@ function submitQuiz(){
 }
 
 
-/* =========================
+
+/* =====================================================
    PREVENT DOUBLE SUBMIT ISSUES
-========================= */
+===================================================== */
 
 window.addEventListener(
     "beforeunload",
     function(){
+
         if(audioCtx){
+
             audioCtx.close();
+
         }
+
     }
 );
 
