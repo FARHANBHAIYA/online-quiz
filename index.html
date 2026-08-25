@@ -14,21 +14,21 @@
 
 body{
     margin:0;
-    padding:20px 12px 55px;
+    padding:18px 10px 50px;
     font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
     background:linear-gradient(135deg,#eef7ff,#fff8ec,#f2fff4);
     color:#172033;
 }
 
 .container{
-    max-width:900px;
+    max-width:1000px;
     margin:auto;
 }
 
 
-/* =========================
+/* =========================================
    FARHAN BOX
-========================= */
+========================================= */
 
 .farhan-box{
     text-align:center;
@@ -37,174 +37,116 @@ body{
 
 .farhan{
     display:inline-block;
-    padding:12px 28px;
+    padding:12px 30px;
     border-radius:17px;
     color:white;
-    font-size:29px;
+    font-size:37px;
     font-weight:900;
     letter-spacing:1px;
     background:linear-gradient(135deg,#7b1fa2,#e91e63,#ff9800);
     border:3px solid white;
-
     box-shadow:
         0 5px 18px rgba(100,0,120,.30),
         inset 0 0 12px rgba(255,255,255,.25);
-
     text-shadow:0 2px 4px rgba(0,0,0,.35);
 }
 
 
-/* =========================
+/* =========================================
    HEADINGS
-========================= */
+========================================= */
 
 .main-heading{
     text-align:center;
-    font-size:31px;
+    font-size:40px;
     line-height:1.4;
     font-weight:900;
-    padding:15px 12px;
-    border-radius:16px;
+    padding:17px 12px;
+    border-radius:15px;
     color:white;
-
-    background:
-        linear-gradient(
-            90deg,
-            #00695c,
-            #00838f,
-            #3949ab
-        );
-
-    box-shadow:
-        0 5px 15px rgba(0,80,100,.25);
-
+    background:linear-gradient(90deg,#00695c,#00838f,#3949ab);
+    box-shadow:0 5px 15px rgba(0,80,100,.25);
     margin-bottom:11px;
 }
 
 .sub-heading{
     text-align:center;
-    font-size:23px;
+    font-size:30px;
     line-height:1.5;
     font-weight:800;
     color:#7b1fa2;
     background:#fff;
     border:2px solid #ce93d8;
-    border-radius:13px;
-    padding:10px 8px;
+    border-radius:12px;
+    padding:11px;
     margin-bottom:20px;
 }
 
 
-/* =========================
+/* =========================================
    QUESTION CARD
-========================= */
+========================================= */
 
 .question-card{
     position:relative;
-
-    background:rgba(255,255,255,.97);
-
-    border-radius:18px;
-
+    background:rgba(255,255,255,.96);
+    border-radius:17px;
     padding:20px;
-
     margin:18px 0;
-
     border-left:8px solid #3949ab;
-
-    box-shadow:
-        0 5px 17px rgba(30,50,80,.14);
-
+    box-shadow:0 5px 17px rgba(30,50,80,.14);
     overflow:hidden;
 }
 
-
-/* =========================
-   QUESTION
-========================= */
-
 .question{
-    font-size:22px;
+    font-size:29px;
     line-height:1.7;
     font-weight:800;
     margin-bottom:14px;
 }
 
 
-/* =========================
+/* =========================================
    QUESTION NUMBER
-========================= */
+========================================= */
 
 .q-number{
     display:inline-block;
-
-    padding:5px 11px;
-
-    border-radius:9px;
-
+    padding:6px 12px;
+    border-radius:8px;
     background:#3949ab;
-
     color:white;
-
     margin-right:8px;
-
-    font-size:18px;
-
+    font-size:23px;
     font-weight:900;
 }
 
 
-/* =========================
+/* =========================================
    OPTIONS
-========================= */
+========================================= */
 
 .option{
     position:relative;
-
     width:100%;
-
     text-align:left;
-
-    margin:11px 0;
-
-    padding:14px 52px 14px 17px;
-
+    margin:12px 0;
+    padding:16px 58px 16px 18px;
     border:none;
-
-    border-radius:13px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #d7e8ff,
-            #bcd6f7
-        );
-
+    border-radius:12px;
+    background:linear-gradient(135deg,#d7e8ff,#bcd6f7);
     color:#15233b;
-
-    font-size:20px;
-
-    line-height:1.55;
-
+    font-size:26px;
+    line-height:1.6;
     font-weight:700;
-
     cursor:pointer;
-
-    box-shadow:
-        0 3px 7px rgba(30,60,100,.18);
-
+    box-shadow:0 3px 7px rgba(30,60,100,.18);
     transition:.25s ease;
 }
 
 .option:hover{
     transform:translateX(4px);
-
-    background:
-        linear-gradient(
-            135deg,
-            #c2daf8,
-            #a8c9f0
-        );
+    background:linear-gradient(135deg,#c2daf8,#a8c9f0);
 }
 
 .option:active{
@@ -212,159 +154,95 @@ body{
 }
 
 
-/* =========================
+/* =========================================
    WRONG
-========================= */
+========================================= */
 
 .option.wrong{
-
-    background:
-        linear-gradient(
-            135deg,
-            #d83b45,
-            #a91420
-        );
-
+    background:linear-gradient(135deg,#d83b45,#a91420);
     color:white;
-
-    box-shadow:
-        0 5px 14px rgba(180,0,20,.35);
+    box-shadow:0 5px 14px rgba(180,0,20,.35);
 }
 
 
-/* =========================
+/* =========================================
    CORRECT
-========================= */
+========================================= */
 
 .option.correct{
-
-    background:
-        linear-gradient(
-            135deg,
-            #198754,
-            #0d6b43
-        );
-
+    background:linear-gradient(135deg,#198754,#0d6b43);
     color:white;
-
-    box-shadow:
-        0 5px 14px rgba(0,110,60,.35);
+    box-shadow:0 5px 14px rgba(0,110,60,.35);
 }
 
 
-/* =========================
-   REVEAL CORRECT
-========================= */
+/* =========================================
+   CORRECT REVEAL
+========================================= */
 
 .option.reveal-correct{
-
-    background:
-        linear-gradient(
-            135deg,
-            #17844e,
-            #0b673e
-        );
-
+    background:linear-gradient(135deg,#17844e,#0b673e);
     color:white;
 }
 
 
-/* =========================
+/* =========================================
    TICK
-========================= */
+========================================= */
 
 .tick{
-
     position:absolute;
-
     right:14px;
-
     top:50%;
-
     transform:translateY(-50%);
-
-    width:31px;
-
-    height:31px;
-
+    width:36px;
+    height:36px;
     border-radius:50%;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
-    font-size:21px;
-
+    font-size:24px;
     font-weight:900;
-
     background:#1677ff;
-
     color:white;
-
-    box-shadow:
-        0 2px 8px rgba(0,0,0,.3);
+    box-shadow:0 2px 8px rgba(0,0,0,.3);
 }
 
 
-/* =========================
+/* =========================================
    CROSS
-========================= */
+========================================= */
 
 .cross{
-
     position:absolute;
-
     right:14px;
-
     top:50%;
-
     transform:translateY(-50%);
-
-    width:30px;
-
-    height:30px;
-
+    width:36px;
+    height:36px;
     border-radius:50%;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
-    font-size:21px;
-
+    font-size:24px;
     font-weight:900;
-
     background:#e31b23;
-
     color:white;
-
-    box-shadow:
-        0 2px 8px rgba(0,0,0,.3);
+    box-shadow:0 2px 8px rgba(0,0,0,.3);
 }
 
 
-/* =========================
+/* =========================================
    CONCLUSION
-========================= */
+========================================= */
 
 .conclusion{
-
     display:none;
-
-    margin:7px 5px 12px;
-
-    padding:12px 15px;
-
-    border-radius:11px;
-
-    font-size:18px;
-
+    margin:7px 4px 12px;
+    padding:13px 17px;
+    border-radius:10px;
+    font-size:23px;
     line-height:1.7;
-
     font-weight:600;
 }
 
@@ -373,60 +251,36 @@ body{
 }
 
 .conclusion.green{
-
     background:#d8f4e5;
-
     color:#075b32;
-
     border-left:6px solid #159447;
 }
 
 .conclusion.red{
-
     background:#ffe0e2;
-
     color:#8d1720;
-
     border-left:6px solid #d32635;
 }
 
 
-/* =========================
+/* =========================================
    SUBMIT
-========================= */
+========================================= */
 
 .submit-area{
-
     text-align:center;
-
     margin:35px 0;
 }
 
 .submit-btn{
-
     border:none;
-
-    padding:17px 45px;
-
-    border-radius:15px;
-
-    font-size:24px;
-
+    padding:19px 50px;
+    border-radius:14px;
+    font-size:32px;
     font-weight:900;
-
     color:white;
-
-    background:
-        linear-gradient(
-            135deg,
-            #6a1b9a,
-            #283593,
-            #00695c
-        );
-
-    box-shadow:
-        0 6px 18px rgba(50,30,120,.35);
-
+    background:linear-gradient(135deg,#6a1b9a,#283593,#00695c);
+    box-shadow:0 6px 18px rgba(50,30,120,.35);
     cursor:pointer;
 }
 
@@ -435,361 +289,234 @@ body{
 }
 
 
-/* =========================
+/* =========================================
    RESULT
-========================= */
+========================================= */
 
 .result{
-
     display:none;
-
     margin-top:28px;
 }
 
 .result-title{
-
     text-align:center;
-
-    font-size:30px;
-
+    font-size:38px;
     font-weight:900;
-
     color:white;
-
-    background:
-        linear-gradient(
-            90deg,
-            #4a148c,
-            #ad1457,
-            #00695c
-        );
-
-    padding:15px;
-
-    border-radius:15px;
-
-    margin-bottom:16px;
+    background:linear-gradient(90deg,#4a148c,#ad1457,#00695c);
+    padding:17px;
+    border-radius:14px;
+    margin-bottom:17px;
 }
 
+
+/* =========================================
+   RESULT GRID
+========================================= */
+
 .result-grid{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
+    grid-template-columns:repeat(2,1fr);
     gap:15px;
 }
 
 .result-box{
-
-    padding:19px 10px;
-
-    border-radius:15px;
-
+    padding:20px 10px;
+    border-radius:14px;
     text-align:center;
-
     color:white;
-
-    box-shadow:
-        0 5px 13px rgba(0,0,0,.22);
+    box-shadow:0 5px 13px rgba(0,0,0,.22);
 }
 
 .result-box .label{
-
-    font-size:19px;
-
+    font-size:24px;
     font-weight:800;
 }
 
 .result-box .value{
-
-    font-size:34px;
-
+    font-size:43px;
     font-weight:900;
-
     margin-top:5px;
 }
 
-.green-box{
 
-    background:
-        linear-gradient(
-            135deg,
-            #087f46,
-            #064d2e
-        );
+/* सही */
+
+.green-box{
+    background:linear-gradient(135deg,#087f46,#064d2e);
 }
+
+
+/* गलत */
 
 .red-box{
-
-    background:
-        linear-gradient(
-            135deg,
-            #c62828,
-            #7f1010
-        );
+    background:linear-gradient(135deg,#c62828,#7f1010);
 }
+
+
+/* SELECTED */
+
+.selected-box{
+    background:linear-gradient(135deg,#1565c0,#0d47a1);
+}
+
+
+/* SKIPPED */
+
+.skip-box{
+    background:linear-gradient(135deg,#ef6c00,#e65100);
+}
+
+
+/* SCORE */
 
 .score-box{
-
-    background:
-        linear-gradient(
-            135deg,
-            #1565c0,
-            #0d47a1
-        );
+    background:linear-gradient(135deg,#6a1b9a,#452080);
 }
+
+
+/* PERCENTAGE */
 
 .percent-box{
-
-    background:
-        linear-gradient(
-            135deg,
-            #6a1b9a,
-            #452080
-        );
+    background:linear-gradient(135deg,#00838f,#005662);
 }
 
 
-/* =========================
+/* =========================================
    FLOWER
-========================= */
+========================================= */
 
 .flower-layer{
-
     position:fixed;
-
     inset:0;
-
     pointer-events:none;
-
     overflow:hidden;
-
     z-index:9999;
 }
 
 .petal{
-
     position:fixed;
-
     width:13px;
-
     height:18px;
-
-    border-radius:
-        70% 30% 70% 30%;
-
+    border-radius:70% 30% 70% 30%;
     opacity:1;
-
     pointer-events:none;
-
-    animation:
-        petalMove 2.4s linear forwards;
+    animation:petalMove 2.4s linear forwards;
 }
 
 @keyframes petalMove{
 
     0%{
-        transform:
-            translate(0,0)
-            rotate(0deg);
-
+        transform:translate(0,0) rotate(0deg);
         opacity:1;
     }
 
     25%{
-        transform:
-            translate(
-                var(--x1),
-                var(--y1)
-            )
-            rotate(100deg);
-
+        transform:translate(var(--x1),var(--y1)) rotate(100deg);
         opacity:1;
     }
 
     55%{
-        transform:
-            translate(
-                var(--x2),
-                var(--y2)
-            )
-            rotate(220deg);
-
+        transform:translate(var(--x2),var(--y2)) rotate(220deg);
         opacity:.9;
     }
 
     80%{
-        transform:
-            translate(
-                var(--x3),
-                var(--y3)
-            )
-            rotate(310deg);
-
+        transform:translate(var(--x3),var(--y3)) rotate(310deg);
         opacity:.65;
     }
 
     100%{
-        transform:
-            translate(
-                var(--x4),
-                var(--y4)
-            )
-            rotate(430deg);
-
+        transform:translate(var(--x4),var(--y4)) rotate(430deg);
         opacity:0;
     }
 }
 
 
-/* =========================
+/* =========================================
    MOBILE
-   बड़ा और साफ TEXT
-========================= */
+========================================= */
 
 @media(max-width:600px){
 
     body{
-        padding:12px 8px 45px;
+        padding:12px 7px 45px;
     }
 
     .farhan{
-
-        font-size:25px;
-
-        padding:11px 23px;
+        font-size:31px;
+        padding:10px 22px;
     }
 
     .main-heading{
-
-        font-size:27px;
-
-        line-height:1.45;
-
-        padding:14px 8px;
+        font-size:34px;
+        line-height:1.5;
+        padding:14px 9px;
     }
 
     .sub-heading{
-
-        font-size:20px;
-
-        line-height:1.55;
-
-        padding:9px 7px;
+        font-size:25px;
+        line-height:1.6;
+        padding:9px;
     }
 
     .question-card{
-
-        padding:17px 14px;
-
+        padding:16px 13px;
         margin:17px 0;
-
         border-left-width:7px;
     }
 
     .question{
-
-        font-size:20px;
-
+        font-size:25px;
         line-height:1.75;
-
-        margin-bottom:13px;
     }
 
     .q-number{
-
-        font-size:17px;
-
-        padding:4px 9px;
+        font-size:21px;
+        padding:5px 10px;
     }
 
     .option{
-
-        font-size:18px;
-
-        line-height:1.6;
-
-        padding:13px 48px 13px 14px;
-
-        margin:10px 0;
+        font-size:23px;
+        line-height:1.7;
+        padding:14px 52px 14px 14px;
+        margin:11px 0;
     }
 
     .conclusion{
-
-        font-size:17px;
-
-        line-height:1.7;
-
-        padding:11px 13px;
+        font-size:21px;
+        line-height:1.75;
+        padding:12px 14px;
     }
 
     .tick,
     .cross{
-
-        width:29px;
-
-        height:29px;
-
-        font-size:20px;
-
+        width:34px;
+        height:34px;
+        font-size:23px;
         right:12px;
     }
 
     .submit-btn{
-
-        font-size:22px;
-
-        padding:16px 34px;
+        font-size:28px;
+        padding:17px 35px;
     }
 
     .result-title{
-
-        font-size:27px;
+        font-size:33px;
     }
 
     .result-box .label{
-
-        font-size:17px;
+        font-size:20px;
     }
 
     .result-box .value{
-
-        font-size:30px;
+        font-size:35px;
     }
 
-}
-
-
-/* =========================
-   VERY SMALL MOBILE
-========================= */
-
-@media(max-width:380px){
-
-    .farhan{
-        font-size:23px;
-    }
-
-    .main-heading{
-        font-size:25px;
-    }
-
-    .sub-heading{
-        font-size:18px;
-    }
-
-    .question{
-        font-size:19px;
-    }
-
-    .option{
-        font-size:17px;
-    }
-
-    .conclusion{
-        font-size:16px;
+    .result-grid{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
     }
 
 }
@@ -803,75 +530,46 @@ body{
 <div class="container">
 
 
-<!-- =========================
-     FARHAN
-========================= -->
-
 <div class="farhan-box">
-
     <div class="farhan">
         ✨ FARHAN BHAIYA ✨
     </div>
-
 </div>
 
 
-<!-- =========================
-     HEADING
-========================= -->
-
 <div class="main-heading">
-
     🧬 BIOLOGY - जैव प्रक्रम 🧬
-
 </div>
 
 
 <div class="sub-heading">
-
     📚 QUESTION BANK OBJECTIVE • पोषण • 63 प्रश्न
-
 </div>
 
 
 <div id="quiz"></div>
 
 
-<!-- =========================
-     SUBMIT
-========================= -->
-
 <div class="submit-area">
 
-    <button
-        class="submit-btn"
-        onclick="submitQuiz()">
-
+    <button class="submit-btn" onclick="submitQuiz()">
         🏆 SUBMIT QUIZ 🏆
-
     </button>
 
 </div>
 
 
-<!-- =========================
-     RESULT
-========================= -->
-
-<div
-    class="result"
-    id="result">
-
+<div class="result" id="result">
 
     <div class="result-title">
-
         🎉 QUIZ RESULT 🎉
-
     </div>
 
 
     <div class="result-grid">
 
+
+        <!-- सही -->
 
         <div class="result-box green-box">
 
@@ -879,16 +577,14 @@ body{
                 सही उत्तर
             </div>
 
-            <div
-                class="value"
-                id="correctCount">
-
+            <div class="value" id="correctCount">
                 0
-
             </div>
 
         </div>
 
+
+        <!-- गलत -->
 
         <div class="result-box red-box">
 
@@ -896,16 +592,44 @@ body{
                 गलत उत्तर
             </div>
 
-            <div
-                class="value"
-                id="wrongCount">
-
+            <div class="value" id="wrongCount">
                 0
-
             </div>
 
         </div>
 
+
+        <!-- SELECTED -->
+
+        <div class="result-box selected-box">
+
+            <div class="label">
+                Select किए गए
+            </div>
+
+            <div class="value" id="selectedCount">
+                0
+            </div>
+
+        </div>
+
+
+        <!-- SKIPPED -->
+
+        <div class="result-box skip-box">
+
+            <div class="label">
+                Skip किए गए
+            </div>
+
+            <div class="value" id="skippedCount">
+                0
+            </div>
+
+        </div>
+
+
+        <!-- SCORE -->
 
         <div class="result-box score-box">
 
@@ -913,16 +637,14 @@ body{
                 SCORE
             </div>
 
-            <div
-                class="value"
-                id="score">
-
+            <div class="value" id="score">
                 0 / 63
-
             </div>
 
         </div>
 
+
+        <!-- PERCENTAGE -->
 
         <div class="result-box percent-box">
 
@@ -930,15 +652,12 @@ body{
                 PERCENTAGE
             </div>
 
-            <div
-                class="value"
-                id="percentage">
-
+            <div class="value" id="percentage">
                 0%
-
             </div>
 
         </div>
+
 
     </div>
 
@@ -947,11 +666,7 @@ body{
 </div>
 
 
-<div
-    class="flower-layer"
-    id="flowerLayer">
-</div>
-
+<div class="flower-layer" id="flowerLayer"></div>
 
 
 <script>
@@ -1403,6 +1118,7 @@ o:["भीतरी","बाहरी","पार्श्व","इनमें 
 a:["A"],
 e:"गार्ड कोशिका की भीतरी भित्ति बाहरी भित्ति की तुलना में अधिक मोटी होती है।"
 }
+
 ];
 
 
@@ -1410,119 +1126,110 @@ e:"गार्ड कोशिका की भीतरी भित्ति 
    QUIZ BUILD
 ===================================================== */
 
-const quiz =
-    document.getElementById("quiz");
+const quiz = document.getElementById("quiz");
 
-let states =
-    questions.map(() => ({
-        locked:false,
-        selected:null,
-        answered:false
-    }));
+
+let states = questions.map(() => ({
+
+    locked:false,
+
+    selected:null,
+
+    answered:false
+
+}));
 
 
 function createQuiz(){
 
-    questions.forEach(
-        (item,index)=>{
+    questions.forEach((item,index)=>{
 
-            const card =
+        const card=document.createElement("div");
+
+        card.className="question-card";
+
+        card.dataset.index=index;
+
+
+        const q=document.createElement("div");
+
+        q.className="question";
+
+
+        q.innerHTML=
+            `<span class="q-number">
+                Q${index+1}
+             </span>
+             ${item.q}`;
+
+
+        card.appendChild(q);
+
+
+        item.o.forEach((text,optIndex)=>{
+
+            const letter=
+                String.fromCharCode(65+optIndex);
+
+
+            const wrapper=
                 document.createElement("div");
 
-            card.className =
-                "question-card";
 
-            card.dataset.index =
-                index;
+            const btn=
+                document.createElement("button");
 
 
-            const q =
+            btn.className="option";
+
+            btn.dataset.letter=letter;
+
+
+            btn.innerHTML=
+                `(${letter}) ${text}`;
+
+
+            const conclusion=
                 document.createElement("div");
 
-            q.className =
-                "question";
+
+            conclusion.className=
+                "conclusion";
 
 
-            q.innerHTML =
-                `<span class="q-number">
-                    Q${index+1}
-                </span>${item.q}`;
+            wrapper.appendChild(btn);
+
+            wrapper.appendChild(conclusion);
+
+            card.appendChild(wrapper);
 
 
-            card.appendChild(q);
+            btn.addEventListener(
+                "click",
+                ()=>{
 
-
-            item.o.forEach(
-                (text,optIndex)=>{
-
-                    const letter =
-                        String.fromCharCode(
-                            65+optIndex
-                        );
-
-
-                    const wrapper =
-                        document.createElement("div");
-
-
-                    const btn =
-                        document.createElement("button");
-
-                    btn.className =
-                        "option";
-
-                    btn.dataset.letter =
-                        letter;
-
-
-                    btn.innerHTML =
-                        `(${letter}) ${text}`;
-
-
-                    const conclusion =
-                        document.createElement("div");
-
-                    conclusion.className =
-                        "conclusion";
-
-
-                    wrapper.appendChild(btn);
-
-                    wrapper.appendChild(
-                        conclusion
-                    );
-
-                    card.appendChild(wrapper);
-
-
-                    btn.addEventListener(
-                        "click",
-                        ()=>{
-
-                            handleOption(
-                                index,
-                                letter,
-                                btn,
-                                conclusion,
-                                card
-                            );
-
-                        }
+                    handleOption(
+                        index,
+                        letter,
+                        btn,
+                        conclusion,
+                        card
                     );
 
                 }
             );
 
+        });
 
-            quiz.appendChild(card);
 
-        }
-    );
+        quiz.appendChild(card);
+
+    });
 
 }
 
-createQuiz();
 
+createQuiz();
 
 
 /* =====================================================
@@ -1537,55 +1244,55 @@ function handleOption(
     card
 ){
 
-    const state =
+    const state=
         states[qIndex];
 
-    const question =
+
+    const question=
         questions[qIndex];
 
 
+    /*
+       पहली बार click
+    */
+
     if(!state.locked){
 
-        state.locked =
-            true;
+        state.locked=true;
 
-        state.selected =
-            letter;
+        state.selected=letter;
 
-        state.answered =
-            true;
+        state.answered=true;
 
 
-        const isCorrect =
+        const isCorrect=
             question.a.includes(letter);
 
 
-        const buttons =
-            card.querySelectorAll(
-                ".option"
-            );
+        const buttons=
+            card.querySelectorAll(".option");
 
 
-        buttons.forEach(
-            (b)=>{
+        buttons.forEach((b)=>{
 
-                const l =
-                    b.dataset.letter;
+            const l=
+                b.dataset.letter;
 
 
-                if(
-                    question.a.includes(l)
-                ){
+            if(question.a.includes(l)){
 
-                    b.classList.add(
-                        "reveal-correct"
-                    );
-
-                }
+                b.classList.add(
+                    "reveal-correct"
+                );
 
             }
-        );
 
+        });
+
+
+        /*
+           सही
+        */
 
         if(isCorrect){
 
@@ -1598,16 +1305,15 @@ function handleOption(
             );
 
 
-            const tick =
+            const tick=
                 document.createElement(
                     "span"
                 );
 
-            tick.className =
-                "tick";
 
-            tick.innerHTML =
-                "✓";
+            tick.className="tick";
+
+            tick.innerHTML="✓";
 
 
             btn.appendChild(tick);
@@ -1622,10 +1328,17 @@ function handleOption(
 
             correctSound();
 
+
             flowerBurst(btn);
 
+        }
 
-        }else{
+
+        /*
+           गलत
+        */
+
+        else{
 
             btn.classList.remove(
                 "reveal-correct"
@@ -1636,16 +1349,15 @@ function handleOption(
             );
 
 
-            const cross =
+            const cross=
                 document.createElement(
                     "span"
                 );
 
-            cross.className =
-                "cross";
 
-            cross.innerHTML =
-                "×";
+            cross.className="cross";
+
+            cross.innerHTML="×";
 
 
             btn.appendChild(cross);
@@ -1664,9 +1376,16 @@ function handleOption(
 
     }
 
+
+    /*
+       Locked होने के बाद answer change नहीं होगा।
+       लेकिन किसी option पर click करने पर उसका
+       conclusion दिखाया जा सकता है।
+    */
+
     else{
 
-        const isCorrect =
+        const isCorrect=
             question.a.includes(letter);
 
 
@@ -1681,7 +1400,6 @@ function handleOption(
 }
 
 
-
 /* =====================================================
    CONCLUSION
 ===================================================== */
@@ -1692,53 +1410,43 @@ function showConclusion(
     text
 ){
 
-    const card =
-        el.closest(
-            ".question-card"
-        );
+    const card=
+        el.closest(".question-card");
 
 
-    card.querySelectorAll(
-        ".conclusion"
-    )
-    .forEach(
-        c=>{
+    card.querySelectorAll(".conclusion")
+        .forEach(c=>{
+
             c.classList.remove(
                 "show",
                 "green",
                 "red"
             );
-        }
-    );
+
+        });
 
 
-    el.innerHTML =
+    el.innerHTML=
         `<b>
             ${isCorrect ? "✓ सही:" : "✗ गलत:"}
-        </b> ${text}`;
+        </b>
+        ${text}`;
 
 
-    el.classList.add(
-        "show"
-    );
+    el.classList.add("show");
 
 
     if(isCorrect){
 
-        el.classList.add(
-            "green"
-        );
+        el.classList.add("green");
 
     }else{
 
-        el.classList.add(
-            "red"
-        );
+        el.classList.add("red");
 
     }
 
 }
-
 
 
 /* =====================================================
@@ -1756,21 +1464,19 @@ function vibrateOnce(){
 }
 
 
-
 /* =====================================================
    AUDIO
 ===================================================== */
 
-let audioCtx =
-    null;
+let audioCtx=null;
 
 
 function getAudio(){
 
     if(!audioCtx){
 
-        audioCtx =
-            new (
+        audioCtx=
+            new(
                 window.AudioContext ||
                 window.webkitAudioContext
             )();
@@ -1778,10 +1484,7 @@ function getAudio(){
     }
 
 
-    if(
-        audioCtx.state ===
-        "suspended"
-    ){
+    if(audioCtx.state==="suspended"){
 
         audioCtx.resume();
 
@@ -1793,26 +1496,25 @@ function getAudio(){
 }
 
 
-
 /* =====================================================
    CORRECT SOUND
 ===================================================== */
 
 function correctSound(){
 
-    const ctx =
+    const ctx=
         getAudio();
 
 
-    const osc =
+    const osc=
         ctx.createOscillator();
 
-    const gain =
+
+    const gain=
         ctx.createGain();
 
 
-    osc.type =
-        "sine";
+    osc.type="sine";
 
 
     osc.frequency.setValueAtTime(
@@ -1847,9 +1549,7 @@ function correctSound(){
 
     osc.connect(gain);
 
-    gain.connect(
-        ctx.destination
-    );
+    gain.connect(ctx.destination);
 
 
     osc.start();
@@ -1861,107 +1561,97 @@ function correctSound(){
 }
 
 
-
 /* =====================================================
    CELEBRATION SOUND
 ===================================================== */
 
 function celebrationSound(){
 
-    const ctx =
+    const ctx=
         getAudio();
 
 
-    const notes =
-        [
-            523,
-            659,
-            784,
-            1046,
-            1318
-        ];
+    const notes=[
+        523,
+        659,
+        784,
+        1046,
+        1318
+    ];
 
 
-    notes.forEach(
-        (freq,i)=>{
+    notes.forEach((freq,i)=>{
 
-            const osc =
-                ctx.createOscillator();
-
-            const gain =
-                ctx.createGain();
+        const osc=
+            ctx.createOscillator();
 
 
-            osc.type =
-                "triangle";
+        const gain=
+            ctx.createGain();
 
 
-            osc.frequency.value =
-                freq;
+        osc.type="triangle";
 
 
-            const start =
-                ctx.currentTime +
-                i*.12;
+        osc.frequency.value=
+            freq;
 
 
-            gain.gain.setValueAtTime(
-                0.0001,
-                start
-            );
+        const start=
+            ctx.currentTime+i*.12;
 
 
-            gain.gain.exponentialRampToValueAtTime(
-                .16,
-                start+.03
-            );
+        gain.gain.setValueAtTime(
+            0.0001,
+            start
+        );
 
 
-            gain.gain.exponentialRampToValueAtTime(
-                .0001,
-                start+.30
-            );
+        gain.gain.exponentialRampToValueAtTime(
+            .16,
+            start+.03
+        );
 
 
-            osc.connect(gain);
+        gain.gain.exponentialRampToValueAtTime(
+            .0001,
+            start+.30
+        );
 
-            gain.connect(
-                ctx.destination
-            );
+
+        osc.connect(gain);
+
+        gain.connect(ctx.destination);
 
 
-            osc.start(start);
+        osc.start(start);
 
-            osc.stop(
-                start+.34
-            );
+        osc.stop(start+.34);
 
-        }
-    );
+    });
 
 }
 
 
-
 /* =====================================================
-   LOW SCORE SOUND
+   SAD SOUND
 ===================================================== */
 
 function sadSound(){
 
-    const ctx =
+    const ctx=
         getAudio();
 
 
-    const osc =
+    const osc=
         ctx.createOscillator();
 
-    const gain =
+
+    const gain=
         ctx.createGain();
 
 
-    osc.type =
-        "sine";
+    osc.type="sine";
 
 
     osc.frequency.setValueAtTime(
@@ -1996,9 +1686,7 @@ function sadSound(){
 
     osc.connect(gain);
 
-    gain.connect(
-        ctx.destination
-    );
+    gain.connect(ctx.destination);
 
 
     osc.start();
@@ -2010,176 +1698,140 @@ function sadSound(){
 }
 
 
-
 /* =====================================================
    FLOWER EFFECT
 ===================================================== */
 
 function flowerBurst(button){
 
-    const rect =
+    const rect=
         button.getBoundingClientRect();
 
 
-    const startX =
-        rect.left +
+    const startX=
+        rect.left+
         rect.width/2;
 
 
-    const startY =
-        rect.top +
+    const startY=
+        rect.top+
         rect.height/2;
 
 
-    const total =
-        24;
+    const total=24;
 
 
-    for(
-        let i=0;
-        i<total;
-        i++
-    ){
+    for(let i=0;i<total;i++){
 
-        setTimeout(
-            ()=>{
+        setTimeout(()=>{
 
-                createPetal(
-                    startX,
-                    startY
-                );
+            createPetal(
+                startX,
+                startY
+            );
 
-            },
-            i*55
-        );
+        },i*55);
 
     }
 
 }
 
 
+function createPetal(x,y){
 
-function createPetal(
-    x,
-    y
-){
-
-    const petal =
-        document.createElement(
-            "span"
-        );
+    const petal=
+        document.createElement("span");
 
 
-    petal.className =
-        "petal";
+    petal.className="petal";
 
 
-    const symbols =
-        [
-            "🌸",
-            "🌺",
-            "✿",
-            "❀"
-        ];
+    const symbols=[
+        "🌸",
+        "🌺",
+        "✿",
+        "❀"
+    ];
 
 
-    petal.textContent =
+    petal.textContent=
         symbols[
             Math.floor(
-                Math.random() *
+                Math.random()*
                 symbols.length
             )
         ];
 
 
-    petal.style.fontSize =
-        (
-            11 +
-            Math.random()*9
-        ) +
-        "px";
+    petal.style.fontSize=
+        (11+
+        Math.random()*9)+"px";
 
 
-    petal.style.left =
+    petal.style.left=
         x+"px";
 
 
-    petal.style.top =
+    petal.style.top=
         y+"px";
 
 
-    const direction =
+    const direction=
         Math.random()<.5
         ? -1
         : 1;
 
 
-    const x1 =
-        direction *
-        (
-            20 +
-            Math.random()*60
-        ) +
-        "px";
+    const x1=
+        direction*
+        (20+
+        Math.random()*60)
+        +"px";
 
 
-    const y1 =
-        -(
-            60 +
-            Math.random()*80
-        ) +
-        "px";
+    const y1=
+        -(60+
+        Math.random()*80)
+        +"px";
 
 
-    const x2 =
-        direction *
-        (
-            70 +
-            Math.random()*150
-        ) +
-        "px";
+    const x2=
+        direction*
+        (70+
+        Math.random()*150)
+        +"px";
 
 
-    const y2 =
-        -(
-            90 +
-            Math.random()*130
-        ) +
-        "px";
+    const y2=
+        -(90+
+        Math.random()*130)
+        +"px";
 
 
-    const x3 =
-        direction *
-        (
-            120 +
-            Math.random()*230
-        ) +
-        "px";
+    const x3=
+        direction*
+        (120+
+        Math.random()*230)
+        +"px";
 
 
-    const y3 =
-        -(
-            30 +
-            Math.random()*100
-        ) +
-        "px";
+    const y3=
+        -(30+
+        Math.random()*100)
+        +"px";
 
 
-    const x4 =
-        direction *
-        (
-            180 +
-            Math.random()*330
-        ) +
-        "px";
+    const x4=
+        direction*
+        (180+
+        Math.random()*330)
+        +"px";
 
 
-    const y4 =
-        (
-            20 +
-            Math.random()*220
-        ) +
-        "px";
+    const y4=
+        (20+
+        Math.random()*220)
+        +"px";
 
 
     petal.style.setProperty(
@@ -2231,55 +1883,83 @@ function createPetal(
 
 
     document
-        .getElementById(
-            "flowerLayer"
-        )
+        .getElementById("flowerLayer")
         .appendChild(petal);
 
 
-    setTimeout(
-        ()=>{
-            petal.remove();
-        },
-        2500
-    );
+    setTimeout(()=>{
+
+        petal.remove();
+
+    },2500);
 
 }
 
 
-
 /* =====================================================
-   SUBMIT
+   SUBMIT QUIZ
 ===================================================== */
 
 function submitQuiz(){
 
-    let correct =
-        0;
+    let correct=0;
 
-    let wrong =
-        0;
+    let wrong=0;
+
+    let selected=0;
+
+    let skipped=0;
 
 
     questions.forEach(
         (question,index)=>{
 
-            const state =
+            const state=
                 states[index];
 
 
-            if(
-                state.locked &&
-                question.a.includes(
-                    state.selected
-                )
-            ){
+            /*
+               प्रश्न select किया गया
+            */
 
-                correct++;
+            if(state.locked){
 
-            }else{
+                selected++;
 
-                wrong++;
+
+                /*
+                   सही
+                */
+
+                if(
+                    question.a.includes(
+                        state.selected
+                    )
+                ){
+
+                    correct++;
+
+                }
+
+                /*
+                   गलत
+                */
+
+                else{
+
+                    wrong++;
+
+                }
+
+            }
+
+            /*
+               प्रश्न skip किया गया
+            */
+
+            else{
+
+                skipped++;
 
             }
 
@@ -2287,145 +1967,150 @@ function submitQuiz(){
     );
 
 
-    const total =
+    const total=
         questions.length;
 
 
-    const percentage =
-        (
-            (correct/total)*100
-        ).toFixed(2);
+    const percentage=
+        ((correct/total)*100)
+        .toFixed(2);
 
 
-    document
-        .getElementById(
-            "correctCount"
-        )
-        .textContent =
+    /*
+       RESULT VALUES
+    */
+
+    document.getElementById(
+        "correctCount"
+    ).textContent=
         correct;
 
 
-    document
-        .getElementById(
-            "wrongCount"
-        )
-        .textContent =
+    document.getElementById(
+        "wrongCount"
+    ).textContent=
         wrong;
 
 
-    document
-        .getElementById(
-            "score"
-        )
-        .textContent =
-        correct +
-        " / " +
+    document.getElementById(
+        "selectedCount"
+    ).textContent=
+        selected;
+
+
+    document.getElementById(
+        "skippedCount"
+    ).textContent=
+        skipped;
+
+
+    document.getElementById(
+        "score"
+    ).textContent=
+        correct+
+        " / "+
         total;
 
 
-    document
-        .getElementById(
-            "percentage"
-        )
-        .textContent =
-        percentage +
+    document.getElementById(
+        "percentage"
+    ).textContent=
+        percentage+
         "%";
 
 
-    document
-        .getElementById(
-            "result"
-        )
-        .style.display =
+    /*
+       RESULT SHOW
+    */
+
+    document.getElementById(
+        "result"
+    ).style.display=
         "block";
 
 
-    document
-        .querySelectorAll(
-            ".option"
-        )
-        .forEach(
-            option=>{
-
-                option.style.boxShadow =
-                    "0 5px 12px rgba(30,40,80,.25)";
-
-            }
-        );
-
+    /*
+       Options shadow
+    */
 
     document
-        .getElementById(
-            "result"
-        )
-        .scrollIntoView({
-            behavior:"smooth",
-            block:"center"
+        .querySelectorAll(".option")
+        .forEach(option=>{
+
+            option.style.boxShadow=
+                "0 5px 12px rgba(30,40,80,.25)";
+
         });
 
 
-    if(
-        percentage >= 70
-    ){
+    /*
+       Result पर scroll
+    */
+
+    document
+        .getElementById("result")
+        .scrollIntoView({
+
+            behavior:"smooth",
+
+            block:"center"
+
+        });
+
+
+    /*
+       Celebration
+    */
+
+    if(percentage>=70){
 
         celebrationSound();
 
 
-        for(
-            let i=0;
-            i<5;
-            i++
-        ){
+        for(let i=0;i<5;i++){
 
-            setTimeout(
-                ()=>{
+            setTimeout(()=>{
 
-                    const fake={
+                const fake={
 
-                        getBoundingClientRect:
-                        ()=>({
+                    getBoundingClientRect:()=>({
 
-                            left:
-                                100 +
-                                Math.random() *
-                                (
-                                    window.innerWidth -
-                                    200
-                                ),
+                        left:
+                        100+
+                        Math.random()*
+                        (
+                            window.innerWidth-
+                            200
+                        ),
 
-                            top:
-                                150 +
-                                Math.random() *
-                                400,
+                        top:
+                        150+
+                        Math.random()*400,
 
-                            width:80,
+                        width:80,
 
-                            height:40
+                        height:40
 
-                        })
+                    })
 
-                    };
+                };
 
 
-                    flowerBurst(
-                        fake
-                    );
+                flowerBurst(fake);
 
-
-                },
-                i*250
-            );
+            },i*250);
 
         }
 
-    }else{
+    }
+
+    else{
 
         sadSound();
 
     }
 
 }
-
 
 
 /* =====================================================
