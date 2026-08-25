@@ -1,1076 +1,370 @@
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>CLASS IXTH BIOLOGY</title>
-
+<title>Biology Objective Quiz</title>
 
 <style>
-
-/* =========================
-   BASIC
-========================= */
-
 *{
     box-sizing:border-box;
 }
 
-html,
 body{
     margin:0;
-    padding:0;
+    padding:20px;
+    background:#eef3f8;
+    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+    color:#222;
 }
 
-body{
-
-    background:#e9eef5;
-
-    color:#000;
-
-    font-family:
-    "Noto Sans Devanagari",
-    Arial,
-    sans-serif;
-
-    -webkit-print-color-adjust:exact !important;
-
-    print-color-adjust:exact !important;
+.quiz-box{
+    max-width:850px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.15);
 }
 
+h1{
+    text-align:center;
+    color:#075b9a;
+    margin-top:0;
+    font-size:28px;
+}
 
-/* =========================
-   DOWNLOAD PDF BUTTON
-========================= */
+.subtitle{
+    text-align:center;
+    font-size:18px;
+    margin-bottom:25px;
+    color:#555;
+}
 
-.download-btn{
+.question{
+    margin-bottom:25px;
+    padding:18px;
+    border:1px solid #d5dce3;
+    border-radius:12px;
+    background:#fafcff;
+}
 
+.question-text{
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:15px;
+    line-height:1.6;
+}
+
+.option{
     display:block;
+    width:100%;
+    text-align:left;
+    margin:9px 0;
+    padding:13px 15px;
+    border:2px solid #d8dee5;
+    border-radius:9px;
+    background:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.2s;
+}
 
-    margin:12px auto;
+.option:hover{
+    background:#eef7ff;
+    border-color:#1683c7;
+}
 
-    padding:10px 25px;
+.option.correct{
+    background:#d9f5df;
+    border-color:#20a13a;
+    color:#126b25;
+    font-weight:bold;
+}
 
-    background:#174ea6 !important;
+.option.wrong{
+    background:#ffe0e0;
+    border-color:#e33434;
+    color:#a40000;
+    font-weight:bold;
+}
 
-    color:#fff !important;
+.result{
+    margin-top:10px;
+    font-size:17px;
+    font-weight:bold;
+}
 
-    border:2px solid #0d3675;
+#scoreBox{
+    display:none;
+    margin-top:25px;
+    padding:20px;
+    text-align:center;
+    border-radius:12px;
+    background:#e5f3ff;
+    border:2px solid #1683c7;
+}
 
-    border-radius:7px;
+#score{
+    font-size:25px;
+    font-weight:bold;
+    color:#075b9a;
+}
 
-    font-size:16px;
-
-    font-weight:900;
-
+button#reset{
+    margin-top:15px;
+    padding:11px 25px;
+    border:none;
+    border-radius:8px;
+    background:#075b9a;
+    color:white;
+    font-size:17px;
     cursor:pointer;
 }
 
-
-/* =========================
-   PAGE
-========================= */
-
-.page{
-
-    width:297mm;
-
-    height:200mm;
-
-    margin:10px auto;
-
-    background:#fff;
-
-    padding:5mm 6mm 3mm;
-
-    box-shadow:
-    0 0 8px rgba(0,0,0,.15);
+button#reset:hover{
+    background:#064673;
 }
 
-
-/* =========================
-   HEADER
-========================= */
-
-.header{
-
-    text-align:center;
-
-    margin-bottom:3px;
-}
-
-
-/* CLASS IXTH BIOLOGY */
-
-.title{
-
-    display:inline-block;
-
-    padding:3px 20px;
-
-    background:#173b7a !important;
-
-    color:#fff !important;
-
-    border:2px solid #102d5d;
-
-    border-radius:5px;
-
-    font-size:19px;
-
-    font-weight:900;
-
-    line-height:1.1;
-
-    -webkit-print-color-adjust:exact !important;
-
-    print-color-adjust:exact !important;
-}
-
-
-/* CHAPTER */
-
-.chapter{
-
-    margin-top:2px;
-
-    color:#102d5d !important;
-
-    font-size:12px;
-
-    font-weight:900;
-
-    line-height:1.15;
-}
-
-
-/* OBJECTIVE TEST */
-
-.test{
-
-    margin-top:1px;
-
-    color:#4c1d95 !important;
-
-    font-size:11px;
-
-    font-weight:900;
-
-    line-height:1.1;
-}
-
-
-/* =========================
-   FULL MARKS / TIME
-========================= */
-
-.info{
-
-    width:100%;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-top:3px;
-
-    padding:0 2px;
-
-    font-size:10.5px;
-
-    font-weight:900;
-
-    color:#000 !important;
-}
-
-
-.full-marks{
-
-    text-align:left;
-}
-
-
-.time{
-
-    text-align:right;
-}
-
-
-/* =========================
-   HEADER LINE
-========================= */
-
-.line{
-
-    border-top:1.5px solid #173b7a;
-
-    margin:3px 0 5px;
-}
-
-
-/* =========================
-   FOUR COLUMNS
-========================= */
-
-.questions{
-
-    column-count:4;
-
-    column-gap:5mm;
-
-    column-rule:
-    1px solid #c5cad2;
-
-    height:174mm;
-
-    column-fill:balance;
-}
-
-
-/* =========================
-   QUESTION
-========================= */
-
-.question{
-
-    font-size:9.4px;
-
-    line-height:1.15;
-
-    margin-bottom:3px;
-
-    break-inside:avoid;
-
-    page-break-inside:avoid;
-
-    color:#000 !important;
-}
-
-
-/* QUESTION TEXT */
-
-.question-text{
-
-    font-weight:800;
-
-    color:#000 !important;
-
-    line-height:1.18;
-}
-
-
-/* =========================
-   OPTIONS
-========================= */
-
-.options{
-
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    column-gap:5px;
-
-    row-gap:0;
-
-    margin-left:8px;
-
-    margin-top:1px;
-}
-
-
-/* OPTION */
-
-.option{
-
-    font-size:8.7px;
-
-    line-height:1.13;
-
-    color:#000 !important;
-}
-
-
-/* =========================
-   PRINT SETTINGS
-========================= */
-
-@page{
-
-    size:A4 landscape;
-
-    margin:5mm;
-}
-
-
-@media print{
-
-    html,
+@media(max-width:600px){
     body{
-
-        width:297mm;
-
-        height:210mm;
-
-        margin:0;
-
-        padding:0;
-
-        background:#fff !important;
-
-        color:#000 !important;
-
-        -webkit-print-color-adjust:
-        exact !important;
-
-        print-color-adjust:
-        exact !important;
-    }
-
-
-    /* DOWNLOAD BUTTON HIDE */
-
-    .download-btn{
-
-        display:none !important;
-    }
-
-
-    /* PAGE */
-
-    .page{
-
-        width:100%;
-
-        height:200mm;
-
-        margin:0;
-
-        padding:4mm 5mm 3mm;
-
-        background:#fff !important;
-
-        box-shadow:none;
-
-        overflow:hidden;
-    }
-
-
-    /* DARK HEADING */
-
-    .title{
-
-        background:#173b7a !important;
-
-        color:#fff !important;
-
-        border:2px solid #102d5d !important;
-
-        -webkit-print-color-adjust:
-        exact !important;
-
-        print-color-adjust:
-        exact !important;
-    }
-
-
-    .chapter{
-
-        color:#102d5d !important;
-    }
-
-
-    .test{
-
-        color:#4c1d95 !important;
-    }
-
-
-    .info{
-
-        color:#000 !important;
-    }
-
-
-    /* FOUR COLUMNS */
-
-    .questions{
-
-        column-count:4;
-
-        column-gap:5mm;
-
-        column-rule:
-        1px solid #c5cad2;
-
-        height:174mm;
-
-        column-fill:balance;
-    }
-
-
-    .question,
-    .question-text,
-    .option{
-
-        color:#000 !important;
-    }
-
-}
-
-
-/* =========================
-   MOBILE VIEW
-========================= */
-
-@media screen and (max-width:900px){
-
-    .page{
-
-        width:100%;
-
-        height:auto;
-
-        min-height:100vh;
-
-        margin:0;
-
         padding:10px;
     }
 
-
-    .questions{
-
-        column-count:1;
-
-        height:auto;
+    .quiz-box{
+        padding:15px;
     }
 
+    h1{
+        font-size:23px;
+    }
+
+    .question-text{
+        font-size:18px;
+    }
+
+    .option{
+        font-size:16px;
+    }
 }
-
 </style>
-
 </head>
-
-
 
 <body>
 
+<div class="quiz-box">
 
-<!-- =========================
-     DOWNLOAD PDF
-========================= -->
+    <h1>CLASS 10th BIOLOGY</h1>
 
-<button
-    class="download-btn"
-    onclick="downloadPDF()">
-
-    📥 Download PDF
-
-</button>
-
-
-
-<!-- =========================
-     PAGE
-========================= -->
-
-<div class="page">
-
-
-<!-- =========================
-     HEADER
-========================= -->
-
-<div class="header">
-
-
-    <div class="title">
-        CLASS IXTH BIOLOGY
+    <div class="subtitle">
+        वस्तुनिष्ठ प्रश्न — Quiz
     </div>
 
+    <!-- प्रश्न 1 -->
+    <div class="question" data-answer="A">
 
-    <div class="chapter">
-        CHAP - 01 कोशिका-जीवन की आधारभूत इकाई
-    </div>
-
-
-    <div class="test">
-        OBJECTIVE TEST
-    </div>
-
-
-    <div class="info">
-
-        <div class="full-marks">
-            FULL MARKS - 40
+        <div class="question-text">
+            1. प्रकाश संश्लेषण क्रिया में ऑक्सीजन बाहर निकलता है—
         </div>
 
+        <button class="option" onclick="checkAnswer(this,'A')">
+            (A) जल से
+        </button>
 
-        <div class="time">
-            TIME - 2 HOUR
-        </div>
+        <button class="option" onclick="checkAnswer(this,'B')">
+            (B) CO₂ से
+        </button>
+
+        <button class="option" onclick="checkAnswer(this,'C')">
+            (C) ग्लूकोज से
+        </button>
+
+        <button class="option" onclick="checkAnswer(this,'D')">
+            (D) डिक्टियोसोम से
+        </button>
+
+        <div class="result"></div>
 
     </div>
 
 
-    <div class="line"></div>
+    <!-- प्रश्न 2 -->
+    <div class="question" data-answer="B">
 
+        <div class="question-text">
+            2. ग्वाइटर अथवा घेंघा पनपता है।
+        </div>
+
+        <button class="option" onclick="checkAnswer(this,'A')">
+            (A) चीनी की कमी से
+        </button>
+
+        <button class="option" onclick="checkAnswer(this,'B')">
+            (B) आयोडीन की कमी से
+        </button>
+
+        <button class="option" onclick="checkAnswer(this,'C')">
+            (C) रक्त की कमी से
+        </button>
+
+        <button class="option" onclick="checkAnswer(this,'D')">
+            (D) मोटापा से
+        </button>
+
+        <div class="result"></div>
+
+    </div>
+
+
+    <!-- प्रश्न 3 -->
+    <div class="question" data-answer="C">
+
+        <div class="question-text">
+            3. कूटपाद किसमें पाया जाता है?
+        </div>
+
+        <button class="option" onclick="checkAnswer(this,'A')">
+            (A) पैरामीशियम
+        </button>
+
+        <button class="option" onclick="checkAnswer(this,'B')">
+            (B) यूग्लीना
+        </button>
+
+        <button class="option" onclick="checkAnswer(this,'C')">
+            (C) अमीबा
+        </button>
+
+        <button class="option" onclick="checkAnswer(this,'D')">
+            (D) इनमें से कोई नहीं
+        </button>
+
+        <div class="result"></div>
+
+    </div>
+
+
+    <div id="scoreBox">
+        <div>🎉 Quiz समाप्त!</div>
+        <div id="score"></div>
+
+        <button id="reset" onclick="resetQuiz()">
+            फिर से Quiz दें
+        </button>
+    </div>
 
 </div>
-
-
-
-<!-- =========================
-     QUESTIONS
-========================= -->
-
-<div
-    class="questions"
-    id="questions">
-</div>
-
-
-</div>
-
 
 
 <script>
 
+let score = 0;
+let attempted = 0;
 
-/* =========================
-   QUESTIONS DATA
-========================= */
-
-const data = [
-
-
-[
-"1. तारककाय पाया जाता है-",
-"(A) कोशिकाद्रव्य में",
-"(B) गुणसूत्र में",
-"(C) केन्द्रक में",
-"(D) केन्द्रिका में"
-],
-
-
-[
-"2. इलेक्ट्रॉन सूक्ष्मदर्शी का अधिकतम आवर्धन है:",
-"(A) 100 X",
-"(B) 1000 X",
-"(C) 20,000 X",
-"(D) 2,00,000 X"
-],
-
-
-[
-"3. सेल (कोशिका) शब्द की उत्पत्ति से सम्बन्धित वैज्ञानिक का नाम है :",
-"(A) श्‍लाइडेन और श्वान",
-"(B) वाट्सन और क्रिक",
-"(C) नॉल और रस्का",
-"(D) रॉबर्ट हुक"
-],
-
-
-[
-"4. ER जुटा रहता है ।",
-"(A) गॉल्गी से",
-"(B) कोशिका झिल्ली से",
-"(C) केंद्रक झिल्ली से",
-"(D) सभी से"
-],
-
-
-[
-"5. निम्न में किसका विकास पहले हुआ है ?",
-"(A) माइटोकॉन्ड्रिया",
-"(B) गॉल्‍गी",
-"(C) केंद्रक",
-"(D) लाइसोसोम"
-],
-
-
-[
-"6. Fo-F1 कणों में ऐसा क्या होता है कि ए. टी. पी. का संश्लेषण होता है ?",
-"(A) प्रोटीन",
-"(B) इलेक्ट्रॉन",
-"(C) प्रोटीन पंप",
-"(D) क्रेब्‍स चक्र"
-],
-
-
-[
-"7. ….. प्लास्टिड के प्रकार हैं :",
-"(A) क्लोरोप्लास्ट",
-"(B) एल्यूरोप्लास्ट",
-"(C) एमाइलोप्लास्ट",
-"(D) इनमें सभी"
-],
-
-
-[
-"8. प्रोप्लास्टिड रूपांतरित हो सकता है :",
-"(A) क्लोरोप्लास्ट में",
-"(B) क्रोमोप्लास्ट में",
-"(C) ल्यूकोप्लास्ट में",
-"(D) सभी में"
-],
-
-
-[
-"9. केंद्रक नियंत्रित करता है :",
-"(A) कोशिका के भिन्न कार्यों को",
-"(B) केंद्रिका संश्लेषण को",
-"(C) आनुवंशिकता को",
-"(D) सभी को"
-],
-
-
-[
-"10. स्तनपायी के लाल रक्त कोशिकाओं में किस अवस्था में केन्द्रक नहीं होता है ?",
-"(A) संश्लेषण के समय",
-"(B) परिपक्व होने पर",
-"(C) मरने के समय",
-"(D) ‘A’ एवं ‘B’ दोनों समय"
-],
-
-
-[
-"11. कोशिकाओं की सूक्ष्म संरचना किस यंत्र के द्वारा देखी जाती है ?",
-"(A) फेज-कंट्रास्ट माइक्रोस्कोप",
-"(B) इलेक्ट्रॉन माइक्रोस्कोप",
-"(C) माइक्रो-डिसेक्सन",
-"(D) कम्पाउण्ड माइक्रोस्कोप"
-],
-
-
-[
-"12. ‘कोशिका सिद्धांत’ का प्रतिपादन किसने किया था ?",
-"(A) रॉबर्ट हुक",
-"(B) ल्यूवेन हॉक",
-"(C) जैनसन",
-"(D) स्लीडेन एवं स्वान"
-],
-
-
-[
-"13. प्रत्येक सजीव कोशिका में निम्नलिखित में कौन निश्चित रूप से पाया जाता है ?",
-"(A) सेंट्रोसोम",
-"(B) हरित लवक",
-"(C) माइटोकॉण्ड्रिया",
-"(D) राइबोसोम"
-],
-
-
-[
-"14. अंतःपद्रव्यी जालिका निम्नलिखित में किस क्रिया से सम्बन्धित है ?",
-"(A) प्रोटीन निर्माणाधीन रूपांतरण",
-"(B) वसा का निर्माण",
-"(C) अंतः कोशिकीय परिवहन",
-"(D) इनमें से सभी"
-],
-
-
-[
-"15. इनमें से किस सजीव कोशिका में केन्द्रक नहीं पाया जाता है ?",
-"(A) जाइलम वाहिनी कोशिका",
-"(B) सखी कोशिकाएँ",
-"(C) जाइलम पैरेनकाइमा",
-"(D) चालनी कोशिकाएँ"
-],
-
-
-[
-"16. समुद्र का जल, समुद्री जंतुओं के तुलना में होता है :",
-"(A) हाइपरटोनिक",
-"(B) हाइपोटोनिक",
-"(C) आइसोटोनिक",
-"(D) ‘A’ एवं ‘B’"
-],
-
-
-[
-"17. … में/पर वसा का संश्लेषण होता है।",
-"(A) ER",
-"(B) SER",
-"(C) RER",
-"(D) लाइसोसोम"
-],
-
-
-[
-"18. तारक केन्द्रक का कार्य है :",
-"(A) DNA-संश्लेषण",
-"(B) तर्कु निर्माण",
-"(C) श्वसन",
-"(D) जनन"
-],
-
-
-[
-"19. झिल्लियों से घिरा हुआ कोशिकाद्रव्य में पाया जानेवाला अंगक जिसमें पाचक रसायन या इन्जाइम पाये जाते हैं, कहलाते हैं :",
-"(A) माइटोकॉण्ड्रिया",
-"(B) लाइसोसोम",
-"(C) केन्द्रिका",
-"(D) तारककाय"
-],
-
-
-[
-"20. पादप कोशिका के चारों तरफ पायी जाने वाली झिल्ली को कहते हैं ?",
-"(A) टोनोप्लास्ट",
-"(B) डिक्टियोसोम",
-"(C) प्लाज्मा झिल्ली",
-"(D) कोशिका भित्तिं"
-],
-
-
-[
-"21. पादप और जन्तु कोशिका में प्रमुख अन्तर है :",
-"(A) पोषण सम्बन्धी",
-"(B) गति सम्बन्धी",
-"(C) वृद्धि सम्बन्धी",
-"(D) श्वसन सम्बन्धी"
-],
-
-
-[
-"22. निम्न में से किस कोशिका में आकृति निश्चित नहीं होती है ?",
-"(A) अमीबा",
-"(B) तंत्रिका कोशिका",
-"(C) श्वेत रक्त कोशिका",
-"(D) सभी"
-],
-
-
-[
-"23. सबसे लंबी कोशिका कौन है ?",
-"(A) तंत्रिका कोशिका",
-"(B) लाल रक्त कोशिका",
-"(C) श्वेत रक्त कोशिका",
-"(D) सभी"
-],
-
-
-[
-"24. निम्न में कौन शेष तीन से मेल नहीं खाता है ?",
-"(A) ER",
-"(B) गॉल्गी",
-"(C) प्लास्टिड",
-"(D) लाइसोसोम"
-],
-
-
-[
-"25. प्रोकैरियोट में नहीं होता है :",
-"(A) 80 S राइबोसोम",
-"(B) केंद्रिका",
-"(C) केंद्रक",
-"(D) सभी"
-],
-
-
-[
-"26. कोशिका झिल्ली में नहीं पाये जाते हैं",
-"(A) आंतरिक प्रोटीन",
-"(B) वसा का स्तर",
-"(C) Cilia",
-"(D) क्रिस्टी"
-],
-
-
-[
-"27. कोशिका झिल्ली में पाये जाते हैं",
-"(A) Flagella",
-"(B) डेस्मोसोम",
-"(C) पुररुज्जीवन",
-"(D) सभी"
-],
-
-
-[
-"28. निम्नलिखित में कौन-सा गुण प्लाज्मा झिल्ली में पाया जाता है ?",
-"(A) अंति अपारगम्यता",
-"(B) अपारगम्यता",
-"(C) चयनित या अर्धपारगम्यता",
-"(D) कभी पूर्ण पारगम्यता तो कभी अपारगम्यता"
-],
-
-
-[
-"29. माइक्रोकॉण्ड्रिया की आंतरिक झिल्ली मुड़कर कैसे रचना का निर्माण करती है ?",
-"(A) थाइलाकॉइड",
-"(B) सिस्टरनी",
-"(C) क्रिस्टी",
-"(D) ग्राना"
-],
-
-
-[
-"30. इनमें से कौन ‘आत्महत्या की थैली’ कहलाता है ?",
-"(A) लाइसोसोम",
-"(B) परऑक्सीसोम",
-"(C) राइबोसोम",
-"(D) स्फेरोसोम"
-],
-
-
-[
-"31. इनमें से किसमें डी. एन. ए. पाया जाता है ?",
-"(A) केन्द्रक / गुणसूत्र",
-"(B) माइटोकॉण्ड्रिया",
-"(C) क्लोरोप्लास्ट",
-"(D) इनमें से सभी में"
-],
-
-
-[
-"32. इनमें से किससे गुणसूत्रों का निर्माण होता है ?",
-"(A) डी. एन. ए.",
-"(B) आर. एन. ए.",
-"(C) प्रोटीन",
-"(D) डी. एन. ए. एवं प्रोटीन"
-],
-
-
-[
-"33. किसकी उत्पत्ति सबसे बाद में हुई है ?",
-"(A) कोशिका झिल्ली",
-"(B) केन्द्रक झिल्ली",
-"(C) DNA",
-"(D) RNA"
-],
-
-
-[
-"34. किसकी उत्पत्ति सबसे पहले हुई है ?",
-"(A) बैक्टीरिया",
-"(B) अमीबा",
-"(C) पारामीसियम",
-"(D) वायरस"
-],
-
-
-[
-"35. मनुष्य के गैमीट्स (शुक्राणु या अण्डे) में कितने गुणसूत्र होते हैं ?",
-"(A) बाइस",
-"(B) तेइस",
-"(C) बाइस जोड़ा",
-"(D) तेइस जोड़ा"
-],
-
-
-[
-"36. प्रोकैरियोटिक कोशिका में कौन कोशिकांग पाया जाता है ?",
-"(A) केन्द्रक",
-"(B) राइबोसोम",
-"(C) सेंट्रोसोम",
-"(D) लाइसोसोम"
-],
-
-
-[
-"37. इनमें से किसे ‘ऊर्जा निर्माण का केन्द्र’ कहा जाता है ?",
-"(A) केन्द्रक",
-"(B) माइटोकॉण्ड्रिया",
-"(C) हरित लवक",
-"(D) राइबोसोम"
-],
-
-
-[
-"38. इनमें से कौन प्रोटीन निर्माण का केन्द्र है ?",
-"(A) माइटोकॉण्ड्रिया",
-"(B) क्लोरोप्लास्ट",
-"(C) राइबोसोम",
-"(D) लाइसोसोम"
-],
-
-
-[
-"39. माइटोकॉन्ड्रिया को बायोप्लास्ट के रूप में किसने चर्चा की थी ?",
-"(A) बेंडा",
-"(B) अल्टमैन",
-"(C) फ्लेमिंग",
-"(D) वर्चों"
-],
-
-
-[
-"40. किसने बतलाया था कि पीढ़ी दर पीढ़ी गुणों को ढोने का कार्य जीन द्वारा होता है ?",
-"(A) जोहान्सेन",
-"(B) बेंडा",
-"(C) फ्लेमिंग",
-"(D) वर्चों"
-],
-
-
-[
-"41. …… बहुकोशिकीय नहीं है :",
-"(A) अमीबा",
-"(B) मलेरिया परजीवी",
-"(C) कालाज्वर परजीवी",
-"(D) सभी"
-],
-
-
-[
-"42. इनमें कौन चयनात्मक पारगम्य झिल्ली है ?",
-"(A) केंद्रकझिल्ली",
-"(B) कोशिकाझिल्ली",
-"(C) टोनोप्लास्ट",
-"(D) कोशिकाभित्ति"
-],
-
-
-[
-"43. निम्नलिखित कोशिकांगों में किसे ‘आत्मघाती थैली’ कहते हैं ?",
-"(A) लाइसोसोम",
-"(B) माइटोकॉण्ड्रिया",
-"(C) टोनोप्लास्ट",
-"(D) अंतः प्रदव्ययी जालिका"
-],
-
-
-[
-"44. पौधों में गैसों का आदान-प्रदान किस क्रिया द्वारा होता है ?",
-"(A) परासरण",
-"(B) विसरण",
-"(C) संकुचन",
-"(D) वाष्पोत्सर्जन"
-],
-
-
-[
-"45. जब किसी जीवित कोशिका को अतिपरासरी विलयन में डाला जाए तो क्या होगा ?",
-"(A) कोशिका फूल जाएगी",
-"(B) कोशिका संकुचित हो जाएगी",
-"(C) कोशिका जैसी की तैसी रहेगी",
-"(D) इनमें से कुछ नहीं होगा"
-],
-
-
-[
-"46. पौधे के मूल द्वारा जल का अवशोषण किस क्रिया द्वारा होता है ?",
-"(A) विसरण",
-"(B) परासरण",
-"(C) एंडोसाइटोसिस",
-"(D) संकुचन"
-],
+function checkAnswer(button, selected){
 
+    let question = button.parentElement;
+    let correctAnswer = question.getAttribute("data-answer");
+    let options = question.querySelectorAll(".option");
+    let result = question.querySelector(".result");
 
-[
-"47. कोशिकाद्रव्य में पाए जानेवाले अनियमित नलिकाओं के जाल को कहते हैं :",
-"(A) गॉल्जी उपकरण",
-"(B) लवक",
-"(C) ग्राना",
-"(D) अंतःप्रद्रव्यी जालिका"
-],
+    /* एक प्रश्न का उत्तर दोबारा न चुना जा सके */
+    if(question.classList.contains("answered")){
+        return;
+    }
 
+    question.classList.add("answered");
+    attempted++;
 
-[
-"48. रंगीन प्लैस्टिड को कहते हैं :",
-"(A) ल्यूकोप्लास्ट",
-"(B) क्लोरोप्लास्ट",
-"(C) क्रोमोप्लास्ट",
-"(D) इनमें से कोई नहीं"
-],
+    /* सभी विकल्प बंद */
+    options.forEach(function(option){
+        option.disabled = true;
+    });
 
+    if(selected === correctAnswer){
 
-[
-"49. केंद्रक में पाए जाने वाले गाढ़े द्रव्य को कहते हैं :",
-"(A) कोशिकारस",
-"(B) मैट्रिक्स",
-"(C) केंद्रकद्रव्य",
-"(D) स्ट्रोमा"
-],
+        button.classList.add("correct");
 
+        result.innerHTML =
+            "✓ सही उत्तर!";
 
-[
-"50. किस प्रकार की कोशिका में बड़ी रसधानी पाई जाती है ?",
-"(A) जंतु कोशिका",
-"(B) पादप कोशिका",
-"(C) प्रोकैरियोटिक कोशिका",
-"(D) सभी यूकैरियोटिक कोशिका"
-]
+        result.style.color = "#16852b";
 
-];
+        score++;
 
+    }else{
 
+        button.classList.add("wrong");
 
-/* =========================
-   CREATE QUESTIONS
-========================= */
+        result.innerHTML =
+            "✗ गलत उत्तर! सही उत्तर है: (" + correctAnswer + ")";
 
-const box =
-document.getElementById("questions");
+        result.style.color = "#c00000";
 
+        /* सही उत्तर को हाइलाइट करें */
+        options.forEach(function(option){
 
-data.forEach(function(q){
+            let onclickText = option.getAttribute("onclick");
 
-    const div =
-    document.createElement("div");
+            if(onclickText.includes("'" + correctAnswer + "'")){
+                option.classList.add("correct");
+            }
 
-    div.className =
-    "question";
+        });
+    }
 
+    /* सभी प्रश्न हल होने पर स्कोर दिखाएँ */
+    if(attempted === 3){
 
-    div.innerHTML = `
+        document.getElementById("scoreBox").style.display = "block";
 
-        <div class="question-text">
-            ${q[0]}
-        </div>
+        document.getElementById("score").innerHTML =
+            "आपका स्कोर: " + score + " / 3";
 
-        <div class="options">
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth"
+        });
+    }
+}
 
-            <div class="option">
-                ${q[1]}
-            </div>
 
-            <div class="option">
-                ${q[2]}
-            </div>
+function resetQuiz(){
 
-            <div class="option">
-                ${q[3]}
-            </div>
+    score = 0;
+    attempted = 0;
 
-            <div class="option">
-                ${q[4]}
-            </div>
+    let questions = document.querySelectorAll(".question");
 
-        </div>
+    questions.forEach(function(question){
 
-    `;
+        question.classList.remove("answered");
 
+        let options = question.querySelectorAll(".option");
 
-    box.appendChild(div);
+        options.forEach(function(option){
 
-});
+            option.disabled = false;
 
+            option.classList.remove("correct");
+            option.classList.remove("wrong");
 
+        });
 
-/* =========================
-   DOWNLOAD PDF
-========================= */
+        question.querySelector(".result").innerHTML = "";
 
-function downloadPDF(){
+    });
 
-    window.print();
+    document.getElementById("scoreBox").style.display = "none";
 
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 }
 
 </script>
 
-
 </body>
-
-    </html>
+      </html>
