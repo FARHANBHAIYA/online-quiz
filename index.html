@@ -36,7 +36,7 @@ body{
 
 
 /* ==================================================
-   HEADINGS
+   HEADER
 ================================================== */
 
 .main-heading{
@@ -53,33 +53,42 @@ body{
 
     display:inline-block;
 
-    padding:10px 24px;
+    position:relative;
 
-    border-radius:15px;
+    padding:11px 27px;
 
-    border:3px solid #075b9a;
+    border-radius:17px;
 
     /*
-       Box के अंदर attractive
-       multicolor background
+       पूरा BOX multicolor
     */
 
     background:
         linear-gradient(
-            135deg,
+            120deg,
             #ff1744,
-            #ff9100,
+            #ff6d00,
             #ffd600,
             #00c853,
             #00b0ff,
-            #7c4dff,
+            #651fff,
+            #d500f9,
             #ff1744
         );
 
-    background-size:300% 300%;
+    background-size:400% 400%;
 
     animation:
-        farhanColor 5s ease infinite;
+        farhanBoxColor 6s ease infinite;
+
+    border:3px solid #ffffff;
+
+    /*
+       Text सफेद ताकि
+       पूरे colourful box में साफ दिखाई दे
+    */
+
+    color:#ffffff;
 
     font-family:Arial,sans-serif;
 
@@ -89,58 +98,41 @@ body{
 
     letter-spacing:2px;
 
-    /*
-       Text को gradient colour देना
-    */
-
-    -webkit-background-clip:text;
-
-    background-clip:text;
-
-    color:transparent;
-
     text-shadow:
-        1px 2px 3px rgba(0,0,0,.15);
+        2px 2px 0 rgba(0,0,0,.25),
+        0 3px 8px rgba(0,0,0,.25);
 
     box-shadow:
-        0 5px 15px rgba(7,91,154,.22);
+        0 6px 18px rgba(0,0,0,.25),
+        0 0 0 3px rgba(126,70,255,.15);
 
-    position:relative;
 }
 
 
-@keyframes farhanColor{
+/* Box का रंग लगातार बदलता रहेगा */
+
+@keyframes farhanBoxColor{
 
     0%{
         background-position:0% 50%;
+    }
+
+    25%{
+        background-position:50% 100%;
     }
 
     50%{
         background-position:100% 50%;
     }
 
+    75%{
+        background-position:50% 0%;
+    }
+
     100%{
         background-position:0% 50%;
     }
 
-}
-
-
-/* FARHAN BOX की बाहरी लाइन */
-
-.farhan::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:-6px;
-
-    border-radius:19px;
-
-    border:2px solid rgba(126,70,255,.55);
-
-    pointer-events:none;
 }
 
 
@@ -161,7 +153,8 @@ body{
             90deg,
             #00695c,
             #00a86b,
-            #2e7d32
+            #2e7d32,
+            #00695c
         );
 
     -webkit-background-clip:text;
@@ -320,7 +313,7 @@ body{
 
 
 /* ==================================================
-   WRONG OPTION
+   WRONG
 ================================================== */
 
 .option.wrong{
@@ -344,7 +337,7 @@ body{
 
 
 /* ==================================================
-   CORRECT OPTION
+   CORRECT
 ================================================== */
 
 .option.correct{
@@ -369,7 +362,6 @@ body{
 
 /* ==================================================
    BLUE TICK
-   केवल सही option click करने पर
 ================================================== */
 
 .option.selected-correct .mark{
@@ -434,7 +426,7 @@ body{
 
 
 /* ==================================================
-   PETALS / FLOWERS
+   PETALS
 ================================================== */
 
 .option-flower{
@@ -445,42 +437,71 @@ body{
 
     pointer-events:none;
 
+    will-change:transform,opacity;
+
     animation:
-        petalFall 2.1s
-        cubic-bezier(.25,.46,.45,.94)
-        forwards;
+        petalAnimation 2s linear forwards;
 }
 
 
-@keyframes petalFall{
+/*
+   पूरा effect:
+   1. option से तेज़ी से ऊपर
+   2. ऊपर रुकना नहीं
+   3. ऊपर पहुँचते ही फैलना
+   4. फिर नीचे गिरना
+*/
 
-    /*
-       Option से निकलना
-    */
+@keyframes petalAnimation{
 
     0%{
 
         transform:
-            translate(0,0)
+            translate3d(
+                0,
+                0,
+                0
+            )
             rotate(0deg)
-            scale(.3);
+            scale(.25);
 
         opacity:0;
     }
 
 
     /*
-       थोड़ा ऊपर जाना
+       Option से निकलकर
+       लगातार ऊपर जाना
     */
 
-    20%{
+    12%{
 
         transform:
-            translate(
-                calc(var(--side) * .25),
-                calc(var(--rise) * -0.45)
+            translate3d(
+                calc(var(--side) * .12),
+                calc(var(--up) * -.30),
+                0
             )
-            rotate(70deg)
+            rotate(50deg)
+            scale(.85);
+
+        opacity:1;
+    }
+
+
+    /*
+       ऊपर की ओर लगातार movement
+    */
+
+    30%{
+
+        transform:
+            translate3d(
+                calc(var(--side) * .35),
+                calc(var(--up) * -.72),
+                0
+            )
+            rotate(120deg)
             scale(1);
 
         opacity:1;
@@ -489,16 +510,18 @@ body{
 
     /*
        सबसे ऊपर
+       लेकिन रुकना नहीं है
     */
 
-    42%{
+    43%{
 
         transform:
-            translate(
+            translate3d(
                 var(--side),
-                calc(var(--rise) * -1)
+                calc(var(--up) * -1),
+                0
             )
-            rotate(160deg)
+            rotate(190deg)
             scale(1.05);
 
         opacity:1;
@@ -506,20 +529,21 @@ body{
 
 
     /*
-       नीचे गिरना शुरू
+       अब चारों तरफ फैलते हुए नीचे
     */
 
-    70%{
+    63%{
 
         transform:
-            translate(
-                calc(var(--side) * 1.15),
-                calc(var(--rise) * -.35)
+            translate3d(
+                calc(var(--side) * 1.45),
+                calc(var(--down) * -.45),
+                0
             )
-            rotate(260deg)
-            scale(.9);
+            rotate(280deg)
+            scale(.95);
 
-        opacity:.9;
+        opacity:.95;
     }
 
 
@@ -527,15 +551,35 @@ body{
        नीचे गिरना
     */
 
+    82%{
+
+        transform:
+            translate3d(
+                calc(var(--side) * 1.75),
+                calc(var(--down) * .35),
+                0
+            )
+            rotate(360deg)
+            scale(.78);
+
+        opacity:.75;
+    }
+
+
+    /*
+       अंतिम नीचे गिरना
+    */
+
     100%{
 
         transform:
-            translate(
-                calc(var(--side) * 1.35),
-                120px
+            translate3d(
+                calc(var(--side) * 2),
+                var(--down),
+                0
             )
-            rotate(420deg)
-            scale(.65);
+            rotate(460deg)
+            scale(.55);
 
         opacity:0;
     }
@@ -646,8 +690,6 @@ body{
 }
 
 
-/* DARK GREEN */
-
 .correct-box{
 
     background:
@@ -660,8 +702,6 @@ body{
     border:2px solid #064d16;
 }
 
-
-/* DARK RED */
 
 .wrong-box{
 
@@ -676,8 +716,6 @@ body{
 }
 
 
-/* DARK BLUE */
-
 .score-box{
 
     background:
@@ -690,8 +728,6 @@ body{
     border:2px solid #002f52;
 }
 
-
-/* DARK PURPLE */
 
 .percent-box{
 
@@ -1033,7 +1069,6 @@ body{
 
 <div id="resultArea">
 
-
     <div class="result-grid">
 
 
@@ -1043,9 +1078,7 @@ body{
 
             <span class="big-number"
                   id="correctCount">
-
                 0
-
             </span>
 
         </div>
@@ -1057,9 +1090,7 @@ body{
 
             <span class="big-number"
                   id="wrongCount">
-
                 0
-
             </span>
 
         </div>
@@ -1071,9 +1102,7 @@ body{
 
             <span class="big-number"
                   id="scoreCount">
-
                 0 / 3
-
             </span>
 
         </div>
@@ -1085,9 +1114,7 @@ body{
 
             <span class="big-number"
                   id="percentage">
-
                 0%
-
             </span>
 
         </div>
@@ -1208,7 +1235,7 @@ function playCorrectSound(){
 
 
 /* ==================================================
-   WRONG ANSWER VIBRATION
+   WRONG VIBRATION
    केवल एक बार
 ================================================== */
 
@@ -1386,7 +1413,7 @@ function sadSound(){
 
 
 /* ==================================================
-   PETALS FROM SELECTED OPTION
+   PETAL EFFECT
 ================================================== */
 
 function flowerBurst(option){
@@ -1409,8 +1436,7 @@ function flowerBurst(option){
 
 
     /*
-       सभी पंखुड़ियाँ
-       उसी option से निकलेंगी
+       22 पंखुड़ियाँ
     */
 
     for(
@@ -1439,7 +1465,8 @@ function flowerBurst(option){
 
 
         /*
-           Starting point
+           शुरुआत option के
+           बीच से होगी
         */
 
         petal.style.left =
@@ -1457,20 +1484,43 @@ function flowerBurst(option){
 
 
         /*
-           ऊपर जाने की दूरी
+           हर पंखुड़ी की
+           अलग दिशा
         */
 
-        const rise =
-            60 +
-            Math.random() * 100;
+        const angle =
+            (
+                Math.random() *
+                Math.PI * 2
+            );
+
+
+        const spread =
+            70 +
+            Math.random()*100;
+
+
+        const side =
+            Math.cos(angle) *
+            spread;
 
 
         /*
-           दाएँ-बाएँ फैलाव
+           ऊपर जाने की दूरी
         */
 
-        const side =
-            (Math.random()*180) - 90;
+        const up =
+            100 +
+            Math.random()*70;
+
+
+        /*
+           नीचे गिरने की दूरी
+        */
+
+        const down =
+            170 +
+            Math.random()*80;
 
 
         petal.style.setProperty(
@@ -1480,8 +1530,14 @@ function flowerBurst(option){
 
 
         petal.style.setProperty(
-            "--rise",
-            rise + "px"
+            "--up",
+            up + "px"
+        );
+
+
+        petal.style.setProperty(
+            "--down",
+            down + "px"
         );
 
 
@@ -1493,12 +1549,12 @@ function flowerBurst(option){
 
 
         /*
-           थोड़ा अलग-अलग समय
+           सभी लगभग एक साथ निकलें
         */
 
         petal.style.animationDelay =
             (
-                Math.random() * .25
+                Math.random()*.06
             ) + "s";
 
 
@@ -1513,7 +1569,7 @@ function flowerBurst(option){
                 petal.remove();
 
             },
-            2300
+            2150
         );
 
     }
@@ -1584,7 +1640,7 @@ function checkAnswer(
 
 
     /* ==================================================
-       CORRECT ANSWER
+       CORRECT
     ================================================== */
 
     if(
@@ -1618,7 +1674,7 @@ function checkAnswer(
 
 
         /*
-           सही होने की sound
+           Correct sound
         */
 
         playCorrectSound();
@@ -1626,7 +1682,7 @@ function checkAnswer(
 
         /*
            उसी option से
-           petals ऊपर जाकर नीचे गिरेंगे
+           petals निकलेंगे
         */
 
         flowerBurst(
@@ -1638,14 +1694,13 @@ function checkAnswer(
 
 
     /* ==================================================
-       WRONG ANSWER
+       WRONG
     ================================================== */
 
     else{
 
         /*
-           चुना हुआ गलत option:
-           RED + CROSS
+           गलत option RED
         */
 
         button.classList.add(
@@ -1666,7 +1721,8 @@ function checkAnswer(
 
 
         /*
-           सही option खोजना
+           सही option GREEN
+           लेकिन कोई blue tick नहीं
         */
 
         options.forEach(
@@ -1687,19 +1743,10 @@ function checkAnswer(
                 )
             ){
 
-                /*
-                   सही option केवल GREEN
-                */
-
                 option.classList.add(
                     "correct"
                 );
 
-
-                /*
-                   सही option पर
-                   BLUE TICK नहीं
-                */
 
                 option.querySelector(
                     ".mark"
@@ -1725,7 +1772,7 @@ function checkAnswer(
 
 
 /* ==================================================
-   SUBMIT QUIZ
+   SUBMIT
 ================================================== */
 
 function submitQuiz(){
@@ -1847,8 +1894,8 @@ function submitQuiz(){
 
 
         /*
-           Submit के बाद भी
-           सही options से petals
+           Celebration पर सही options
+           से भी petals
         */
 
         const correctOptions =
@@ -1948,7 +1995,7 @@ function submitQuiz(){
 
 
 /* ==================================================
-   RESET QUIZ
+   RESET
 ================================================== */
 
 function resetQuiz(){
