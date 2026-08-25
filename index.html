@@ -8,35 +8,34 @@
 
 <style>
 
+/* ==================================================
+   BASIC
+================================================== */
+
 *{
     box-sizing:border-box;
 }
 
 body{
     margin:0;
-    padding:12px;
-    background:linear-gradient(135deg,#e3efff,#f8fbff);
+    padding:10px;
+    background:linear-gradient(135deg,#e4f0ff,#f9fcff);
     font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
     color:#222;
 }
-
-
-/* ==================================================
-   MAIN BOX
-================================================== */
 
 .quiz-box{
     max-width:850px;
     margin:auto;
     background:#fff;
-    padding:22px;
+    padding:20px;
     border-radius:20px;
     box-shadow:0 7px 28px rgba(0,0,0,.16);
 }
 
 
 /* ==================================================
-   HEADER
+   HEADING
 ================================================== */
 
 .main-heading{
@@ -44,24 +43,13 @@ body{
     margin-bottom:25px;
 }
 
-
-/* ==================================================
-   FARHAN BHAIYA
-================================================== */
-
 .farhan{
-
     display:inline-block;
-
     position:relative;
 
     padding:11px 27px;
 
     border-radius:17px;
-
-    /*
-       पूरा BOX multicolor
-    */
 
     background:
         linear-gradient(
@@ -78,17 +66,11 @@ body{
 
     background-size:400% 400%;
 
-    animation:
-        farhanBoxColor 6s ease infinite;
+    animation:farhanColor 6s ease infinite;
 
-    border:3px solid #ffffff;
+    border:3px solid #fff;
 
-    /*
-       Text सफेद ताकि
-       पूरे colourful box में साफ दिखाई दे
-    */
-
-    color:#ffffff;
+    color:#fff;
 
     font-family:Arial,sans-serif;
 
@@ -103,15 +85,10 @@ body{
         0 3px 8px rgba(0,0,0,.25);
 
     box-shadow:
-        0 6px 18px rgba(0,0,0,.25),
-        0 0 0 3px rgba(126,70,255,.15);
-
+        0 6px 18px rgba(0,0,0,.25);
 }
 
-
-/* Box का रंग लगातार बदलता रहेगा */
-
-@keyframes farhanBoxColor{
+@keyframes farhanColor{
 
     0%{
         background-position:0% 50%;
@@ -132,13 +109,7 @@ body{
     100%{
         background-position:0% 50%;
     }
-
 }
-
-
-/* ==================================================
-   BIOLOGY
-================================================== */
 
 .biology{
 
@@ -153,24 +124,14 @@ body{
             90deg,
             #00695c,
             #00a86b,
-            #2e7d32,
-            #00695c
+            #2e7d32
         );
 
     -webkit-background-clip:text;
-
     background-clip:text;
 
     color:transparent;
-
-    text-shadow:
-        0 2px 3px rgba(0,0,0,.12);
 }
-
-
-/* ==================================================
-   OBJECTIVE
-================================================== */
 
 .objective{
 
@@ -198,8 +159,6 @@ body{
 
     box-shadow:
         0 4px 10px rgba(74,20,140,.3);
-
-    letter-spacing:.4px;
 }
 
 
@@ -209,11 +168,9 @@ body{
 
 .question{
 
-    position:relative;
+    margin-top:22px;
 
-    margin-top:21px;
-
-    padding:19px;
+    padding:18px;
 
     border:2px solid #b7c9dc;
 
@@ -222,14 +179,13 @@ body{
     background:
         linear-gradient(
             135deg,
-            #ffffff,
+            #fff,
             #eef6ff
         );
 
     box-shadow:
         0 4px 12px rgba(0,0,0,.08);
 }
-
 
 .question-text{
 
@@ -239,14 +195,23 @@ body{
 
     line-height:1.65;
 
-    margin-bottom:15px;
+    margin-bottom:14px;
 
     color:#17446b;
 }
 
 
 /* ==================================================
-   OPTIONS
+   OPTION WRAPPER
+================================================== */
+
+.option-wrap{
+    margin:10px 0;
+}
+
+
+/* ==================================================
+   OPTION
 ================================================== */
 
 .option{
@@ -261,19 +226,17 @@ body{
 
     min-height:55px;
 
-    margin:11px 0;
-
     padding:12px 55px 12px 16px;
 
-    border:2px solid #98aebe;
+    border:2px solid #91a8ba;
 
     border-radius:12px;
 
     background:
         linear-gradient(
             135deg,
-            #dfeaf3,
-            #d4e2ed
+            #dce8f1,
+            #cedde8
         );
 
     color:#173449;
@@ -293,27 +256,45 @@ body{
         box-shadow .25s;
 }
 
-
-.option:hover:not(:disabled){
+.option:hover{
 
     background:
         linear-gradient(
             135deg,
-            #cfe7fa,
-            #bcdcf2
+            #cde3f4,
+            #bdd8ec
         );
 
     border-color:#1683c7;
-
-    transform:translateY(-1px);
-
-    box-shadow:
-        0 5px 12px rgba(7,91,154,.16);
 }
 
 
 /* ==================================================
-   WRONG
+   LOCKED CORRECT
+================================================== */
+
+.option.correct{
+
+    background:
+        linear-gradient(
+            135deg,
+            #4fc46a,
+            #31ae4f
+        ) !important;
+
+    border-color:#087c26 !important;
+
+    color:#043d12 !important;
+
+    font-weight:900;
+
+    box-shadow:
+        0 4px 13px rgba(0,120,35,.28);
+}
+
+
+/* ==================================================
+   LOCKED WRONG
 ================================================== */
 
 .option.wrong{
@@ -321,8 +302,8 @@ body{
     background:
         linear-gradient(
             135deg,
-            #f08a8a,
-            #e66b6b
+            #ef8585,
+            #df6060
         ) !important;
 
     border-color:#c40000 !important;
@@ -333,58 +314,6 @@ body{
 
     box-shadow:
         0 4px 13px rgba(190,0,0,.28);
-}
-
-
-/* ==================================================
-   CORRECT
-================================================== */
-
-.option.correct{
-
-    background:
-        linear-gradient(
-            135deg,
-            #55c96d,
-            #36b955
-        ) !important;
-
-    border-color:#087c26 !important;
-
-    color:#043d12 !important;
-
-    font-weight:900;
-
-    box-shadow:
-        0 4px 13px rgba(0,120,35,.27);
-}
-
-
-/* ==================================================
-   BLUE TICK
-================================================== */
-
-.option.selected-correct .mark{
-
-    display:flex;
-
-    background:#1267d6;
-
-    color:#fff;
-}
-
-
-/* ==================================================
-   RED CROSS
-================================================== */
-
-.option.wrong .mark{
-
-    display:flex;
-
-    background:#c40000;
-
-    color:#fff;
 }
 
 
@@ -403,7 +332,6 @@ body{
     transform:translateY(-50%);
 
     width:30px;
-
     height:30px;
 
     border-radius:50%;
@@ -411,7 +339,6 @@ body{
     display:none;
 
     align-items:center;
-
     justify-content:center;
 
     font-family:Arial,sans-serif;
@@ -424,9 +351,91 @@ body{
         0 2px 6px rgba(0,0,0,.22);
 }
 
+.option.selected-correct .mark{
+
+    display:flex;
+
+    background:#1267d6;
+
+    color:#fff;
+}
+
+.option.wrong .mark{
+
+    display:flex;
+
+    background:#c40000;
+
+    color:#fff;
+}
+
 
 /* ==================================================
-   PETALS
+   CONCLUSION
+   शुरुआत में hidden
+================================================== */
+
+.conclusion{
+
+    display:none;
+
+    margin-top:5px;
+
+    margin-left:5px;
+
+    padding:9px 13px;
+
+    border-radius:9px;
+
+    font-size:15px;
+
+    line-height:1.55;
+
+    font-weight:600;
+
+    animation:showConclusion .25s ease;
+}
+
+@keyframes showConclusion{
+
+    from{
+        opacity:0;
+        transform:translateY(-4px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* सही option का हल्का green conclusion */
+
+.conclusion.green{
+
+    background:#dff5e4;
+
+    border-left:4px solid #159447;
+
+    color:#145c2b;
+}
+
+
+/* गलत option का हल्का red conclusion */
+
+.conclusion.red{
+
+    background:#fde1e1;
+
+    border-left:4px solid #d52b2b;
+
+    color:#7a2020;
+}
+
+
+/* ==================================================
+   FLOWER / PETALS
 ================================================== */
 
 .option-flower{
@@ -445,11 +454,8 @@ body{
 
 
 /*
-   पूरा effect:
-   1. option से तेज़ी से ऊपर
-   2. ऊपर रुकना नहीं
-   3. ऊपर पहुँचते ही फैलना
-   4. फिर नीचे गिरना
+   पूरी animation में LINEAR गति।
+   कोई अचानक रुकना या तेज/धीमा होना नहीं।
 */
 
 @keyframes petalAnimation{
@@ -468,52 +474,33 @@ body{
         opacity:0;
     }
 
-
-    /*
-       Option से निकलकर
-       लगातार ऊपर जाना
-    */
-
-    12%{
+    10%{
 
         transform:
             translate3d(
-                calc(var(--side) * .12),
-                calc(var(--up) * -.30),
+                calc(var(--side) * .10),
+                calc(var(--up) * -.25),
                 0
             )
-            rotate(50deg)
-            scale(.85);
+            rotate(45deg)
+            scale(.8);
 
         opacity:1;
     }
-
-
-    /*
-       ऊपर की ओर लगातार movement
-    */
 
     30%{
 
         transform:
             translate3d(
                 calc(var(--side) * .35),
-                calc(var(--up) * -.72),
+                calc(var(--up) * -.60),
                 0
             )
             rotate(120deg)
             scale(1);
-
-        opacity:1;
     }
 
-
-    /*
-       सबसे ऊपर
-       लेकिन रुकना नहीं है
-    */
-
-    43%{
+    45%{
 
         transform:
             translate3d(
@@ -521,54 +508,35 @@ body{
                 calc(var(--up) * -1),
                 0
             )
-            rotate(190deg)
+            rotate(180deg)
             scale(1.05);
-
-        opacity:1;
     }
 
-
-    /*
-       अब चारों तरफ फैलते हुए नीचे
-    */
-
-    63%{
+    65%{
 
         transform:
             translate3d(
-                calc(var(--side) * 1.45),
-                calc(var(--down) * -.45),
+                calc(var(--side) * 1.35),
+                calc(var(--down) * -.30),
                 0
             )
-            rotate(280deg)
+            rotate(270deg)
             scale(.95);
-
-        opacity:.95;
     }
-
-
-    /*
-       नीचे गिरना
-    */
 
     82%{
 
         transform:
             translate3d(
-                calc(var(--side) * 1.75),
-                calc(var(--down) * .35),
+                calc(var(--side) * 1.65),
+                calc(var(--down) * .45),
                 0
             )
             rotate(360deg)
             scale(.78);
 
-        opacity:.75;
+        opacity:.7;
     }
-
-
-    /*
-       अंतिम नीचे गिरना
-    */
 
     100%{
 
@@ -578,12 +546,11 @@ body{
                 var(--down),
                 0
             )
-            rotate(460deg)
+            rotate(470deg)
             scale(.55);
 
         opacity:0;
     }
-
 }
 
 
@@ -597,7 +564,7 @@ body{
 
     width:100%;
 
-    margin:29px auto 10px;
+    margin:28px auto 10px;
 
     padding:16px;
 
@@ -623,28 +590,13 @@ body{
 
     box-shadow:
         0 5px 14px rgba(0,0,0,.25);
-
-    transition:.3s;
 }
-
-
-#submitBtn:hover{
-
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 7px 18px rgba(0,0,0,.3);
-}
-
 
 #submitBtn:disabled{
 
     background:#555;
 
     cursor:not-allowed;
-
-    transform:none;
 }
 
 
@@ -659,7 +611,6 @@ body{
     margin-top:27px;
 }
 
-
 .result-grid{
 
     display:grid;
@@ -669,7 +620,6 @@ body{
 
     gap:15px;
 }
-
 
 .result-card{
 
@@ -689,7 +639,6 @@ body{
     color:#fff;
 }
 
-
 .correct-box{
 
     background:
@@ -698,10 +647,7 @@ body{
             #087f23,
             #075c1b
         );
-
-    border:2px solid #064d16;
 }
-
 
 .wrong-box{
 
@@ -711,10 +657,7 @@ body{
             #c62828,
             #8e0000
         );
-
-    border:2px solid #720000;
 }
-
 
 .score-box{
 
@@ -724,10 +667,7 @@ body{
             #075b9a,
             #003c6b
         );
-
-    border:2px solid #002f52;
 }
-
 
 .percent-box{
 
@@ -737,10 +677,7 @@ body{
             #6a1b9a,
             #42105f
         );
-
-    border:2px solid #310b46;
 }
-
 
 .big-number{
 
@@ -847,6 +784,10 @@ body{
         min-height:52px;
     }
 
+    .conclusion{
+        font-size:14px;
+    }
+
     .result-grid{
         grid-template-columns:1fr;
     }
@@ -895,48 +836,95 @@ body{
 <div class="question" data-answer="A">
 
     <div class="question-text">
-        1. प्रकाश संश्लेषण क्रिया में ऑक्सीजन बाहर निकलता है—
+        1. प्रकाश संश्लेषण में निकलने वाली ऑक्सीजन का स्रोत क्या है?
     </div>
 
 
-    <button class="option"
-            onclick="checkAnswer(this,'A')">
+    <div class="option-wrap">
 
-        (A) जल से
+        <button class="option"
+                onclick="optionClick(this,'A')">
 
-        <span class="mark">✓</span>
+            (A) जल
 
-    </button>
+            <span class="mark">✓</span>
 
+        </button>
 
-    <button class="option"
-            onclick="checkAnswer(this,'B')">
+        <div class="conclusion green">
 
-        (B) CO₂ से
+            <b>निष्कर्ष:</b>
+            प्रकाश संश्लेषण में निकलने वाली ऑक्सीजन जल से आती है।
 
-        <span class="mark">✕</span>
+        </div>
 
-    </button>
-
-
-    <button class="option"
-            onclick="checkAnswer(this,'C')">
-
-        (C) ग्लूकोज से
-
-        <span class="mark">✕</span>
-
-    </button>
+    </div>
 
 
-    <button class="option"
-            onclick="checkAnswer(this,'D')">
 
-        (D) डिक्टियोसोम से
+    <div class="option-wrap">
 
-        <span class="mark">✕</span>
+        <button class="option"
+                onclick="optionClick(this,'B')">
 
-    </button>
+            (B) कार्बन डाइऑक्साइड
+
+            <span class="mark">✕</span>
+
+        </button>
+
+        <div class="conclusion red">
+
+            <b>निष्कर्ष:</b>
+            CO₂ भोजन बनाने में काम आती है, ऑक्सीजन का मुख्य स्रोत नहीं है।
+
+        </div>
+
+    </div>
+
+
+
+    <div class="option-wrap">
+
+        <button class="option"
+                onclick="optionClick(this,'C')">
+
+            (C) ग्लूकोज
+
+            <span class="mark">✕</span>
+
+        </button>
+
+        <div class="conclusion red">
+
+            <b>निष्कर्ष:</b>
+            ग्लूकोज प्रकाश संश्लेषण से बनता है, ऑक्सीजन का स्रोत नहीं है।
+
+        </div>
+
+    </div>
+
+
+
+    <div class="option-wrap">
+
+        <button class="option"
+                onclick="optionClick(this,'D')">
+
+            (D) क्लोरोफिल
+
+            <span class="mark">✕</span>
+
+        </button>
+
+        <div class="conclusion red">
+
+            <b>निष्कर्ष:</b>
+            क्लोरोफिल प्रकाश को पकड़ता है, लेकिन ऑक्सीजन का स्रोत नहीं है।
+
+        </div>
+
+    </div>
 
 </div>
 
@@ -949,48 +937,95 @@ body{
 <div class="question" data-answer="B">
 
     <div class="question-text">
-        2. ग्वाइटर अथवा घेंघा पनपता है।
+        2. घेंघा रोग किसकी कमी से होता है?
     </div>
 
 
-    <button class="option"
-            onclick="checkAnswer(this,'A')">
+    <div class="option-wrap">
 
-        (A) चीनी की कमी से
+        <button class="option"
+                onclick="optionClick(this,'A')">
 
-        <span class="mark">✕</span>
+            (A) आयरन
 
-    </button>
+            <span class="mark">✕</span>
 
+        </button>
 
-    <button class="option"
-            onclick="checkAnswer(this,'B')">
+        <div class="conclusion red">
 
-        (B) आयोडीन की कमी से
+            <b>निष्कर्ष:</b>
+            आयरन की कमी से मुख्य रूप से एनीमिया होता है।
 
-        <span class="mark">✓</span>
+        </div>
 
-    </button>
-
-
-    <button class="option"
-            onclick="checkAnswer(this,'C')">
-
-        (C) रक्त की कमी से
-
-        <span class="mark">✕</span>
-
-    </button>
+    </div>
 
 
-    <button class="option"
-            onclick="checkAnswer(this,'D')">
 
-        (D) मोटापा से
+    <div class="option-wrap">
 
-        <span class="mark">✕</span>
+        <button class="option"
+                onclick="optionClick(this,'B')">
 
-    </button>
+            (B) आयोडीन
+
+            <span class="mark">✓</span>
+
+        </button>
+
+        <div class="conclusion green">
+
+            <b>निष्कर्ष:</b>
+            आयोडीन की कमी से घेंघा रोग हो सकता है।
+
+        </div>
+
+    </div>
+
+
+
+    <div class="option-wrap">
+
+        <button class="option"
+                onclick="optionClick(this,'C')">
+
+            (C) कैल्शियम
+
+            <span class="mark">✕</span>
+
+        </button>
+
+        <div class="conclusion red">
+
+            <b>निष्कर्ष:</b>
+            कैल्शियम हड्डियों के लिए जरूरी है, इसकी कमी से घेंघा नहीं होता।
+
+        </div>
+
+    </div>
+
+
+
+    <div class="option-wrap">
+
+        <button class="option"
+                onclick="optionClick(this,'D')">
+
+            (D) सोडियम
+
+            <span class="mark">✕</span>
+
+        </button>
+
+        <div class="conclusion red">
+
+            <b>निष्कर्ष:</b>
+            सोडियम शरीर में जल और लवण का संतुलन बनाए रखने में मदद करता है।
+
+        </div>
+
+    </div>
 
 </div>
 
@@ -1003,48 +1038,95 @@ body{
 <div class="question" data-answer="C">
 
     <div class="question-text">
-        3. कूटपाद किसमें पाया जाता है?
+        3. कूटपाद किसमें पाए जाते हैं?
     </div>
 
 
-    <button class="option"
-            onclick="checkAnswer(this,'A')">
+    <div class="option-wrap">
 
-        (A) पैरामीशियम
+        <button class="option"
+                onclick="optionClick(this,'A')">
 
-        <span class="mark">✕</span>
+            (A) पैरामीशियम
 
-    </button>
+            <span class="mark">✕</span>
 
+        </button>
 
-    <button class="option"
-            onclick="checkAnswer(this,'B')">
+        <div class="conclusion red">
 
-        (B) यूग्लीना
+            <b>निष्कर्ष:</b>
+            पैरामीशियम गति के लिए पक्ष्माभों का उपयोग करता है।
 
-        <span class="mark">✕</span>
+        </div>
 
-    </button>
-
-
-    <button class="option"
-            onclick="checkAnswer(this,'C')">
-
-        (C) अमीबा
-
-        <span class="mark">✓</span>
-
-    </button>
+    </div>
 
 
-    <button class="option"
-            onclick="checkAnswer(this,'D')">
 
-        (D) इनमें से कोई नहीं
+    <div class="option-wrap">
 
-        <span class="mark">✕</span>
+        <button class="option"
+                onclick="optionClick(this,'B')">
 
-    </button>
+            (B) यूग्लीना
+
+            <span class="mark">✕</span>
+
+        </button>
+
+        <div class="conclusion red">
+
+            <b>निष्कर्ष:</b>
+            यूग्लीना गति के लिए कशाभ का उपयोग करता है।
+
+        </div>
+
+    </div>
+
+
+
+    <div class="option-wrap">
+
+        <button class="option"
+                onclick="optionClick(this,'C')">
+
+            (C) अमीबा
+
+            <span class="mark">✓</span>
+
+        </button>
+
+        <div class="conclusion green">
+
+            <b>निष्कर्ष:</b>
+            अमीबा कूटपाद बनाकर चलता है और भोजन पकड़ता है।
+
+        </div>
+
+    </div>
+
+
+
+    <div class="option-wrap">
+
+        <button class="option"
+                onclick="optionClick(this,'D')">
+
+            (D) बैक्टीरिया
+
+            <span class="mark">✕</span>
+
+        </button>
+
+        <div class="conclusion red">
+
+            <b>निष्कर्ष:</b>
+            बैक्टीरिया में सामान्यतः कूटपाद नहीं पाए जाते।
+
+        </div>
+
+    </div>
 
 </div>
 
@@ -1134,7 +1216,6 @@ body{
 
 </div>
 
-
 </div>
 
 
@@ -1152,7 +1233,6 @@ let attempted = 0;
 let submitted = false;
 
 
-
 /* ==================================================
    CORRECT SOUND
 ================================================== */
@@ -1165,14 +1245,11 @@ function playCorrectSound(){
 
     if(!AudioContext) return;
 
-
     const ctx =
         new AudioContext();
 
-
     const notes =
         [523,659,784,1046];
-
 
     notes.forEach(
         function(freq,index){
@@ -1183,14 +1260,11 @@ function playCorrectSound(){
         const gain =
             ctx.createGain();
 
-
         osc.type =
             "sine";
 
-
         osc.frequency.value =
             freq;
-
 
         osc.connect(gain);
 
@@ -1198,29 +1272,24 @@ function playCorrectSound(){
             ctx.destination
         );
 
-
         const start =
             ctx.currentTime +
             index*.09;
-
 
         gain.gain.setValueAtTime(
             .001,
             start
         );
 
-
         gain.gain.exponentialRampToValueAtTime(
             .3,
             start+.02
         );
 
-
         gain.gain.exponentialRampToValueAtTime(
             .001,
             start+.25
         );
-
 
         osc.start(start);
 
@@ -1233,10 +1302,8 @@ function playCorrectSound(){
 }
 
 
-
 /* ==================================================
    WRONG VIBRATION
-   केवल एक बार
 ================================================== */
 
 function strongVibration(){
@@ -1252,7 +1319,6 @@ function strongVibration(){
 }
 
 
-
 /* ==================================================
    CELEBRATION SOUND
 ================================================== */
@@ -1265,10 +1331,8 @@ function celebrationSound(){
 
     if(!AudioContext) return;
 
-
     const ctx =
         new AudioContext();
-
 
     const notes =
         [
@@ -1282,7 +1346,6 @@ function celebrationSound(){
             1568
         ];
 
-
     notes.forEach(
         function(freq,index){
 
@@ -1292,14 +1355,11 @@ function celebrationSound(){
         const gain =
             ctx.createGain();
 
-
         osc.type =
             "triangle";
 
-
         osc.frequency.value =
             freq;
-
 
         osc.connect(gain);
 
@@ -1307,29 +1367,24 @@ function celebrationSound(){
             ctx.destination
         );
 
-
         const start =
             ctx.currentTime +
             index*.11;
-
 
         gain.gain.setValueAtTime(
             .001,
             start
         );
 
-
         gain.gain.exponentialRampToValueAtTime(
             .3,
             start+.02
         );
 
-
         gain.gain.exponentialRampToValueAtTime(
             .001,
             start+.3
         );
-
 
         osc.start(start);
 
@@ -1340,7 +1395,6 @@ function celebrationSound(){
     });
 
 }
-
 
 
 /* ==================================================
@@ -1355,10 +1409,8 @@ function sadSound(){
 
     if(!AudioContext) return;
 
-
     const ctx =
         new AudioContext();
-
 
     const osc =
         ctx.createOscillator();
@@ -1366,22 +1418,18 @@ function sadSound(){
     const gain =
         ctx.createGain();
 
-
     osc.type =
         "sine";
-
 
     osc.frequency.setValueAtTime(
         330,
         ctx.currentTime
     );
 
-
     osc.frequency.exponentialRampToValueAtTime(
         110,
         ctx.currentTime+1.2
     );
-
 
     osc.connect(gain);
 
@@ -1389,18 +1437,15 @@ function sadSound(){
         ctx.destination
     );
 
-
     gain.gain.setValueAtTime(
         .23,
         ctx.currentTime
     );
 
-
     gain.gain.exponentialRampToValueAtTime(
         .001,
         ctx.currentTime+1.2
     );
-
 
     osc.start();
 
@@ -1411,15 +1456,13 @@ function sadSound(){
 }
 
 
-
 /* ==================================================
-   PETAL EFFECT
+   FLOWER EFFECT
 ================================================== */
 
 function flowerBurst(option){
 
     const petals = [
-
         "🌸",
         "🌺",
         "🌼",
@@ -1427,16 +1470,14 @@ function flowerBurst(option){
         "🌷",
         "🪻",
         "🍃"
-
     ];
-
 
     const rect =
         option.getBoundingClientRect();
 
 
     /*
-       22 पंखुड़ियाँ
+       अलग-अलग direction
     */
 
     for(
@@ -1450,10 +1491,8 @@ function flowerBurst(option){
                 "div"
             );
 
-
         petal.className =
             "option-flower";
-
 
         petal.innerHTML =
             petals[
@@ -1465,38 +1504,30 @@ function flowerBurst(option){
 
 
         /*
-           शुरुआत option के
-           बीच से होगी
+           उसी option से शुरू
         */
 
         petal.style.left =
             (
                 rect.left +
-                rect.width / 2
+                rect.width/2
             ) + "px";
-
 
         petal.style.top =
             (
                 rect.top +
-                rect.height / 2
+                rect.height/2
             ) + "px";
 
 
-        /*
-           हर पंखुड़ी की
-           अलग दिशा
-        */
-
         const angle =
-            (
-                Math.random() *
-                Math.PI * 2
-            );
+            Math.random() *
+            Math.PI *
+            2;
 
 
         const spread =
-            70 +
+            60 +
             Math.random()*100;
 
 
@@ -1505,18 +1536,10 @@ function flowerBurst(option){
             spread;
 
 
-        /*
-           ऊपर जाने की दूरी
-        */
-
         const up =
             100 +
             Math.random()*70;
 
-
-        /*
-           नीचे गिरने की दूरी
-        */
 
         const down =
             170 +
@@ -1528,12 +1551,10 @@ function flowerBurst(option){
             side + "px"
         );
 
-
         petal.style.setProperty(
             "--up",
             up + "px"
         );
-
 
         petal.style.setProperty(
             "--down",
@@ -1549,12 +1570,12 @@ function flowerBurst(option){
 
 
         /*
-           सभी लगभग एक साथ निकलें
+           हर flower थोड़ा अलग समय पर निकलेगा
         */
 
         petal.style.animationDelay =
             (
-                Math.random()*.06
+                Math.random()*.45
             ) + "s";
 
 
@@ -1569,7 +1590,7 @@ function flowerBurst(option){
                 petal.remove();
 
             },
-            2150
+            2500
         );
 
     }
@@ -1577,12 +1598,11 @@ function flowerBurst(option){
 }
 
 
-
 /* ==================================================
-   CHECK ANSWER
+   OPTION CLICK
 ================================================== */
 
-function checkAnswer(
+function optionClick(
     button,
     selected
 ){
@@ -1598,177 +1618,200 @@ function checkAnswer(
         );
 
 
-    if(
-        question.classList.contains(
-            "answered"
-        )
-    ){
-
-        return;
-
-    }
-
-
     const correctAnswer =
         question.getAttribute(
             "data-answer"
         );
 
 
-    const options =
-        question.querySelectorAll(
-            ".option"
+    /*
+       इस option का conclusion
+    */
+
+    const conclusion =
+        button.parentElement
+        .querySelector(
+            ".conclusion"
         );
 
 
-    question.classList.add(
-        "answered"
-    );
+    /*
+       ----------------------------------------------
+       अगर question पहली बार click हो रहा है
+       तो answer LOCK होगा
+       ----------------------------------------------
+    */
+
+    if(
+        !question.classList.contains(
+            "answered"
+        )
+    ){
+
+        question.classList.add(
+            "answered"
+        );
 
 
-    attempted++;
+        attempted++;
 
 
-    options.forEach(
-        function(option){
+        /*
+           पहला selected answer save
+        */
 
-        option.disabled =
-            true;
+        question.dataset.selected =
+            selected;
+
+
+        /*
+           सभी options को visually
+           answer के बाद भी clickable रखें
+        */
+
+        if(
+            selected ===
+            correctAnswer
+        ){
+
+            /* सही */
+
+            score++;
+
+            button.classList.add(
+                "correct",
+                "selected-correct"
+            );
+
+            button.querySelector(
+                ".mark"
+            ).innerHTML =
+                "✓";
+
+            button.querySelector(
+                ".mark"
+            ).style.display =
+                "flex";
+
+
+            playCorrectSound();
+
+
+            flowerBurst(
+                button
+            );
+
+        }
+
+        else{
+
+            /* गलत */
+
+            button.classList.add(
+                "wrong"
+            );
+
+            button.querySelector(
+                ".mark"
+            ).innerHTML =
+                "✕";
+
+            button.querySelector(
+                ".mark"
+            ).style.display =
+                "flex";
+
+
+            /*
+               सही option केवल GREEN
+               blue tick नहीं
+            */
+
+            const options =
+                question.querySelectorAll(
+                    ".option"
+                );
+
+
+            options.forEach(
+                function(option){
+
+                const code =
+                    option.getAttribute(
+                        "onclick"
+                    );
+
+
+                if(
+                    code &&
+                    code.includes(
+                        "'" +
+                        correctAnswer +
+                        "'"
+                    )
+                ){
+
+                    option.classList.add(
+                        "correct"
+                    );
+
+                    option.querySelector(
+                        ".mark"
+                    ).style.display =
+                        "none";
+                }
+
+            });
+
+
+            /*
+               गलत पर केवल vibration
+            */
+
+            strongVibration();
+
+        }
+
+    }
+
+
+    /*
+       ==================================================
+       IMPORTANT:
+       हर बाद के click पर answer CHANGE नहीं होगा।
+       केवल clicked option का conclusion खुलेगा।
+       ==================================================
+    */
+
+
+    /*
+       पहले इस question के सभी conclusions hide
+       करेंगे
+    */
+
+    question.querySelectorAll(
+        ".conclusion"
+    ).forEach(
+        function(item){
+
+        item.style.display =
+            "none";
 
     });
 
 
+    /*
+       केवल clicked option का conclusion show
+    */
 
-    /* ==================================================
-       CORRECT
-    ================================================== */
+    if(conclusion){
 
-    if(
-        selected ===
-        correctAnswer
-    ){
-
-        score++;
-
-
-        /*
-           Green + Blue Tick
-        */
-
-        button.classList.add(
-            "correct",
-            "selected-correct"
-        );
-
-
-        button.querySelector(
-            ".mark"
-        ).innerHTML =
-            "✓";
-
-
-        button.querySelector(
-            ".mark"
-        ).style.display =
-            "flex";
-
-
-        /*
-           Correct sound
-        */
-
-        playCorrectSound();
-
-
-        /*
-           उसी option से
-           petals निकलेंगे
-        */
-
-        flowerBurst(
-            button
-        );
-
-    }
-
-
-
-    /* ==================================================
-       WRONG
-    ================================================== */
-
-    else{
-
-        /*
-           गलत option RED
-        */
-
-        button.classList.add(
-            "wrong"
-        );
-
-
-        button.querySelector(
-            ".mark"
-        ).innerHTML =
-            "✕";
-
-
-        button.querySelector(
-            ".mark"
-        ).style.display =
-            "flex";
-
-
-        /*
-           सही option GREEN
-           लेकिन कोई blue tick नहीं
-        */
-
-        options.forEach(
-            function(option){
-
-            const answerCode =
-                option.getAttribute(
-                    "onclick"
-                );
-
-
-            if(
-                answerCode &&
-                answerCode.includes(
-                    "'" +
-                    correctAnswer +
-                    "'"
-                )
-            ){
-
-                option.classList.add(
-                    "correct"
-                );
-
-
-                option.querySelector(
-                    ".mark"
-                ).style.display =
-                    "none";
-
-            }
-
-        });
-
-
-        /*
-           केवल एक बार vibration
-           कोई sound नहीं
-        */
-
-        strongVibration();
+        conclusion.style.display =
+            "block";
 
     }
 
 }
-
 
 
 /* ==================================================
@@ -1848,27 +1891,15 @@ function submitQuiz(){
         "block";
 
 
-    document.querySelectorAll(
-        ".option"
-    ).forEach(
-        function(option){
-
-        option.style.cursor =
-            "default";
-
-    });
-
-
     const message =
         document.getElementById(
             "finalMessage"
         );
 
 
-
-    /* ==================================================
+    /*
        HIGH SCORE
-    ================================================== */
+    */
 
     if(
         percentage >= 70
@@ -1877,14 +1908,11 @@ function submitQuiz(){
         message.innerHTML =
             "🎉 बहुत शानदार! शानदार प्रदर्शन! 🎉";
 
-
         message.style.background =
             "linear-gradient(135deg,#075b1b,#0b8f32)";
 
-
         message.style.color =
             "#fff";
-
 
         message.style.border =
             "2px solid #064d16";
@@ -1894,8 +1922,8 @@ function submitQuiz(){
 
 
         /*
-           Celebration पर सही options
-           से भी petals
+           Submit पर सही options से
+           staggered flowers
         */
 
         const correctOptions =
@@ -1910,12 +1938,12 @@ function submitQuiz(){
             setTimeout(
                 function(){
 
-                flowerBurst(
-                    option
-                );
+                    flowerBurst(
+                        option
+                    );
 
-            },
-            index*250
+                },
+                index*350
             );
 
         });
@@ -1923,10 +1951,9 @@ function submitQuiz(){
     }
 
 
-
-    /* ==================================================
-       MEDIUM SCORE
-    ================================================== */
+    /*
+       MEDIUM
+    */
 
     else if(
         percentage >= 40
@@ -1935,43 +1962,29 @@ function submitQuiz(){
         message.innerHTML =
             "👍 अच्छा प्रयास! थोड़ी और मेहनत करें।";
 
-
         message.style.background =
             "linear-gradient(135deg,#8a6200,#c18a00)";
-
 
         message.style.color =
             "#fff";
 
-
-        message.style.border =
-            "2px solid #674900";
-
     }
 
 
-
-    /* ==================================================
-       LOW SCORE
-    ================================================== */
+    /*
+       LOW
+    */
 
     else{
 
         message.innerHTML =
             "😔 कोई बात नहीं! दोबारा प्रयास करें, अगली बार बेहतर होगा।";
 
-
         message.style.background =
             "linear-gradient(135deg,#8e0000,#c62828)";
 
-
         message.style.color =
             "#fff";
-
-
-        message.style.border =
-            "2px solid #650000";
-
 
         sadSound();
 
@@ -1993,18 +2006,17 @@ function submitQuiz(){
 }
 
 
-
 /* ==================================================
    RESET
 ================================================== */
 
 function resetQuiz(){
 
-    score = 0;
+    score=0;
 
-    attempted = 0;
+    attempted=0;
 
-    submitted = false;
+    submitted=false;
 
 
     document.querySelectorAll(
@@ -2017,14 +2029,13 @@ function resetQuiz(){
         );
 
 
+        delete question.dataset.selected;
+
+
         question.querySelectorAll(
             ".option"
         ).forEach(
             function(option){
-
-            option.disabled =
-                false;
-
 
             option.classList.remove(
                 "correct",
@@ -2038,11 +2049,16 @@ function resetQuiz(){
             ).style.display =
                 "none";
 
+        });
 
-            option.querySelector(
-                ".mark"
-            ).innerHTML =
-                "✓";
+
+        question.querySelectorAll(
+            ".conclusion"
+        ).forEach(
+            function(conclusion){
+
+            conclusion.style.display =
+                "none";
 
         });
 
@@ -2074,4 +2090,4 @@ function resetQuiz(){
 </script>
 
 </body>
-    </html>
+            </html>
