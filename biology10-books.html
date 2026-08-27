@@ -1,151 +1,633 @@
 <!DOCTYPE html>
 <html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Class 10 Biology - FARHAN BHAIYA</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Class 10 Biology Books - Science Education</title>
 
 <style>
+
 *{
     box-sizing:border-box;
 }
 
-html,body{
+html,
+body{
+    width:100%;
     margin:0;
     padding:0;
-    width:100%;
-    min-height:100%;
 }
 
 body{
-    font-family:Arial, sans-serif;
-    background:#f1f8e9;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
     color:#222;
-    padding-bottom:40px;
 }
 
-.header{
-    width:100%;
+/* HEADER */
+
+header{
     background:#2e7d32;
     color:white;
     text-align:center;
-    padding:20px 10px;
+    padding:28px 15px;
 }
 
-.header h1{
+header h1{
     margin:0;
-    font-size:28px;
+    font-size:32px;
 }
 
-.header p{
+header p{
     margin:8px 0 0;
-    font-size:16px;
+    font-size:17px;
 }
+
+/* HOME BUTTON */
+
+.top-nav{
+    background:white;
+    padding:12px;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.12);
+}
+
+.top-nav a{
+    display:inline-block;
+    margin:4px;
+    padding:10px 22px;
+    background:#2e7d32;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:8px;
+}
+
+/* MAIN */
 
 .container{
     width:100%;
-    max-width:900px;
+    max-width:1100px;
     margin:auto;
-    padding:15px;
+    padding:20px 12px 50px;
 }
 
-.title{
-    text-align:center;
+/* WELCOME */
+
+.welcome{
     background:white;
-    padding:18px 10px;
-    border-radius:12px;
-    margin-bottom:15px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.12);
+    padding:25px 18px;
+    border-radius:16px;
+    text-align:center;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
 
-.title h2{
-    margin:0;
-    color:#1b5e20;
+.welcome h2{
+    margin-top:0;
+    color:#2e7d32;
+}
+
+.welcome p{
+    line-height:1.7;
+}
+
+/* SECTION TITLE */
+
+.section-title{
+    text-align:center;
+    color:#2e7d32;
+    margin:30px 0 18px;
+}
+
+/* CHAPTERS */
+
+.chapters{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
 }
 
 .chapter{
+    display:block;
     background:white;
-    margin:12px 0;
-    padding:16px;
-    border-radius:12px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.10);
+    padding:22px 18px;
+    border-radius:18px;
+    text-decoration:none;
+    color:#2e7d32;
+    box-shadow:0 4px 14px rgba(0,0,0,.10);
+    transition:.2s;
+}
+
+.chapter:hover{
+    transform:translateY(-3px);
+    background:#f1f8f1;
+}
+
+.chapter-number{
+    font-size:17px;
+    font-weight:bold;
+    color:#555;
 }
 
 .chapter h3{
-    margin:0 0 12px;
-    color:#1b5e20;
+    margin:9px 0 0;
+    font-size:20px;
+    line-height:1.5;
 }
 
-.pdf-button{
+/* ALL SUBJECTS */
+
+.subjects{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.subject{
     display:block;
-    width:100%;
+    background:white;
+    padding:20px 10px;
+    border-radius:16px;
     text-align:center;
     text-decoration:none;
+    color:#2e7d32;
+    box-shadow:0 3px 12px rgba(0,0,0,.09);
+}
+
+.subject:hover{
+    background:#f1f8f1;
+}
+
+.subject-icon{
+    font-size:38px;
+}
+
+.subject h3{
+    margin:9px 0 0;
+    font-size:17px;
+}
+
+/* ALL CLASSES */
+
+.classes{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.class-btn{
+    display:block;
+    background:white;
+    padding:18px 8px;
+    border-radius:15px;
+    text-align:center;
+    text-decoration:none;
+    color:#2e7d32;
+    font-size:18px;
+    font-weight:bold;
+    box-shadow:0 3px 12px rgba(0,0,0,.09);
+}
+
+.class-btn:hover{
+    background:#f1f8f1;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:30px;
     background:#2e7d32;
     color:white;
-    padding:13px;
-    border-radius:8px;
-    font-size:17px;
-    font-weight:bold;
-}
-
-.pdf-button:hover{
-    background:#1b5e20;
-}
-
-.note{
-    background:#fffde7;
-    border-left:5px solid #f9a825;
-    padding:12px;
-    margin-top:15px;
-    border-radius:6px;
-    font-size:14px;
-}
-
-.footer{
     text-align:center;
-    margin-top:25px;
-    padding:15px;
-    color:#555;
-    font-size:14px;
+    padding:20px;
 }
+
+footer p{
+    margin:0;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    header h1{
+        font-size:27px;
+    }
+
+    .chapters{
+        grid-template-columns:1fr;
+        gap:12px;
+    }
+
+    .subjects{
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+    }
+
+    .classes{
+        grid-template-columns:repeat(3,1fr);
+        gap:10px;
+    }
+
+    .chapter{
+        padding:20px 15px;
+    }
+
+    .chapter h3{
+        font-size:18px;
+    }
+
+    .class-btn{
+        padding:15px 5px;
+        font-size:16px;
+    }
+
+}
+
+@media(max-width:400px){
+
+    .classes{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
 </style>
+
 </head>
 
 <body>
 
-<div class="header">
-    <h1>FARHAN BHAIYA</h1>
-    <p>विज्ञान को आसान तरीके से सीखें</p>
-</div>
+<!-- HEADER -->
 
-<div class="container">
+<header>
 
-    <div class="title">
-        <h2>कक्षा 10 — जीव विज्ञान</h2>
-        <p>Biology Chapter & Book</p>
+    <h1>📚 CLASS 10 BIOLOGY</h1>
+
+    <p>
+        Biology की पुस्तक अध्यायवार पढ़ें
+    </p>
+
+</header>
+
+<!-- HOME BUTTON -->
+
+<nav class="top-nav">
+
+    <a href="index.html">
+        🏠 Home
+    </a>
+
+</nav>
+
+<main class="container">
+
+<!-- WELCOME -->
+
+<section class="welcome">
+
+    <h2>
+        📖 Biology Books
+    </h2>
+
+    <p>
+        अपने अध्याय पर क्लिक करें और
+        Biology की पढ़ाई शुरू करें।
+    </p>
+
+</section>
+
+<!-- CHAPTERS -->
+
+<h2 class="section-title">
+    🧬 Biology के Chapters
+</h2>
+
+<section class="chapters">
+
+<!-- CHAPTER 1 -->
+
+<a class="chapter"
+href="jhsc105.pdf"
+target="_blank">
+
+    <div class="chapter-number">
+        Chapter 1
     </div>
 
-    <div class="chapter">
-        <h3>अध्याय 1 — जैव प्रक्रम</h3>
+    <h3>
+        जैव प्रक्रम
+    </h3>
 
-        <a class="pdf-button"
-           href="jhsc105.pdf"
-           target="_blank">
-           📖 Chapter 1 पढ़ें
-        </a>
+</a>
 
-        <div class="note">
-            Chapter 1 की PDF पढ़ने के लिए ऊपर दिए गए बटन पर क्लिक करें।
-        </div>
+<!-- CHAPTER 2 -->
+
+<a class="chapter"
+href="biology10-chapter2.html">
+
+    <div class="chapter-number">
+        Chapter 2
     </div>
 
-</div>
+    <h3>
+        नियंत्रण एवं समन्वय
+    </h3>
 
-<div class="footer">
-    © FARHAN BHAIYA
-</div>
+</a>
+
+<!-- CHAPTER 3 -->
+
+<a class="chapter"
+href="biology10-chapter3.html">
+
+    <div class="chapter-number">
+        Chapter 3
+    </div>
+
+    <h3>
+        जीव जनन कैसे करते हैं?
+    </h3>
+
+</a>
+
+<!-- CHAPTER 4 -->
+
+<a class="chapter"
+href="biology10-chapter4.html">
+
+    <div class="chapter-number">
+        Chapter 4
+    </div>
+
+    <h3>
+        आनुवंशिकता एवं जैव विकास
+    </h3>
+
+</a>
+
+<!-- CHAPTER 5 -->
+
+<a class="chapter"
+href="biology10-chapter5.html">
+
+    <div class="chapter-number">
+        Chapter 5
+    </div>
+
+    <h3>
+        हमारा पर्यावरण
+    </h3>
+
+</a>
+
+<!-- CHAPTER 6 -->
+
+<a class="chapter"
+href="biology10-chapter6.html">
+
+    <div class="chapter-number">
+        Chapter 6
+    </div>
+
+    <h3>
+        प्राकृतिक संसाधनों का संपोषित प्रबंधन
+    </h3>
+
+</a>
+
+</section>
+
+<!-- ALL SUBJECTS -->
+
+<h2 class="section-title">
+    📚 सभी Subjects
+</h2>
+
+<section class="subjects">
+
+<a class="subject"
+href="science10.html">
+
+    <div class="subject-icon">
+        🔬
+    </div>
+
+    <h3>
+        Science
+    </h3>
+
+</a>
+
+<a class="subject"
+href="socialscience10.html">
+
+    <div class="subject-icon">
+        🌍
+    </div>
+
+    <h3>
+        Social Science
+    </h3>
+
+</a>
+
+<a class="subject"
+href="math10.html">
+
+    <div class="subject-icon">
+        ➗
+    </div>
+
+    <h3>
+        Math
+    </h3>
+
+</a>
+
+<a class="subject"
+href="hindi10.html">
+
+    <div class="subject-icon">
+        📖
+    </div>
+
+    <h3>
+        हिन्दी
+    </h3>
+
+</a>
+
+<a class="subject"
+href="urdu10.html">
+
+    <div class="subject-icon">
+        📝
+    </div>
+
+    <h3>
+        उर्दू
+    </h3>
+
+</a>
+
+<a class="subject"
+href="english10.html">
+
+    <div class="subject-icon">
+        🔤
+    </div>
+
+    <h3>
+        English
+    </h3>
+
+</a>
+
+<a class="subject"
+href="sanskrit10.html">
+
+    <div class="subject-icon">
+        🕉️
+    </div>
+
+    <h3>
+        संस्कृत
+    </h3>
+
+</a>
+
+<a class="subject"
+href="quiz10.html">
+
+    <div class="subject-icon">
+        🎯
+    </div>
+
+    <h3>
+        Quiz
+    </h3>
+
+</a>
+
+</section>
+
+<!-- ALL CLASSES -->
+
+<h2 class="section-title">
+    🎓 सभी Classes
+</h2>
+
+<section class="classes">
+
+<a class="class-btn" href="class1.html">
+    📘 Class 1
+</a>
+
+<a class="class-btn" href="class2.html">
+    📗 Class 2
+</a>
+
+<a class="class-btn" href="class3.html">
+    📕 Class 3
+</a>
+
+<a class="class-btn" href="class4.html">
+    📙 Class 4
+</a>
+
+<a class="class-btn" href="class5.html">
+    📘 Class 5
+</a>
+
+<a class="class-btn" href="class6.html">
+    📗 Class 6
+</a>
+
+<a class="class-btn" href="class7.html">
+    📕 Class 7
+</a>
+
+<a class="class-btn" href="class8.html">
+    📙 Class 8
+</a>
+
+<a class="class-btn" href="class9.html">
+    📘 Class 9
+</a>
+
+<a class="class-btn" href="class10.html">
+    📗 Class 10
+</a>
+
+<a class="class-btn" href="class11.html">
+    📕 Class 11
+</a>
+
+<a class="class-btn" href="class12.html">
+    📙 Class 12
+</a>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Science Education
+    </p>
+
+</footer>
+
+<!-- SCROLL POSITION -->
+
+<script>
+
+(function(){
+
+    const KEY = "biology10_books_scroll";
+
+    window.addEventListener("pagehide",function(){
+
+        sessionStorage.setItem(
+            KEY,
+            window.scrollY
+        );
+
+    });
+
+    window.addEventListener("pageshow",function(){
+
+        const savedPosition =
+            sessionStorage.getItem(KEY);
+
+        if(savedPosition !== null){
+
+            requestAnimationFrame(function(){
+
+                window.scrollTo(
+                    0,
+                    parseInt(savedPosition,10)
+                );
+
+            });
+
+        }
+
+    });
+
+})();
+
+</script>
 
 </body>
-</html>
+
+    </html>
